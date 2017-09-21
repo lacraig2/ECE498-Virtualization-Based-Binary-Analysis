@@ -8,6 +8,7 @@ PANDAENDCOMMENT */
 #define __STDC_FORMAT_MACROS
 
 #include "panda/plugin.h"
+#include "../wintrospection/wintrospection.h"
 #include <inttypes.h>
 
 bool init_plugin(void *);
@@ -18,10 +19,10 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb);
 int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
 	#if defined (TARGET_I386)
 		CPUArchState *env = (CPUArchState*)cpu->env_ptr;
+		int cr3 = (int) panda_current_asid(cpu);
 		uint64_t count = rr_get_guest_instr_count();
 		int eax = (int)env->regs[R_EAX];
-		printf("INSTR: %" PRIx64 " EAX: %" PRIx32 "\n", count, eax);
-
+		printf("INSTR: 0x%" PRIx64 " EAX: 0x%" PRIx32 " CR3: 0x%" PRIx32 "\n", count, eax, cr3);
 	#endif
     return 0;
 }
