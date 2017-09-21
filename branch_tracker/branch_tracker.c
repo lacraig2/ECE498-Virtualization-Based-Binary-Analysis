@@ -19,7 +19,7 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
 	#if defined (TARGET_I386)
 		CPUArchState *env = (CPUArchState*)cpu->env_ptr;
 		uint64_t count = rr_get_guest_instr_count();
-		printf("INSTR: %" PRIx64 " EAX: " PRIx32 "\n", count,env->regs[R_EAX]);
+		printf("INSTR: %" PRIx64 " EAX: %" PRIx32 "\n", count,env->regs[R_EAX]);
 
 	#endif
     return 0;
