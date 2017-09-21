@@ -22,7 +22,6 @@ int before_block_exec(CPUState *env, TranslationBlock *tb) {
 bool init_plugin(void *self) {
     panda_cb pcb = { .before_block_exec = before_block_exec };
     panda_register_callback(self, PANDA_CB_BEFORE_BLOCK_EXEC, pcb);
-
     return true;
 }
 
