@@ -13,11 +13,15 @@ PANDAENDCOMMENT */
 bool init_plugin(void *);
 void uninit_plugin(void *);
 
-int before_block_exec(CPUState *env, TranslationBlock *tb);
+int before_block_exec(CPUState *cpu, TranslationBlock *tb);
 
-int before_block_exec(CPUState *env, TranslationBlock *tb) {
-	uint64_t count = rr_get_guest_instr_count();
-	printf("BEFORE BLOCK EXEC%" PRId64 "\n", count);
+int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
+	#if defined (TARGET_I386)
+		CPUArchState *env = (CPUArchState*)cpu->env_ptr;
+		uint64_t count = rr_get_guest_instr_count();
+		printf("INSTR: %" PRIx64 " EAX: %x\n", count,env->regs[R_EAX]);
+
+	#endif
     return 0;
 }
 
