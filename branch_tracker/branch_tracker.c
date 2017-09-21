@@ -17,8 +17,7 @@ int before_block_exec(CPUState *env, TranslationBlock *tb);
 
 int before_block_exec(CPUState *env, TranslationBlock *tb) {
 	uint64_t count = rr_get_guest_instr_count();
-	printf("BEFORE BLOCK EXEC%" PRIu64 "\n", count);
-
+	printf("BEFORE BLOCK EXEC%" PRId64 "\n", count);
     return 0;
 }
 
