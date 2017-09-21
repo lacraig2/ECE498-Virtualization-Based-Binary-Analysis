@@ -13,8 +13,8 @@ PANDAENDCOMMENT */
 
 bool init_plugin(void *);
 void uninit_plugin(void *);
-int replay_handle_packet(CPUState *env, uint8_t *buf, int size,
-                            uint8_t direction, uint64_t old_buf_addr);
+// int replay_handle_packet(CPUState *env, uint8_t *buf, int size,
+                            // uint8_t direction, uint64_t old_buf_addr);
 
 int before_block_exec(CPUState *cpu, TranslationBlock *tb);
 
@@ -34,17 +34,17 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
     return 0;
 }
 
-int replay_handle_packet(CPUState *env, uint8_t *buf, int size,
-                            uint8_t direction, uint64_t old_buf_addr){
-	if (direction == PANDA_NET_RX){
-		printf("RECEIVE NET TRANSFER\n");
-	}
-	return 0;
-}
+// int replay_handle_packet(CPUState *env, uint8_t *buf, int size,
+//                             uint8_t direction, uint64_t old_buf_addr){
+// 	if (direction == PANDA_NET_RX){
+// 		printf("RECEIVE NET TRANSFER\n");
+// 	}
+// 	return 0;
+// }
 
 
 bool init_plugin(void *self) {
-    panda_cb pcb = { .before_block_exec = before_block_exec, .replay_handle_packet=replay_handle_packet};
+    panda_cb pcb = { .before_block_exec = before_block_exec};//, .replay_handle_packet=replay_handle_packet};
     panda_register_callback(self, PANDA_CB_BEFORE_BLOCK_EXEC, pcb);
     panda_enable_precise_pc();
     return true;
