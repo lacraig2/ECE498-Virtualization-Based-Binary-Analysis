@@ -19,7 +19,7 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb);
 int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
 	//char *base = panda_parse_string(args, "base", NULL);
 	#if defined (TARGET_I386)
-		panda_arg_list *args = panda_get_args("llvm_trace");
+		panda_arg_list *args = panda_get_args("branch_tracker");
 		uint32_t pid = panda_parse_uint32(args, "PID", 0);
 		int cr3 = (int) panda_current_asid(cpu);
 		if (cr3 == pid || pid == 1337){
