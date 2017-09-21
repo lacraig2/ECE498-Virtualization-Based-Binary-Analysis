@@ -15,7 +15,7 @@ void uninit_plugin(void *);
 int before_block_exec(CPUState *env, TranslationBlock *tb);
 
 int before_block_exec(CPUState *env, TranslationBlock *tb) {
-	printf("BEFORE BLOCK EXEC")
+	printf("BEFORE BLOCK EXEC");
     return 0;
 }
 
