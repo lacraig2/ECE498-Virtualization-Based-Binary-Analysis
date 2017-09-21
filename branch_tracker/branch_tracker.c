@@ -36,7 +36,7 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
 
 int replay_net_transfer(CPUState *env, uint32_t type, uint64_t src_addr,
                             uint64_t dest_addr, uint32_t num_bytes){
-	printf("NET TRANSFER\n")
+	printf("NET TRANSFER\n");
 	return 0;
 }
 
