@@ -22,7 +22,7 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
 		panda_arg_list *args = panda_get_args("branch_tracker");
 		uint32_t pid = panda_parse_uint32(args, "PID", 0);
 		int cr3 = (int) panda_current_asid(cpu);
-		if (cr3 == pid || pid == 1337){
+		if (cr3 == pid || pid == -1){
 			CPUArchState *env = (CPUArchState*)cpu->env_ptr;
 			uint64_t count = rr_get_guest_instr_count();
 			int eax = (int)env->regs[R_EAX];
