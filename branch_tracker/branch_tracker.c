@@ -35,7 +35,7 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
 }
 
 int replay_handle_packet(CPUState *env, uint8_t *buf, int size,
-                            uint8_t direction, uint64_t old_buf_addr)
+                            uint8_t direction, uint64_t old_buf_addr){
 	if (direction == PANDA_NET_RX){
 		printf("RECEIVE NET TRANSFER\n");
 	}
