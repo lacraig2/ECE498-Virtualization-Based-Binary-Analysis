@@ -8,6 +8,7 @@ PANDAENDCOMMENT */
 #define __STDC_FORMAT_MACROS
 
 #include "panda/plugin.h"
+#include <inttypes.h>
 
 bool init_plugin(void *);
 void uninit_plugin(void *);
@@ -15,7 +16,9 @@ void uninit_plugin(void *);
 int before_block_exec(CPUState *env, TranslationBlock *tb);
 
 int before_block_exec(CPUState *env, TranslationBlock *tb) {
-	printf("BEFORE BLOCK EXEC");
+	uint64_t count = rr_get_guest_instr_count();
+	printf("BEFORE BLOCK EXEC%" PRIu64 "\n", count);
+
     return 0;
 }
 
