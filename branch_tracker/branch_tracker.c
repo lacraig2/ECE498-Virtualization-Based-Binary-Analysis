@@ -28,7 +28,7 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
 			CPUArchState *env = (CPUArchState*)cpu->env_ptr;
 			uint64_t count = rr_get_guest_instr_count();
 			int eax = (int)env->regs[R_EAX];
-			printf("INSTR: 0x%" PRIx64 " EAX: 0x%" PRIx32 " CR3: 0x%" PRIx32 "\n", count, eax, cr3);
+			printf("INSTR: 0x%" PRIx64 " EAX: 0x%" PRIx32 " CR3: 0x%" PRIx32 " in kerkel: %s\n", count, eax, cr3, panda_in_kernel() ? "true":"false");
 		}
 	#endif
     return 0;
