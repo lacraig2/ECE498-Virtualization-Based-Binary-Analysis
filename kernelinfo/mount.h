@@ -2,7 +2,7 @@
 #include <linux/seq_file.h>
 #include <linux/poll.h>
 // #include <linux/ns_common.h>
-#include <linux/fs_pin.h>
+// #include <linux/fs_pin.h>
 
 struct mnt_namespace {
 	atomic_t		count;
