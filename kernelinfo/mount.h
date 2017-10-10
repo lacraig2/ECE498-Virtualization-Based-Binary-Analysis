@@ -1,8 +1,8 @@
 #include <linux/mount.h>
 #include <linux/seq_file.h>
 #include <linux/poll.h>
-// #include <linux/ns_common.h>
-// #include <linux/fs_pin.h>
+#include "ns_common.h"
+#include "fs_pin.h"
 
 struct mnt_namespace {
 	atomic_t		count;
