@@ -13,7 +13,7 @@ extern "C" {
 
 #include "syscalls2.h" 
 #include "panda_common.h"
-#include "panda_plugin_plugin.h"
+#include "panda/plugin_plugin.h"
 #include "panda/plugin.h"
 #include "../wintrospection/wintrospection.h"
 #include <inttypes.h>
