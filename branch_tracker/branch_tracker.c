@@ -41,12 +41,12 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
 		// panda_arg_list *args = panda_get_args("branch_tracker");
 		// uint32_t pid = panda_parse_uint32(args, "process", 0);
 		// int cr3 = (int) panda_current_asid(cpu);
-	OsiProc *current = get_current_process(cpu);
-	if (!strcmp("wget", current->name)){
-		OsiPage *pages = current->pages;
-		printf("------------------WGET PAGE-----------------");
+	// OsiProc *current = get_current_process(cpu);
+	// if (!strcmp("wget", current->name)){
+		// OsiPage *pages = current->pages;
+		// printf("------------------WGET PAGE-----------------");
 		
-	}
+	// }
 	// #endif
     return 0;
 }
