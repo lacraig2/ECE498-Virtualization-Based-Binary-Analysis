@@ -14,6 +14,18 @@ PANDAENDCOMMENT */
 
 bool init_plugin(void *);
 void uninit_plugin(void *);
+void my_NtReadFile_enter(
+        CPUState* env,
+        target_ulong pc,
+        uint32_t FileHandle,
+        uint32_t Event,
+        uint32_t UserApcRoutine,
+        uint32_t UserApcContext,
+        uint32_t IoStatusBlock,
+        uint32_t Buffer,
+        uint32_t BufferLength,
+        uint32_t ByteOffset,
+        uint32_t Key);
 // int replay_handle_packet(CPUState *env, uint8_t *buf, int size,
                             // uint8_t direction, uint64_t old_buf_addr);
 
@@ -35,6 +47,26 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
     return 0;
 }
 
+void my_NtReadFile_enter(
+        CPUState* env,
+        target_ulong pc,
+        uint32_t FileHandle,
+        uint32_t Event,
+        uint32_t UserApcRoutine,
+        uint32_t UserApcContext,
+        uint32_t IoStatusBlock,
+        uint32_t Buffer,
+        uint32_t BufferLength,
+        uint32_t ByteOffset,
+        uint32_t Key) {
+   printf("NtReadFile(FileHandle=%x, Event=%x, UserApcRoutine=%x, "
+                     "UserApcContext=%x, IoStatusBlock=%x, Buffer=%x, "
+                     "BufferLength=%x, ByteOffset=%x, Key=%x)\n",
+        FileHandle, Event, UserApcRoutine, UserApcContext,
+        IoStatusBlock, Buffer, BufferLength, ByteOffset, Key);
+}
+
+
 // int replay_handle_packet(CPUState *env, uint8_t *buf, int size,
 //                             uint8_t direction, uint64_t old_buf_addr){
 // 	if (direction == PANDA_NET_RX){
@@ -47,6 +79,7 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
 bool init_plugin(void *self) {
     panda_cb pcb = { .before_block_exec = before_block_exec};//, .replay_handle_packet=replay_handle_packet};
     panda_register_callback(self, PANDA_CB_BEFORE_BLOCK_EXEC, pcb);
+    PPP_REG_CB("syscalls2", on_NtReadFile_enter, my_NtReadFile_enter);
     panda_enable_precise_pc();
     return true;
 }
