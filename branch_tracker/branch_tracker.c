@@ -6,6 +6,13 @@
 PANDAENDCOMMENT */
 
 #define __STDC_FORMAT_MACROS
+
+extern "C" {
+#include "panda_plugin.h" 
+}
+
+#include "syscalls2.h" 
+#include "panda_common.h"
 #include "panda_plugin_plugin.h"
 #include "panda/plugin.h"
 #include "../wintrospection/wintrospection.h"
