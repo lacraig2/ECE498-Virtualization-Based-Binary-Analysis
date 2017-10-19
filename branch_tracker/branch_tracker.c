@@ -6,7 +6,7 @@
 PANDAENDCOMMENT */
 
 #define __STDC_FORMAT_MACROS
-
+#include "panda_plugin_plugin.h"
 #include "panda/plugin.h"
 #include "../wintrospection/wintrospection.h"
 #include <inttypes.h>
