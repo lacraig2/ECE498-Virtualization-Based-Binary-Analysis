@@ -14,7 +14,7 @@ PANDAENDCOMMENT */
 #include "osi/osi_ext.h"
 #include "../syscalls2/gen_syscalls_ext_typedefs.h"
 #include "../syscalls2/syscalls_common.h"
-#include "panda_plugin_plugin.h"
+// #include "panda_plugin_plugin.h"
 
 bool init_plugin(void *);
 void uninit_plugin(void *);
