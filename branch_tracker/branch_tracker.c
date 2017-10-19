@@ -7,7 +7,7 @@ PANDAENDCOMMENT */
 
 #define __STDC_FORMAT_MACROS
 
-#include "panda_plugin.h" 
+#include "panda/panda_plugin.h" 
 #include "syscalls2.h" 
 #include "panda_common.h"
 #include "panda/plugin_plugin.h"
