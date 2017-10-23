@@ -9,77 +9,70 @@ PANDAENDCOMMENT */
 
 #include "panda/plugin.h"
 #include "panda/plugin_plugin.h"
-#include "../wintrospection/wintrospection.h"
+#include "panda/common.h"
+// #include "../wintrospection/wintrospection.h"
 #include <inttypes.h>
+
+#ifndef TARGET_I386
+#define EAX ((CPUArchState*)cpu->env_ptr)->regs[R_EAX]
+#define EBX ((CPUArchState*)cpu->env_ptr)->regs[R_EBX]
+#define ECX ((CPUArchState*)cpu->env_ptr)->regs[R_ECX]
+#define EDI ((CPUArchState*)cpu->env_ptr)->regs[R_EDI]
+#define ESP ((CPUArchState*)cpu->env_ptr)->regs[R_ESP]
+#define EBP ((CPUArchState*)cpu->env_ptr)->regs[R_EBP]
+#endif
 
 bool init_plugin(void *);
 void uninit_plugin(void *);
-void my_NtReadFile_enter(
-        CPUState* env,
-        target_ulong pc,
-        uint32_t FileHandle,
-        uint32_t Event,
-        uint32_t UserApcRoutine,
-        uint32_t UserApcContext,
-        uint32_t IoStatusBlock,
-        uint32_t Buffer,
-        uint32_t BufferLength,
-        uint32_t ByteOffset,
-        uint32_t Key);
-// int replay_handle_packet(CPUState *env, uint8_t *buf, int size,
-                            // uint8_t direction, uint64_t old_buf_addr);
 
 int before_block_exec(CPUState *cpu, TranslationBlock *tb);
 
 int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
-	//char *base = panda_parse_string(args, "base", NULL);
-	#if defined (TARGET_I386)
-		panda_arg_list *args = panda_get_args("branch_tracker");
-		uint32_t pid = panda_parse_uint32(args, "PID", 0);
-		int cr3 = (int) panda_current_asid(cpu);
-		if (cr3 == pid || pid == -1){
-			CPUArchState *env = (CPUArchState*)cpu->env_ptr;
-			uint64_t count = rr_get_guest_instr_count();
-			int eax = (int)env->regs[R_EAX];
-			printf("INSTR: 0x%" PRIx64 " EAX: 0x%" PRIx32 " CR3: 0x%" PRIx32 " in kerkel: %s\n", count, eax, cr3, panda_in_kernel(cpu) ? "true":"false");
+	// questions: how do I copy data. 
+	//Which direction does the stack go in x86?
+
+	OsiProc *current = get_current_process(cpu);
+	if (!strcmp("wget", current->name)){
+		OsiPage *pages = current->pages;
+		int high_addr = pages->start;
+		int low_addr = high_addr+pages->len;
+		int i;
+		int size = (ESP-EBP)*sizeof(char);
+		unsigned char *buf = (unsigned char *) malloc(len*sizeof(char));
+		int err = panda_virtual_memory_rw(env, EBP, buf, sizeof, 0);
+		if (err==-1){
+			printf("Couldn't read memory");
+			return 0;
 		}
-	#endif
+		for (i=EBP;i<=ESP; i++){
+
+			// int value = val[i];
+			// if (value > low_addr && value < high_addr){
+				//probably a pointer
+				// printf("%d %d %d", i, val[i], val[val[i]]);
+			// }else{
+			printf("%d %d", i, buf[i]);
+			// }
+		}
+	}
     return 0;
 }
 
-void my_NtReadFile_enter(
-        CPUState* env,
-        target_ulong pc,
-        uint32_t FileHandle,
-        uint32_t Event,
-        uint32_t UserApcRoutine,
-        uint32_t UserApcContext,
-        uint32_t IoStatusBlock,
-        uint32_t Buffer,
-        uint32_t BufferLength,
-        uint32_t ByteOffset,
-        uint32_t Key) {
-   printf("NtReadFile(FileHandle=%x, Event=%x, UserApcRoutine=%x, "
-                     "UserApcContext=%x, IoStatusBlock=%x, Buffer=%x, "
-                     "BufferLength=%x, ByteOffset=%x, Key=%x)\n",
-        FileHandle, Event, UserApcRoutine, UserApcContext,
-        IoStatusBlock, Buffer, BufferLength, ByteOffset, Key);
-}
-
-
-// int replay_handle_packet(CPUState *env, uint8_t *buf, int size,
-//                             uint8_t direction, uint64_t old_buf_addr){
-// 	if (direction == PANDA_NET_RX){
-// 		printf("RECEIVE NET TRANSFER\n");
-// 	}
-// 	return 0;
-// }
 
 
 bool init_plugin(void *self) {
     panda_cb pcb = { .before_block_exec = before_block_exec};//, .replay_handle_packet=replay_handle_packet};
     panda_register_callback(self, PANDA_CB_BEFORE_BLOCK_EXEC, pcb);
-    PPP_REG_CB("syscalls2", on_NtReadFile_enter, my_NtReadFile_enter);
+    if (panda_os_type == OST_LINUX) {
+        panda_require("osi_linux");
+        assert(init_osi_linux_api());
+
+        PPP_REG_CB("syscalls2", on_sys_open_enter, linux_open_enter);
+        // PPP_REG_CB("syscalls2", on_sys_read_enter, linux_read_enter);
+        // PPP_REG_CB("syscalls2", on_sys_read_return, linux_read_return);
+        // PPP_REG_CB("syscalls2", on_sys_pread64_enter, linux_pread_enter);
+        // PPP_REG_CB("syscalls2", on_sys_pread64_return, linux_pread_return);
+    }
     panda_enable_precise_pc();
     return true;
 }
