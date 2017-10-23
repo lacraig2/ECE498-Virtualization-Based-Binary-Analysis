@@ -28,16 +28,32 @@ PANDAENDCOMMENT */
 #include <llvm/Transforms/IPO/PassManagerBuilder.h>
 
 
-
 extern "C" {
-
 #include <sys/time.h>
-
 #include "callstack_instr/callstack_instr.h"
 #include "callstack_instr/callstack_instr_ext.h"
 #include <inttypes.h>
+#include "panda/rr/rr_log.h"
+#include "panda/plog.h"
+#include "panda/addr.h"
 
+#include "osi/osi_types.h"
+#include "osi/osi_ext.h"
+
+// this provides the fd resolution magic
+
+#include "osi_linux/osi_linux_ext.h"
+
+#include "wintrospection/wintrospection.h"
+#include "wintrospection/wintrospection_ext.h"
+
+#include "syscalls2/gen_syscalls_ext_typedefs.h"
+
+bool init_plugin(void *);
+void uninit_plugin(void *);
+int before_block_exec(CPUState *cpu, TranslationBlock *tb);
 }
+
 // #include "../wintrospection/wintrospection.h"
 
 
@@ -49,13 +65,6 @@ extern "C" {
 // #define ESP ((CPUArchState*)cpu->env_ptr)->regs[R_ESP]
 // #define EBP ((CPUArchState*)cpu->env_ptr)->regs[R_EBP]
 // #endif
-extern "C"{
-bool init_plugin(void *);
-void uninit_plugin(void *);
-
-int before_block_exec(CPUState *cpu, TranslationBlock *tb);
-}
-
 int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
 	// questions: how do I copy data. 
 	//Which direction does the stack go in x86?
