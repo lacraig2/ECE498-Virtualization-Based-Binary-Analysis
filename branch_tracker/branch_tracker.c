@@ -62,22 +62,22 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
 		int ESP = (int)env->regs[R_ESP];
 		int size = (ESP-EBP)*sizeof(char);
 		printf("EBP: %d ESP: %d size: %d\n", EBP, ESP, size);
-		printf("got to this stage");
-		unsigned char *buf = (unsigned char *) malloc(size*sizeof(char));
-		int err = panda_virtual_memory_rw(cpu, EBP, buf, size, 0);
-		if (err==-1){
-			printf("Couldn't read memory");
-			return 0;
-		}
-		for (i=EBP;i<=ESP; i++){
-			int value = buf[i];
+		// printf("got to this stage");
+		// unsigned char *buf = (unsigned char *) malloc(size*sizeof(char));
+		// int err = panda_virtual_memory_rw(cpu, EBP, buf, size, 0);
+		// if (err==-1){
+			// printf("Couldn't read memory");
+			// return 0;
+		// }
+		// for (i=EBP;i<=ESP; i++){
+			// int value = buf[i];
 			// if (value > low_addr && value < high_addr){
 				// printf("prolly a pointer: %d val: %d val: %d", i, buf[i], buf[buf[i]-low_addr]);
 			// }else{
-			printf("addr: %d val:%d", i+EBP, value);
+			// printf("addr: %d val:%d", i+EBP, value);
 			// ASDFASDSADFSDF
 			// }
-		}
+		// }
 		// printf("process name: %s\n", current->name);
 	}
 	#endif
