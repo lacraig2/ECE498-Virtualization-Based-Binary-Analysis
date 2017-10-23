@@ -78,9 +78,9 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
     // printf("\n-------------------------------------------------\n\n");
 
     // Cleanup
-    free_osiproc(current);
-    free_osiprocs(ps);
-    free_osimodules(ms);
+    // free_osiproc(current);
+    // free_osiprocs(ps);
+    // free_osimodules(ms);
 
     return 0;
 }
