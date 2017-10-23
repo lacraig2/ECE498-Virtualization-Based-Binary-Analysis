@@ -52,10 +52,10 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
 		CPUArchState *env = (CPUArchState*)cpu->env_ptr;
 		int EAX = (int)env->regs[R_EAX];
 		printf("process: %s EAX: %d\n", current->name,EAX);
-		OsiPage *pages = current[0]->pages;
+		OsiPage *page = current->pages;
 		printf("got pages");
-		int high_addr = pages->start;
-		int low_addr = high_addr+pages->len;
+		int high_addr = page->start;
+		int low_addr = high_addr+page->len;
 		printf("memory %d %d", low_addr,high_addr);
 		int i;
 		int EBP = (int)env->regs[R_EBP];
