@@ -19,7 +19,8 @@ PANDAENDCOMMENT */
 #define INVOKE_FREQ_PGD
 //#define INVOKE_FREQ_BBL
 
-
+#include "../wintrospection/wintrospection.h"
+#include <inttypes.h>
 #include "panda/plugin.h"
 #include "osi/osi_types.h"
 #include "osi/osi_ext.h"
