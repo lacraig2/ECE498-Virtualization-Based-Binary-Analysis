@@ -5,11 +5,33 @@
  * 
 PANDAENDCOMMENT */
 
+#ifndef __STDC_FORMAT_MACROS
 #define __STDC_FORMAT_MACROS
+#endif
+
+#ifdef NDEBUG
+#undef NDEBUG
+#endif
 
 #include "panda/plugin.h"
-#include "panda/plugin_plugin.h"
-#include "panda/common.h"
+#include "panda/tcg-llvm.h"
+
+#include <llvm/PassManager.h>
+#include <llvm/PassRegistry.h>
+#include <llvm/Analysis/Verifier.h>
+#include <llvm/ExecutionEngine/ExecutionEngine.h>
+#include <llvm/Transforms/IPO/PassManagerBuilder.h>
+
+#include "panda_hypercall_struct.h"
+
+extern "C" {
+
+#include <sys/time.h>
+
+#include "callstack_instr/callstack_instr.h"
+#include "callstack_instr/callstack_instr_ext.h"
+
+}
 // #include "../wintrospection/wintrospection.h"
 #include "osi/osi_types.h"
 #include "osi/os_intro.h"
@@ -23,11 +45,12 @@ PANDAENDCOMMENT */
 // #define ESP ((CPUArchState*)cpu->env_ptr)->regs[R_ESP]
 // #define EBP ((CPUArchState*)cpu->env_ptr)->regs[R_EBP]
 // #endif
-
+extern "C"{
 bool init_plugin(void *);
 void uninit_plugin(void *);
 
 int before_block_exec(CPUState *cpu, TranslationBlock *tb);
+}
 
 int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
 	// questions: how do I copy data. 
