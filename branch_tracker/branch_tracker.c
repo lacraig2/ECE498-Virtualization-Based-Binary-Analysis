@@ -25,9 +25,9 @@ PANDAENDCOMMENT */
 #include "osi/osi_ext.h"
 
 
-#define ESP ((CPUX86State *)((CPUState *)env->env_ptr))->regs[R_ESP]
-#define EAX ((CPUArchState*)env->env_ptr)->regs[R_EAX]
-#define EBP ((CPUArchState*)env->env_ptr)->regs[R_EBP]
+// #define ESP ((CPUX86State *)((CPUState *)env->env_ptr))->regs[R_ESP]
+// #define EAX ((CPUArchState*)env->env_ptr)->regs[R_EAX]
+// #define EBP ((CPUArchState*)env->env_ptr)->regs[R_EBP]
 
 bool init_plugin(void *);
 void uninit_plugin(void *);
@@ -50,6 +50,9 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
 		int low_addr = high_addr+pages->len;
 		int i;
 		int size = (ESP-EBP)*sizeof(char);
+		int EBP = cpu->regs[R_EBP];
+		int EAX = cpu->regs[R_EAX];
+		int ESP = cpu->regs[R_ESP];
 		unsigned char *buf = (unsigned char *) malloc(len*sizeof(char));
 		int err = panda_virtual_memory_rw(cpu, EBP, buf, size, 0);
 		if (err==-1){
@@ -57,14 +60,12 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
 			return 0;
 		}
 		for (i=EBP;i<=ESP; i++){
-
 			int value = val[i];
 			if (value > low_addr && value < high_addr){
-				probably a pointer
 				printf("%d %d %d", i, val[i], val[val[i]]);
 			}else{
-			printf("%d %d", i, buf[i]);
-			ASDFASDSADFSDF
+				printf("%d %d", i, buf[i]);
+			// ASDFASDSADFSDF
 			}
 		}
 		printf("process name: %s\n", current->name);
