@@ -33,7 +33,7 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb);
 
 int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
     // int i;
-    OsiProc *current = (OsiProc) get_current_process(cpu);
+    OsiProc *current = get_current_process(cpu);
 	if (!strcmp("wget", current->name)){
 		printf("process: %s", current->name);
 	}
