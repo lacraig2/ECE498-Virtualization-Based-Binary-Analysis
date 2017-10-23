@@ -51,17 +51,17 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
 	if (!strcmp("wget", current->name)){
 		CPUArchState *env = (CPUArchState*)cpu->env_ptr;
 		int EAX = (int)env->regs[R_EAX];
-		printf("process: %s EAX: %d\n", current->name,EAX);
+		// printf("process: %s EAX: %d\n", current->name,EAX);
 		// OsiPage *page = current->pages;
 		// printf("got pages");
 		// int high_addr = page->start;
 		// int low_addr = high_addr+page->len;
 		// printf("memory %d %d", low_addr,high_addr);
-		int i;
+		// int i;
 		int EBP = (int)env->regs[R_EBP];
 		int ESP = (int)env->regs[R_ESP];
 		int size = (ESP-EBP)*sizeof(char);
-		printf("EBP: %d ESP: %d size: %d\n", EBP, ESP, size);
+		printf("proc: %s EBP: %d ESP: %d size: %d\n", current-> name, EBP, ESP, size);
 		// printf("got to this stage");
 		// unsigned char *buf = (unsigned char *) malloc(size*sizeof(char));
 		// int err = panda_virtual_memory_rw(cpu, EBP, buf, size, 0);
