@@ -50,7 +50,7 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
     OsiProc *current = get_current_process(cpu);
 	if (!strcmp("wget", current->name)){
 		CPUArchState *env = (CPUArchState*)cpu->env_ptr;
-		int EAX = (int)env->regs[R_EAX];
+		// int EAX = (int)env->regs[R_EAX];
 		// printf("process: %s EAX: %d\n", current->name,EAX);
 		// OsiPage *page = current->pages;
 		// printf("got pages");
