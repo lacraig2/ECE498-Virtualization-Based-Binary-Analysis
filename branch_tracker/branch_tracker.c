@@ -53,15 +53,16 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
 		int EAX = (int)env->regs[R_EAX];
 		printf("process: %s EAX: %d\n", current->name,EAX);
 		OsiPage *pages = current->pages;
+		printf("got pages");
 		int high_addr = pages->start;
 		int low_addr = high_addr+pages->len;
+		printf("memory %d %d", low_addr,high_addr);
 		int i;
 		int EBP = (int)env->regs[R_EBP];
 		int ESP = (int)env->regs[R_ESP];
 		int size = (ESP-EBP)*sizeof(char);
-
-		unsigned char *buf = (unsigned char *) malloc((ESP-EBP)*sizeof(char));
-		printf("memory %d %d", low_addr,high_addr);
+		printf("got to this stage");
+		unsigned char *buf = (unsigned char *) malloc(size*sizeof(char));
 		int err = panda_virtual_memory_rw(cpu, EBP, buf, size, 0);
 		if (err==-1){
 			printf("Couldn't read memory");
