@@ -73,7 +73,7 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
 			// if (value > low_addr && value < high_addr){
 				// printf("prolly a pointer: %d val: %d val: %d", i, buf[i], buf[buf[i]-low_addr]);
 			// }else{
-			printf("addr: %d val:%d", i+low_addr, value);
+			printf("addr: %d val:%d", i+EBP, value);
 			// ASDFASDSADFSDF
 			// }
 		}
