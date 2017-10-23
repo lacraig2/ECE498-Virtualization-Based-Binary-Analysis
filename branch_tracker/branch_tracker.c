@@ -45,13 +45,14 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
 
 	if (!strcmp("wget", current->name)){
 		printf("process: %s\n", current->name);
+		CPUArchState *env = (CPUArchState*)cpu->env_ptr;
 		OsiPage *pages = current->pages;
 		int high_addr = pages->start;
 		int low_addr = high_addr+pages->len;
 		int i;
-		int EBP = cpu->regs[R_EBP];
-		int EAX = cpu->regs[R_EAX];
-		int ESP = cpu->regs[R_ESP];
+		int EBP = (int)env->regs[R_EBP];
+		int EAX = (int)env->regs[R_EAX];
+		int ESP = (int)env->regs[R_ESP];
 		int size = (ESP-EBP)*sizeof(char);
 
 		unsigned char *buf = (unsigned char *) malloc(len*sizeof(char));
