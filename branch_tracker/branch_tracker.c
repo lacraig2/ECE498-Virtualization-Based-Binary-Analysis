@@ -61,7 +61,7 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
 		int EBP = (int)env->regs[R_EBP];
 		int ESP = (int)env->regs[R_ESP];
 		int size = (ESP-EBP)*sizeof(char);
-		printf("size: %d\n", size);
+		printf("EBP: %d ESP: %d size: %d\n", EBP, ESP, size);
 		printf("got to this stage");
 		unsigned char *buf = (unsigned char *) malloc(size*sizeof(char));
 		int err = panda_virtual_memory_rw(cpu, EBP, buf, size, 0);
