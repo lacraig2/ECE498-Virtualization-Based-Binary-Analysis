@@ -15,6 +15,11 @@ PANDAENDCOMMENT */
 
 #include "panda/plugin.h"
 #include "panda/tcg-llvm.h"
+#include "panda/plugin_plugin.h"
+#include "panda_hypercall_struct.h"
+
+#include "osi/osi_types.h"
+#include "osi/os_intro.h"
 
 #include <llvm/PassManager.h>
 #include <llvm/PassRegistry.h>
@@ -22,7 +27,7 @@ PANDAENDCOMMENT */
 #include <llvm/ExecutionEngine/ExecutionEngine.h>
 #include <llvm/Transforms/IPO/PassManagerBuilder.h>
 
-#include "panda_hypercall_struct.h"
+
 
 extern "C" {
 
@@ -30,12 +35,11 @@ extern "C" {
 
 #include "callstack_instr/callstack_instr.h"
 #include "callstack_instr/callstack_instr_ext.h"
+#include <inttypes.h>
 
 }
 // #include "../wintrospection/wintrospection.h"
-#include "osi/osi_types.h"
-#include "osi/os_intro.h"
-#include <inttypes.h>
+
 
 // #ifdef TARGET_I386
 // #define EAX ((CPUArchState*)cpu->env_ptr)->regs[R_EAX]
@@ -90,6 +94,8 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
 bool init_plugin(void *self) {
     panda_cb pcb = { .before_block_exec = before_block_exec};//, .replay_handle_packet=replay_handle_packet};
     panda_register_callback(self, PANDA_CB_BEFORE_BLOCK_EXEC, pcb);
+    panda_require("osi");
+    assert(init_osi_api());
     // if (panda_os_type == OST_LINUX) {
         // panda_require("osi_linux");
         // assert(init_osi_linux_api());
