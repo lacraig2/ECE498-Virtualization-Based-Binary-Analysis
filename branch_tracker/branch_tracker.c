@@ -39,7 +39,7 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
 		int i;
 		int size = (ESP-EBP)*sizeof(char);
 		unsigned char *buf = (unsigned char *) malloc(len*sizeof(char));
-		int err = panda_virtual_memory_rw(env, EBP, buf, sizeof, 0);
+		int err = panda_virtual_memory_rw(env, EBP, buf, size, 0);
 		if (err==-1){
 			printf("Couldn't read memory");
 			return 0;
