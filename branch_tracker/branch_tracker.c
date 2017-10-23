@@ -24,6 +24,7 @@ PANDAENDCOMMENT */
 #include "panda/plugin.h"
 #include "osi/osi_types.h"
 #include "osi/osi_ext.h"
+#include "cpu.h"
 
 
 // #define ESP ((CPUX86State *)((CPUState *)env->env_ptr))->regs[R_ESP]
