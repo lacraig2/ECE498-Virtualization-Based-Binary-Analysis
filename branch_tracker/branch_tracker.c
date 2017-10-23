@@ -40,13 +40,14 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb);
 
 int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
     // int i;	
-    OsiProc *current = get_current_process(cpu);
+    
 	// if (!strcmp("wget", current->name)){
 		// printf("process: %s\n", current->name);
 	// }
 
 
     #ifdef TARGET_I386
+    OsiProc *current = get_current_process(cpu);
 	if (!strcmp("wget", current->name)){
 		CPUArchState *env = (CPUArchState*)cpu->env_ptr;
 		int EAX = (int)env->regs[R_EAX];
@@ -59,7 +60,7 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
 		int ESP = (int)env->regs[R_ESP];
 		int size = (ESP-EBP)*sizeof(char);
 
-		unsigned char *buf = (unsigned char *) malloc(len*sizeof(char));
+		unsigned char *buf = (unsigned char *) malloc((ESP-EBP)*sizeof(char));
 		printf("memory %d %d", low_addr,high_addr);
 		int err = panda_virtual_memory_rw(cpu, EBP, buf, size, 0);
 		if (err==-1){
