@@ -11,6 +11,8 @@ PANDAENDCOMMENT */
 #include "panda/plugin_plugin.h"
 #include "panda/common.h"
 // #include "../wintrospection/wintrospection.h"
+#include "osi/osi_types.h"
+#include "osi/os_intro.h"
 #include <inttypes.h>
 
 #ifndef TARGET_I386
