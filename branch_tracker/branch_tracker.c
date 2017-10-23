@@ -24,7 +24,7 @@ PANDAENDCOMMENT */
 #include "panda/plugin.h"
 #include "osi/osi_types.h"
 #include "osi/osi_ext.h"
-#include "cpu.h"
+// #include "cpu.h"
 
 
 // #define ESP ((CPUX86State *)((CPUState *)env->env_ptr))->regs[R_ESP]
@@ -45,6 +45,8 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
 		// printf("process: %s\n", current->name);
 	// }
 
+
+    #ifdef TARGET_I386
 	if (!strcmp("wget", current->name)){
 		CPUArchState *env = (CPUArchState*)cpu->env_ptr;
 		int EAX = (int)env->regs[R_EAX];
@@ -69,12 +71,13 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
 			// if (value > low_addr && value < high_addr){
 				// printf("prolly a pointer: %d val: %d val: %d", i, buf[i], buf[buf[i]-low_addr]);
 			// }else{
-			printf("addr: %d val:%d", i+low_addr, buf[i]);
+			printf("addr: %d val:%d", i+low_addr, value);
 			// ASDFASDSADFSDF
 			// }
 		}
 		// printf("process name: %s\n", current->name);
 	}
+	#endif
 
     // OsiProc *current = get_current_process(cpu);
     // printf("Current process: %s PID:" TARGET_FMT_ld " PPID:" TARGET_FMT_ld "\n", current->name, current->pid, current->ppid);
