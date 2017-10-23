@@ -52,6 +52,7 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
 				// printf("%d %d %d", i, val[i], val[val[i]]);
 			// }else{
 			printf("%d %d", i, buf[i]);
+			// ASDFASDSADFSDF
 			// }
 		}
 	}
@@ -63,16 +64,16 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
 bool init_plugin(void *self) {
     panda_cb pcb = { .before_block_exec = before_block_exec};//, .replay_handle_packet=replay_handle_packet};
     panda_register_callback(self, PANDA_CB_BEFORE_BLOCK_EXEC, pcb);
-    if (panda_os_type == OST_LINUX) {
-        panda_require("osi_linux");
-        assert(init_osi_linux_api());
+    // if (panda_os_type == OST_LINUX) {
+        // panda_require("osi_linux");
+        // assert(init_osi_linux_api());
 
-        PPP_REG_CB("syscalls2", on_sys_open_enter, linux_open_enter);
+        // PPP_REG_CB("syscalls2", on_sys_open_enter, linux_open_enter);
         // PPP_REG_CB("syscalls2", on_sys_read_enter, linux_read_enter);
         // PPP_REG_CB("syscalls2", on_sys_read_return, linux_read_return);
         // PPP_REG_CB("syscalls2", on_sys_pread64_enter, linux_pread_enter);
         // PPP_REG_CB("syscalls2", on_sys_pread64_return, linux_pread_return);
-    }
+    // }
     panda_enable_precise_pc();
     return true;
 }
