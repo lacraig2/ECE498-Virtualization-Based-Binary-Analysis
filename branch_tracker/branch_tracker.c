@@ -49,10 +49,11 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
 		int high_addr = pages->start;
 		int low_addr = high_addr+pages->len;
 		int i;
-		int size = (ESP-EBP)*sizeof(char);
 		int EBP = cpu->regs[R_EBP];
 		int EAX = cpu->regs[R_EAX];
 		int ESP = cpu->regs[R_ESP];
+		int size = (ESP-EBP)*sizeof(char);
+
 		unsigned char *buf = (unsigned char *) malloc(len*sizeof(char));
 		int err = panda_virtual_memory_rw(cpu, EBP, buf, size, 0);
 		if (err==-1){
