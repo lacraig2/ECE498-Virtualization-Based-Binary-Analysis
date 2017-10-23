@@ -24,6 +24,11 @@ PANDAENDCOMMENT */
 #include "osi/osi_types.h"
 #include "osi/osi_ext.h"
 
+
+#define ESP ((CPUX86State *)((CPUState *)env->env_ptr))->regs[R_ESP]
+#define EAX ((CPUArchState*)env->env_ptr)->regs[R_EAX]
+#define EBP ((CPUArchState*)env->env_ptr)->regs[R_EBP]
+
 bool init_plugin(void *);
 void uninit_plugin(void *);
 
@@ -33,9 +38,36 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb);
 
 int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
     // int i;
-    OsiProc *current = get_current_process(cpu);
+    // OsiProc *current = get_current_process(cpu);
+	// if (!strcmp("wget", current->name)){
+		// printf("process: %s\n", current->name);
+	// }
+
 	if (!strcmp("wget", current->name)){
 		printf("process: %s\n", current->name);
+		OsiPage *pages = current->pages;
+		int high_addr = pages->start;
+		int low_addr = high_addr+pages->len;
+		int i;
+		int size = (ESP-EBP)*sizeof(char);
+		unsigned char *buf = (unsigned char *) malloc(len*sizeof(char));
+		int err = panda_virtual_memory_rw(cpu, EBP, buf, size, 0);
+		if (err==-1){
+			printf("Couldn't read memory");
+			return 0;
+		}
+		for (i=EBP;i<=ESP; i++){
+
+			int value = val[i];
+			if (value > low_addr && value < high_addr){
+				probably a pointer
+				printf("%d %d %d", i, val[i], val[val[i]]);
+			}else{
+			printf("%d %d", i, buf[i]);
+			ASDFASDSADFSDF
+			}
+		}
+		printf("process name: %s\n", current->name);
 	}
 
     // OsiProc *current = get_current_process(cpu);
