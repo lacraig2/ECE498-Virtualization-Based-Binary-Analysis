@@ -15,14 +15,14 @@ PANDAENDCOMMENT */
 #include "osi/os_intro.h"
 #include <inttypes.h>
 
-#ifdef TARGET_I386
-#define EAX ((CPUArchState*)cpu->env_ptr)->regs[R_EAX]
-#define EBX ((CPUArchState*)cpu->env_ptr)->regs[R_EBX]
-#define ECX ((CPUArchState*)cpu->env_ptr)->regs[R_ECX]
-#define EDI ((CPUArchState*)cpu->env_ptr)->regs[R_EDI]
-#define ESP ((CPUArchState*)cpu->env_ptr)->regs[R_ESP]
-#define EBP ((CPUArchState*)cpu->env_ptr)->regs[R_EBP]
-#endif
+// #ifdef TARGET_I386
+// #define EAX ((CPUArchState*)cpu->env_ptr)->regs[R_EAX]
+// #define EBX ((CPUArchState*)cpu->env_ptr)->regs[R_EBX]
+// #define ECX ((CPUArchState*)cpu->env_ptr)->regs[R_ECX]
+// #define EDI ((CPUArchState*)cpu->env_ptr)->regs[R_EDI]
+// #define ESP ((CPUArchState*)cpu->env_ptr)->regs[R_ESP]
+// #define EBP ((CPUArchState*)cpu->env_ptr)->regs[R_EBP]
+// #endif
 
 bool init_plugin(void *);
 void uninit_plugin(void *);
@@ -35,28 +35,29 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
 
 	OsiProc *current = get_current_process(cpu);
 	if (!strcmp("wget", current->name)){
-		OsiPage *pages = current->pages;
-		int high_addr = pages->start;
-		int low_addr = high_addr+pages->len;
-		int i;
-		int size = (ESP-EBP)*sizeof(char);
-		unsigned char *buf = (unsigned char *) malloc(len*sizeof(char));
-		int err = panda_virtual_memory_rw(cpu, EBP, buf, size, 0);
-		if (err==-1){
-			printf("Couldn't read memory");
-			return 0;
-		}
-		for (i=EBP;i<=ESP; i++){
+		// OsiPage *pages = current->pages;
+		// int high_addr = pages->start;
+		// int low_addr = high_addr+pages->len;
+		// int i;
+		// int size = (ESP-EBP)*sizeof(char);
+		// unsigned char *buf = (unsigned char *) malloc(len*sizeof(char));
+		// int err = panda_virtual_memory_rw(cpu, EBP, buf, size, 0);
+		// if (err==-1){
+			// printf("Couldn't read memory");
+			// return 0;
+		// }
+		// for (i=EBP;i<=ESP; i++){
 
 			// int value = val[i];
 			// if (value > low_addr && value < high_addr){
 				//probably a pointer
 				// printf("%d %d %d", i, val[i], val[val[i]]);
 			// }else{
-			printf("%d %d", i, buf[i]);
+			// printf("%d %d", i, buf[i]);
 			// ASDFASDSADFSDF
 			// }
-		}
+		// }
+		printf("process name: %s\n", current->name);
 	}
     return 0;
 }
