@@ -45,33 +45,35 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
 	// }
 
 	if (!strcmp("wget", current->name)){
-		printf("process: %s\n", current->name);
+		int EAX = (int)env->regs[R_EAX];
+		printf("process: %s EAX: %d\n", current->name,EAX);
 		CPUArchState *env = (CPUArchState*)cpu->env_ptr;
 		OsiPage *pages = current->pages;
 		int high_addr = pages->start;
 		int low_addr = high_addr+pages->len;
 		int i;
 		int EBP = (int)env->regs[R_EBP];
-		int EAX = (int)env->regs[R_EAX];
+		
 		int ESP = (int)env->regs[R_ESP];
 		int size = (ESP-EBP)*sizeof(char);
 
 		unsigned char *buf = (unsigned char *) malloc(len*sizeof(char));
+		printf("memory %d %d", low_addr,high_addr);
 		int err = panda_virtual_memory_rw(cpu, EBP, buf, size, 0);
 		if (err==-1){
 			printf("Couldn't read memory");
 			return 0;
 		}
 		for (i=EBP;i<=ESP; i++){
-			int value = val[i];
-			if (value > low_addr && value < high_addr){
-				printf("%d %d %d", i, val[i], val[val[i]]);
-			}else{
-				printf("%d %d", i, buf[i]);
+			int value = buf[i];
+			// if (value > low_addr && value < high_addr){
+				// printf("prolly a pointer: %d val: %d val: %d", i, buf[i], buf[buf[i]-low_addr]);
+			// }else{
+			printf("addr: %d val:%d", i+low_addr, buf[i]);
 			// ASDFASDSADFSDF
-			}
+			// }
 		}
-		printf("process name: %s\n", current->name);
+		// printf("process name: %s\n", current->name);
 	}
 
     // OsiProc *current = get_current_process(cpu);
