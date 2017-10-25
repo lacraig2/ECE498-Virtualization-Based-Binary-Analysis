@@ -48,7 +48,7 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
 
     #ifdef TARGET_I386
     OsiProc *current = get_current_process(cpu);
-	if (!strcmp("wget", current->name)){
+	if (!strcmp("vuln", current->name)){
 		CPUArchState *env = (CPUArchState*)cpu->env_ptr;
 		// int EAX = (int)env->regs[R_EAX];
 		// printf("process: %s EAX: %d\n", current->name,EAX);
@@ -63,8 +63,16 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
 		int size = (ESP-EBP)*sizeof(char);
 		printf("proc: %s EBP: %d ESP: %d size: %d\n", current-> name, EBP, ESP, size);
 		// printf("got to this stage");
-		// unsigned char *buf = (unsigned char *) malloc(size*sizeof(char));
-		// int err = panda_virtual_memory_rw(cpu, EBP, buf, size, 0);
+        if (size > 0){
+		  unsigned char *buf = (unsigned char *) malloc(size*sizeof(char));
+		  int err = panda_virtual_memory_rw(cpu, EBP, buf, size, 0);
+          int i;
+          for (i=0; i<size; i++){
+            printf("addr: %d val: %d", i+EBP, buf[i]);
+          }
+        }else{
+            printf("size %d", size)
+        }
 		// if (err==-1){
 			// printf("Couldn't read memory");
 			// return 0;
