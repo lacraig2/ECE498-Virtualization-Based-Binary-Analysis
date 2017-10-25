@@ -49,7 +49,6 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
     #endif
 
     #ifdef TARGET_I386
-    printf("getting executed");
     OsiProc *current = get_current_process(cpu);
 	if (!strcmp("vuln", current->name)){
 		CPUArchState *env = (CPUArchState*)cpu->env_ptr;
