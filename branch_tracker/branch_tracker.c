@@ -44,9 +44,12 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
 	// if (!strcmp("wget", current->name)){
 		// printf("process: %s\n", current->name);
 	// }
-
+    #ifndef TARGET_I386
+    printf("NOT I386");
+    #endif
 
     #ifdef TARGET_I386
+    printf("getting executed");
     OsiProc *current = get_current_process(cpu);
 	if (!strcmp("vuln", current->name)){
 		CPUArchState *env = (CPUArchState*)cpu->env_ptr;
@@ -60,7 +63,7 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
 		// int i;
 		int EBP = (int)env->regs[R_EBP];
 		int ESP = (int)env->regs[R_ESP];
-		int size = (ESP-EBP)*sizeof(char);
+		int size = (EBP-ESP)*sizeof(char);
 		printf("proc: %s EBP: %d ESP: %d size: %d\n", current-> name, EBP, ESP, size);
 		// printf("got to this stage");
         if (size > 0){
