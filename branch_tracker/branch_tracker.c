@@ -69,6 +69,10 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
         if (size > 0){
 		  unsigned char *buf = (unsigned char *) malloc(size*sizeof(char));
 		  int err = panda_virtual_memory_rw(cpu, EBP, buf, size, 0);
+          if (err==-1){
+            printf("couldn't read memory.")
+            return -1;
+          }
           int i;
           for (i=0; i<size; i++){
             printf("addr: %d val: %d", i+EBP, buf[i]);
