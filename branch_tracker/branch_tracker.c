@@ -88,7 +88,7 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
           printf("count %lu\n", count);
           int i;
           for (i=0; i<size; i++){
-            printf("%saddr: %d val: %d\n", (!old_buffer && buf[i]!=old_buffer[i]) ? "*" : " ", i+EBP, buf[i]);
+            printf("%saddr: %d val: %d\n", (old_buffer && buf[i]!=old_buffer[i]) ? "*" : " ", i+EBP, buf[i]);
           }
           old_buffer = buf;
         }else{
