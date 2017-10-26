@@ -88,8 +88,10 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
           printf("count %lu\n", count);
           int i;
           bool isFirst = false;
-          if (!old_buffer)
+          if (!old_buffer){
             isFirst = true;
+            printf("isFirst set to true");
+          }  
 
           for (i=0; i<size; i++){
             printf("%saddr: %d val: %d\n", (!isFirst && buf[i]!=old_buffer[i]) ? "*" : " ", i+EBP, buf[i]);
