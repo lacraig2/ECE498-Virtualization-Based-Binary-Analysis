@@ -20,10 +20,12 @@ PANDAENDCOMMENT */
 //#define INVOKE_FREQ_BBL
 
 #include <inttypes.h>
+#include <stdio.h>
 // #include "../wintrospection/wintrospection.h"
 #include "panda/plugin.h"
 #include "osi/osi_types.h"
 #include "osi/osi_ext.h"
+#include <stdbool.h>
 // #include "cpu.h"
 
 
@@ -37,6 +39,11 @@ void uninit_plugin(void *);
 int vmi_pgd_changed(CPUState *cpu, target_ulong old_pgd, target_ulong new_pgd);
 int before_block_exec(CPUState *cpu, TranslationBlock *tb);
 
+
+// FILE *fp;
+
+
+unsigned char* old_buffer;
 
 int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
     // int i;	
@@ -73,13 +80,19 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
             return -1;
           }
 
-          OsiPage *page = current->pages;
-          const uint64_t start = (uint64_t) page->start;
-          const uint64_t len = (uint64_t) page->len;
-          printf("Got pages: %lu %lu\n", start,len);
+          // OsiPage *page = current->pages;
+          // const uint64_t start = (uint64_t) page->start;
+          // const uint64_t len = (uint64_t) page->len;
+          // printf("Got pages: %lu %lu\n", start,len);
+          uint64_t count = rr_get_guest_instr_count();
+          printf("count %lu\n", count);
           int i;
+          bool isFirst = false;
+          if (!old_buffer)
+            isFirst = true;
+
           for (i=0; i<size; i++){
-            printf("addr: %d val: %d\n", i+EBP, buf[i]);
+            printf("%saddr: %d val: %d\n", (!isFirst && buf[i]!=old_buffer[i]) ? "*" : " ", i+EBP, buf[i]);
           }
         }else{
             printf("size %d\n", size);
