@@ -94,7 +94,7 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
           }  
 
           for (i=0; i<size; i++){
-            printf("%saddr: %d val: %d\n", (!isFirst && buf[i]!=old_buffer[i]) ? "*" : " ", i+EBP, buf[i]);
+            printf("%saddr: %d val: %d\n", (!isFirst && buf[i]!=old_buffer[i]) ? "*" : "ba", i+EBP, buf[i]);
           }
         }else{
             printf("size %d\n", size);
