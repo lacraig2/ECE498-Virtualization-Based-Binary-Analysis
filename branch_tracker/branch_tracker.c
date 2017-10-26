@@ -87,14 +87,8 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
           uint64_t count = rr_get_guest_instr_count();
           printf("count %lu\n", count);
           int i;
-          bool isFirst = false;
-          if (!old_buffer){
-            isFirst = true;
-            printf("isFirst set to true");
-          }  
-
           for (i=0; i<size; i++){
-            printf("%saddr: %d val: %d\n", (!isFirst && buf[i]!=old_buffer[i]) ? "*" : "ba", i+EBP, buf[i]);
+            printf("%saddr: %d val: %d\n", (!old_buffer && buf[i]!=old_buffer[i]) ? "*" : " ", i+EBP, buf[i]);
           }
           old_buffer = buf;
         }else{
