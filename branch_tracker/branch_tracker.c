@@ -72,6 +72,9 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
             printf("couldn't read memory.\n");
             return -1;
           }
+
+          OsiPage *page = current->pages;
+          printf("Got pages: %d %d", page->start, page->len);
           int i;
           for (i=0; i<size; i++){
             printf("addr: %d val: %d\n", i+EBP, buf[i]);
