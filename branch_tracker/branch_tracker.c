@@ -74,7 +74,7 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
           }
 
           OsiPage *page = current->pages;
-          printf("Got pages: %d %d", page->start, page->len);
+          printf("Got pages: %lu %lu\n", page->start, page->len);
           int i;
           for (i=0; i<size; i++){
             printf("addr: %d val: %d\n", i+EBP, buf[i]);
