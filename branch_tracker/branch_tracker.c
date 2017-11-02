@@ -67,7 +67,7 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
             int len = page->len;
             if (len > 0){
                 unsigned char *buf = (unsigned char *) malloc(len*sizeof(char));
-                int err = panda_physical_memory_rw(cpu, addr, buf, len, 0);
+                int err = panda_physical_memory_rw(addr, buf, len, 0);
                 if (err==-1){
                     printf("couldn't read memory.\n");
                 }else{
