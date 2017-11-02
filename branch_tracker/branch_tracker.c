@@ -64,7 +64,8 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
         if (current->pages){
 		    OsiPage *page = current->pages;
             int addr = page->start;
-            int len = page->len;
+            int len = page->len
+            printf("memaddr: %u len: %u", addr, len);
             if (len > 0){
                 unsigned char *buf = (unsigned char *) malloc(len*sizeof(char));
                 int err = panda_physical_memory_rw(addr, buf, len, 0);
@@ -75,7 +76,7 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
                 }
 
             }else{
-                printf("len %d\n",len);
+                printf("len %u\n",len);
             }
         }else{
             printf("no pages\n");
@@ -104,11 +105,11 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
           printf("count %lu\n", count);
           int i;
           for (i=0; i<size; i++){
-            printf("addr: %d val: %d\n", i+EBP, buf[i]);
+            printf("addr: %u val: %u\n", i+EBP, buf[i]);
           }
           // old_buffer = buf;
         }else{
-            printf("size %d\n", size);
+            printf("size %u\n", size);
         }
 		// if (err==-1){
 			// printf("Couldn't read memory");
