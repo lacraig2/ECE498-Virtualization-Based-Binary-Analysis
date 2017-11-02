@@ -180,6 +180,7 @@ int vmi_pgd_changed(CPUState *cpu, target_ulong old_pgd, target_ulong new_pgd) {
 }
 
 bool init_plugin(void *self) {
+    panda_memory_memcb();
 #if defined(INVOKE_FREQ_PGD)
     // relatively short execution
     panda_cb pcb = { .asid_changed = vmi_pgd_changed };
