@@ -65,7 +65,7 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
 		    OsiPage *page = current->pages;
             int high_addr = page->start;
             int len = page->len;
-            if (size > 0){
+            if (len > 0){
                 unsigned char *buf = (unsigned char *) malloc(len*sizeof(char));
                 int err = panda_virtual_memory_rw(cpu, high_addr, buf, len, 0);
                 if (err==-1){
