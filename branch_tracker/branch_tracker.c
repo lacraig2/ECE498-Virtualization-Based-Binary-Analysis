@@ -65,7 +65,7 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
 		// printf("got pages");
 		int high_addr = page->start;
 		int low_addr = high_addr+page->len;
-		printf("memory %d %d", low_addr,high_addr);
+		printf("memory %d %d\n", low_addr,high_addr);
 		// int i;
 		int EBP = (int)env->regs[R_EBP];
 		int ESP = (int)env->regs[R_ESP];
