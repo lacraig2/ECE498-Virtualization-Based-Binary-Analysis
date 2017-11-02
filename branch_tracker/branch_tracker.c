@@ -127,7 +127,7 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
 			// }
 		// }
 		// printf("process name: %s\n", current->name);
-	}
+	// }
 	#endif
 
     // OsiProc *current = get_current_process(cpu);
