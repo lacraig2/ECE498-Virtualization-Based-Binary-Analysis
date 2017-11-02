@@ -57,7 +57,7 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
 
     #ifdef TARGET_I386
     OsiProc *current = get_current_process(cpu);
-	if (!strcmp("vuln", current->name)){
+	if (!strcmp("/sbin/init", current->name)){
 		CPUArchState *env = (CPUArchState*)cpu->env_ptr;
 		// int EAX = (int)env->regs[R_EAX];
 		// printf("process: %s EAX: %d\n", current->name,EAX);
