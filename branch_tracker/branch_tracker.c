@@ -64,8 +64,8 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
         if (current->pages){
 		    OsiPage *page = current->pages;
             int addr = page->start;
-            int len = page->len
-            printf("memaddr: %u len: %u", addr, len);
+            int len = page->len;
+            printf("memaddr: %u len: %u\n", addr, len);
             if (len > 0){
                 unsigned char *buf = (unsigned char *) malloc(len*sizeof(char));
                 int err = panda_physical_memory_rw(addr, buf, len, 0);
