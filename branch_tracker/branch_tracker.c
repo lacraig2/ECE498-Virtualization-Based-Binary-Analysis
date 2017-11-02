@@ -57,60 +57,62 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
 
     #ifdef TARGET_I386
     OsiProc *current = get_current_process(cpu);
-	if (!strcmp("/sbin/init", current->name)){
-		CPUArchState *env = (CPUArchState*)cpu->env_ptr;
-		// int EAX = (int)env->regs[R_EAX];
-		// printf("process: %s EAX: %d\n", current->name,EAX);
-        if (current->pages){
-		    OsiPage *page = current->pages;
-            int addr = page->start;
-            int len = page->len;
-            printf("memaddr: %u len: %u\n", addr, len);
-            if (len > 0){
-                unsigned char *buf = (unsigned char *) malloc(len*sizeof(char));
-                int err = panda_physical_memory_rw(addr, buf, len, 0);
-                if (err==-1){
-                    printf("couldn't read memory.\n");
-                }else{
-                    printf("buff_mem %s\n", buf);
-                }
+    printf("%s\n",current->name);
+	// if (!strcmp("/sbin/init", current->name)){
+	// 	CPUArchState *env = (CPUArchState*)cpu->env_ptr;
+	// 	// int EAX = (int)env->regs[R_EAX];
+	// 	// printf("process: %s EAX: %d\n", current->name,EAX);
+ //        if (current->pages){
+	// 	    OsiPage *page = current->pages;
+ //            int addr = page->start;
+ //            int len = page->len;
+ //            printf("memaddr: %u len: %u\n", addr, len);
+ //            if (len > 0){
+ //                unsigned char *buf = (unsigned char *) malloc(len*sizeof(char));
+ //                int err = panda_physical_memory_rw(addr, buf, len, 0);
+ //                if (err==-1){
+ //                    printf("couldn't read memory.\n");
+ //                }else{
+ //                    printf("buff_mem %s\n", buf);
+ //                }
 
-            }else{
-                printf("len %u\n",len);
-            }
-        }else{
-            printf("no pages\n");
-        }
-		// printf("got pages");
+ //            }else{
+ //                printf("len %u\n",len);
+ //            }
+ //        }else{
+ //            printf("no pages\n");
+ //        }
+	// 	// printf("got pages");
 		
-		// int i;
-		int EBP = (int)env->regs[R_EBP];
-		int ESP = (int)env->regs[R_ESP];
-		int size = (EBP-ESP)*sizeof(char);
-		printf("proc: %s EBP: %d ESP: %d size: %d\n", current-> name, EBP, ESP, size);
-		// printf("got to this stage");
-        if (size > 0){
-		  unsigned char *buf = (unsigned char *) malloc(size*sizeof(char));
-		  int err = panda_virtual_memory_rw(cpu, EBP, buf, size, 0);
-          if (err==-1){
-            printf("couldn't read memory.\n");
-            return -1;
-          }
+	// 	// int i;
+	// 	int EBP = (int)env->regs[R_EBP];
+	// 	int ESP = (int)env->regs[R_ESP];
+	// 	int size = (EBP-ESP)*sizeof(char);
+	// 	printf("proc: %s EBP: %d ESP: %d size: %d\n", current-> name, EBP, ESP, size);
+	// 	// printf("got to this stage");
+ //        if (size > 0){
+	// 	  unsigned char *buf = (unsigned char *) malloc(size*sizeof(char));
+	// 	  int err = panda_virtual_memory_rw(cpu, EBP, buf, size, 0);
+ //          if (err==-1){
+ //            printf("couldn't read memory.\n");
+ //            return -1;
+ //          }
 
-          // OsiPage *page = current->pages;
-          // const uint64_t start = (uint64_t) page->start;
-          // const uint64_t len = (uint64_t) page->len;
-          // printf("Got pages: %lu %lu\n", start,len);
-          uint64_t count = rr_get_guest_instr_count();
-          printf("count %lu\n", count);
-          int i;
-          for (i=0; i<size; i++){
-            printf("addr: %u val: %u\n", i+EBP, buf[i]);
-          }
-          // old_buffer = buf;
-        }else{
-            printf("size %u\n", size);
-        }
+ //          // OsiPage *page = current->pages;
+ //          // const uint64_t start = (uint64_t) page->start;
+ //          // const uint64_t len = (uint64_t) page->len;
+ //          // printf("Got pages: %lu %lu\n", start,len);
+ //          uint64_t count = rr_get_guest_instr_count();
+ //          printf("count %lu\n", count);
+ //          int i;
+ //          for (i=0; i<size; i++){
+ //            printf("addr: %u val: %u\n", i+EBP, buf[i]);
+ //          }
+ //          // old_buffer = buf;
+ //        }else{
+ //            printf("size %u\n", size);
+ //        }
+
 		// if (err==-1){
 			// printf("Couldn't read memory");
 			// return 0;
