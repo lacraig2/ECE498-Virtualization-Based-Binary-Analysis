@@ -43,7 +43,7 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb);
 // FILE *fp;
 
 
-unsigned char* old_buffer;
+// unsigned char* old_buffer;
 
 int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
     // int i;	
@@ -88,9 +88,9 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
           printf("count %lu\n", count);
           int i;
           for (i=0; i<size; i++){
-            printf("%saddr: %d val: %d\n", (old_buffer && buf[i]!=old_buffer[i]) ? "*" : " ", i+EBP, buf[i]);
+            printf("addr: %d val: %d\n", i+EBP, buf[i]);
           }
-          old_buffer = buf;
+          // old_buffer = buf;
         }else{
             printf("size %d\n", size);
         }
