@@ -1,0 +1,1609 @@
+os_type=2 bits=32 os_details=[ubuntu3.13.0.132.generic]
+Adding PANDA arg osi_linux:kconf_file=kernelinfo.conf.
+Adding PANDA arg osi_linux:kconf_group=ubuntu_kernel.
+Looking for kconffile in /home/luke/ece498/./build-panda/i386-softmmu/panda/plugins/osi_linux/kernelinfo.conf
+OSI grabbing Linux introspection backend.
+Linux OSI, using group ubuntu3.13.0.132.generic:32 from /home/luke/ece498/build-panda/i386-softmmu/panda/plugins/osi_linux/kernelinfo.conf.
+panda_require: osi_linux
+panda_load_plugin: /home/luke/ece498/build-panda/i386-softmmu/panda/plugins/panda_osi_linux.so already loaded
+loading snapshot
+... done.
+opening nondet log for read :	./stack_overflow-rr-nondet.log
+proc: vuln EBP: -142787220 ESP: -142787220 size: 0
+size 0
+proc: vuln EBP: -142787092 ESP: -142787212 size: 120
+count 1924951
+addr: -142787092 val: 244
+addr: -142787091 val: 61
+addr: -142787090 val: 125
+addr: -142787089 val: 247
+addr: -142787088 val: 134
+addr: -142787087 val: 61
+addr: -142787086 val: 102
+addr: -142787085 val: 193
+addr: -142787084 val: 0
+addr: -142787083 val: 62
+addr: -142787082 val: 125
+addr: -142787081 val: 247
+addr: -142787080 val: 144
+addr: -142787079 val: 89
+addr: -142787078 val: 102
+addr: -142787077 val: 193
+addr: -142787076 val: 32
+addr: -142787075 val: 232
+addr: -142787074 val: 124
+addr: -142787073 val: 247
+addr: -142787072 val: 72
+addr: -142787071 val: 62
+addr: -142787070 val: 125
+addr: -142787069 val: 247
+addr: -142787068 val: 68
+addr: -142787067 val: 216
+addr: -142787066 val: 20
+addr: -142787065 val: 193
+addr: -142787064 val: 0
+addr: -142787063 val: 0
+addr: -142787062 val: 0
+addr: -142787061 val: 0
+addr: -142787060 val: 96
+addr: -142787059 val: 78
+addr: -142787058 val: 72
+addr: -142787057 val: 247
+addr: -142787056 val: 0
+addr: -142787055 val: 16
+addr: -142787054 val: 203
+addr: -142787053 val: 191
+addr: -142787052 val: 0
+addr: -142787051 val: 0
+addr: -142787050 val: 0
+addr: -142787049 val: 0
+addr: -142787048 val: 0
+addr: -142787047 val: 0
+addr: -142787046 val: 0
+addr: -142787045 val: 0
+addr: -142787044 val: 128
+addr: -142787043 val: 154
+addr: -142787042 val: 181
+addr: -142787041 val: 245
+addr: -142787040 val: 0
+addr: -142787039 val: 0
+addr: -142787038 val: 0
+addr: -142787037 val: 0
+addr: -142787036 val: 0
+addr: -142787035 val: 0
+addr: -142787034 val: 0
+addr: -142787033 val: 192
+addr: -142787032 val: 0
+addr: -142787031 val: 0
+addr: -142787030 val: 0
+addr: -142787029 val: 0
+addr: -142787028 val: 96
+addr: -142787027 val: 78
+addr: -142787026 val: 72
+addr: -142787025 val: 247
+addr: -142787024 val: 116
+addr: -142787023 val: 0
+addr: -142787022 val: 0
+addr: -142787021 val: 0
+addr: -142787020 val: 0
+addr: -142787019 val: 0
+addr: -142787018 val: 0
+addr: -142787017 val: 0
+addr: -142787016 val: 0
+addr: -142787015 val: 0
+addr: -142787014 val: 0
+addr: -142787013 val: 0
+addr: -142787012 val: 242
+addr: -142787011 val: 255
+addr: -142787010 val: 255
+addr: -142787009 val: 255
+addr: -142787008 val: 224
+addr: -142787007 val: 231
+addr: -142787006 val: 124
+addr: -142787005 val: 247
+addr: -142787004 val: 0
+addr: -142787003 val: 119
+addr: -142787002 val: 190
+addr: -142787001 val: 245
+addr: -142787000 val: 200
+addr: -142786999 val: 62
+addr: -142786998 val: 125
+addr: -142786997 val: 247
+addr: -142786996 val: 141
+addr: -142786995 val: 29
+addr: -142786994 val: 24
+addr: -142786993 val: 193
+addr: -142786992 val: 255
+addr: -142786991 val: 255
+addr: -142786990 val: 11
+addr: -142786989 val: 0
+addr: -142786988 val: 0
+addr: -142786987 val: 0
+addr: -142786986 val: 0
+addr: -142786985 val: 0
+addr: -142786984 val: 16
+addr: -142786983 val: 173
+addr: -142786982 val: 232
+addr: -142786981 val: 153
+addr: -142786980 val: 0
+addr: -142786979 val: 32
+addr: -142786978 val: 203
+addr: -142786977 val: 191
+addr: -142786976 val: 128
+addr: -142786975 val: 154
+addr: -142786974 val: 181
+addr: -142786973 val: 245
+proc: vuln EBP: -142787160 ESP: -142787160 size: 0
+size 0
+proc: vuln EBP: -142787068 ESP: -142787068 size: 0
+size 0
+proc: vuln EBP: -142787152 ESP: -142787272 size: 120
+count 1964872
+addr: -142787152 val: 184
+addr: -142787151 val: 61
+addr: -142787150 val: 125
+addr: -142787149 val: 247
+addr: -142787148 val: 134
+addr: -142787147 val: 61
+addr: -142787146 val: 102
+addr: -142787145 val: 193
+addr: -142787144 val: 232
+addr: -142787143 val: 61
+addr: -142787142 val: 125
+addr: -142787141 val: 247
+addr: -142787140 val: 154
+addr: -142787139 val: 140
+addr: -142787138 val: 22
+addr: -142787137 val: 193
+addr: -142787136 val: 0
+addr: -142787135 val: 116
+addr: -142787134 val: 190
+addr: -142787133 val: 247
+addr: -142787132 val: 192
+addr: -142787131 val: 84
+addr: -142787130 val: 108
+addr: -142787129 val: 108
+addr: -142787128 val: 56
+addr: -142787127 val: 89
+addr: -142787126 val: 0
+addr: -142787125 val: 0
+addr: -142787124 val: 112
+addr: -142787123 val: 249
+addr: -142787122 val: 20
+addr: -142787121 val: 193
+addr: -142787120 val: 0
+addr: -142787119 val: 90
+addr: -142787118 val: 186
+addr: -142787117 val: 245
+addr: -142787116 val: 208
+addr: -142787115 val: 128
+addr: -142787114 val: 0
+addr: -142787113 val: 0
+addr: -142787112 val: 1
+addr: -142787111 val: 0
+addr: -142787110 val: 0
+addr: -142787109 val: 0
+addr: -142787108 val: 248
+addr: -142787107 val: 231
+addr: -142787106 val: 124
+addr: -142787105 val: 247
+addr: -142787104 val: 0
+addr: -142787103 val: 128
+addr: -142787102 val: 4
+addr: -142787101 val: 8
+addr: -142787100 val: 240
+addr: -142787099 val: 231
+addr: -142787098 val: 124
+addr: -142787097 val: 247
+addr: -142787096 val: 52
+addr: -142787095 val: 62
+addr: -142787094 val: 125
+addr: -142787093 val: 247
+addr: -142787092 val: 112
+addr: -142787091 val: 249
+addr: -142787090 val: 20
+addr: -142787089 val: 193
+addr: -142787088 val: 0
+addr: -142787087 val: 144
+addr: -142787086 val: 4
+addr: -142787085 val: 8
+addr: -142787084 val: 117
+addr: -142787083 val: 8
+addr: -142787082 val: 0
+addr: -142787081 val: 0
+addr: -142787080 val: 0
+addr: -142787079 val: 0
+addr: -142787078 val: 0
+addr: -142787077 val: 0
+addr: -142787076 val: 0
+addr: -142787075 val: 90
+addr: -142787074 val: 186
+addr: -142787073 val: 245
+addr: -142787072 val: 0
+addr: -142787071 val: 0
+addr: -142787070 val: 0
+addr: -142787069 val: 0
+addr: -142787068 val: 0
+addr: -142787067 val: 0
+addr: -142787066 val: 0
+addr: -142787065 val: 0
+addr: -142787064 val: 0
+addr: -142787063 val: 128
+addr: -142787062 val: 4
+addr: -142787061 val: 8
+addr: -142787060 val: 0
+addr: -142787059 val: 0
+addr: -142787058 val: 0
+addr: -142787057 val: 0
+addr: -142787056 val: 1
+addr: -142787055 val: 0
+addr: -142787054 val: 0
+addr: -142787053 val: 0
+addr: -142787052 val: 0
+addr: -142787051 val: 144
+addr: -142787050 val: 4
+addr: -142787049 val: 8
+addr: -142787048 val: 0
+addr: -142787047 val: 0
+addr: -142787046 val: 0
+addr: -142787045 val: 0
+addr: -142787044 val: 128
+addr: -142787043 val: 154
+addr: -142787042 val: 181
+addr: -142787041 val: 245
+addr: -142787040 val: 0
+addr: -142787039 val: 90
+addr: -142787038 val: 186
+addr: -142787037 val: 245
+addr: -142787036 val: 0
+addr: -142787035 val: 0
+addr: -142787034 val: 0
+addr: -142787033 val: 0
+proc: vuln EBP: -142786988 ESP: -142787108 size: 120
+count 2016601
+addr: -142786988 val: 92
+addr: -142786987 val: 62
+addr: -142786986 val: 125
+addr: -142786985 val: 247
+addr: -142786984 val: 134
+addr: -142786983 val: 61
+addr: -142786982 val: 102
+addr: -142786981 val: 193
+addr: -142786980 val: 140
+addr: -142786979 val: 62
+addr: -142786978 val: 125
+addr: -142786977 val: 247
+addr: -142786976 val: 154
+addr: -142786975 val: 140
+addr: -142786974 val: 22
+addr: -142786973 val: 193
+addr: -142786972 val: 0
+addr: -142786971 val: 0
+addr: -142786970 val: 0
+addr: -142786969 val: 0
+addr: -142786968 val: 160
+addr: -142786967 val: 167
+addr: -142786966 val: 102
+addr: -142786965 val: 193
+addr: -142786964 val: 0
+addr: -142786963 val: 0
+addr: -142786962 val: 119
+addr: -142786961 val: 183
+addr: -142786960 val: 179
+addr: -142786959 val: 3
+addr: -142786958 val: 21
+addr: -142786957 val: 193
+addr: -142786956 val: 244
+addr: -142786955 val: 126
+addr: -142786954 val: 39
+addr: -142786953 val: 193
+addr: -142786952 val: 208
+addr: -142786951 val: 128
+addr: -142786950 val: 0
+addr: -142786949 val: 0
+addr: -142786948 val: 129
+addr: -142786947 val: 209
+addr: -142786946 val: 20
+addr: -142786945 val: 193
+addr: -142786944 val: 128
+addr: -142786943 val: 154
+addr: -142786942 val: 181
+addr: -142786941 val: 245
+addr: -142786940 val: 0
+addr: -142786939 val: 0
+addr: -142786938 val: 119
+addr: -142786937 val: 183
+addr: -142786936 val: 0
+addr: -142786935 val: 16
+addr: -142786934 val: 0
+addr: -142786933 val: 0
+addr: -142786932 val: 164
+addr: -142786931 val: 62
+addr: -142786930 val: 125
+addr: -142786929 val: 247
+addr: -142786928 val: 179
+addr: -142786927 val: 3
+addr: -142786926 val: 21
+addr: -142786925 val: 193
+addr: -142786924 val: 194
+addr: -142786923 val: 209
+addr: -142786922 val: 20
+addr: -142786921 val: 193
+addr: -142786920 val: 128
+addr: -142786919 val: 154
+addr: -142786918 val: 181
+addr: -142786917 val: 245
+addr: -142786916 val: 0
+addr: -142786915 val: 119
+addr: -142786914 val: 190
+addr: -142786913 val: 245
+addr: -142786912 val: 0
+addr: -142786911 val: 0
+addr: -142786910 val: 119
+addr: -142786909 val: 183
+addr: -142786908 val: 200
+addr: -142786907 val: 62
+addr: -142786906 val: 125
+addr: -142786905 val: 247
+addr: -142786904 val: 53
+addr: -142786903 val: 48
+addr: -142786902 val: 5
+addr: -142786901 val: 193
+addr: -142786900 val: 117
+addr: -142786899 val: 0
+addr: -142786898 val: 0
+addr: -142786897 val: 0
+addr: -142786896 val: 128
+addr: -142786895 val: 51
+addr: -142786894 val: 172
+addr: -142786893 val: 193
+addr: -142786892 val: 0
+addr: -142786891 val: 0
+addr: -142786890 val: 0
+addr: -142786889 val: 0
+addr: -142786888 val: 184
+addr: -142786887 val: 154
+addr: -142786886 val: 181
+addr: -142786885 val: 245
+addr: -142786884 val: 0
+addr: -142786883 val: 226
+addr: -142786882 val: 75
+addr: -142786881 val: 247
+addr: -142786880 val: 0
+addr: -142786879 val: 119
+addr: -142786878 val: 190
+addr: -142786877 val: 245
+addr: -142786876 val: 0
+addr: -142786875 val: 0
+addr: -142786874 val: 0
+addr: -142786873 val: 0
+addr: -142786872 val: 56
+addr: -142786871 val: 63
+addr: -142786870 val: 125
+addr: -142786869 val: 247
+proc: vuln EBP: -142786652 ESP: -142786772 size: 120
+count 2152512
+addr: -142786652 val: 172
+addr: -142786651 val: 63
+addr: -142786650 val: 125
+addr: -142786649 val: 247
+addr: -142786648 val: 51
+addr: -142786647 val: 58
+addr: -142786646 val: 102
+addr: -142786645 val: 193
+addr: -142786644 val: 0
+addr: -142786643 val: 32
+addr: -142786642 val: 125
+addr: -142786641 val: 247
+addr: -142786640 val: 70
+addr: -142786639 val: 112
+addr: -142786638 val: 102
+addr: -142786637 val: 193
+addr: -142786636 val: 0
+addr: -142786635 val: 0
+addr: -142786634 val: 0
+addr: -142786633 val: 0
+addr: -142786632 val: 0
+addr: -142786631 val: 0
+addr: -142786630 val: 0
+addr: -142786629 val: 0
+addr: -142786628 val: 0
+addr: -142786627 val: 0
+addr: -142786626 val: 0
+addr: -142786625 val: 0
+addr: -142786624 val: 0
+addr: -142786623 val: 0
+addr: -142786622 val: 0
+addr: -142786621 val: 0
+addr: -142786620 val: 0
+addr: -142786619 val: 0
+addr: -142786618 val: 0
+addr: -142786617 val: 0
+addr: -142786616 val: 0
+addr: -142786615 val: 0
+addr: -142786614 val: 0
+addr: -142786613 val: 0
+addr: -142786612 val: 0
+addr: -142786611 val: 0
+addr: -142786610 val: 0
+addr: -142786609 val: 0
+addr: -142786608 val: 123
+addr: -142786607 val: 0
+addr: -142786606 val: 0
+addr: -142786605 val: 0
+addr: -142786604 val: 123
+addr: -142786603 val: 0
+addr: -142786602 val: 0
+addr: -142786601 val: 0
+addr: -142786600 val: 0
+addr: -142786599 val: 0
+addr: -142786598 val: 0
+addr: -142786597 val: 0
+addr: -142786596 val: 0
+addr: -142786595 val: 0
+addr: -142786594 val: 0
+addr: -142786593 val: 0
+addr: -142786592 val: 11
+addr: -142786591 val: 0
+addr: -142786590 val: 0
+addr: -142786589 val: 0
+addr: -142786588 val: 48
+addr: -142786587 val: 32
+addr: -142786586 val: 119
+addr: -142786585 val: 183
+addr: -142786584 val: 115
+addr: -142786583 val: 0
+addr: -142786582 val: 0
+addr: -142786581 val: 0
+addr: -142786580 val: 0
+addr: -142786579 val: 2
+addr: -142786578 val: 0
+addr: -142786577 val: 0
+addr: -142786576 val: 112
+addr: -142786575 val: 21
+addr: -142786574 val: 203
+addr: -142786573 val: 191
+addr: -142786572 val: 123
+addr: -142786571 val: 0
+addr: -142786570 val: 0
+addr: -142786569 val: 0
+addr: -142786568 val: 0
+addr: -142786567 val: 0
+addr: -142786566 val: 0
+addr: -142786565 val: 0
+addr: -142786564 val: 0
+addr: -142786563 val: 0
+addr: -142786562 val: 0
+addr: -142786561 val: 0
+addr: -142786560 val: 0
+addr: -142786559 val: 0
+addr: -142786558 val: 0
+addr: -142786557 val: 0
+addr: -142786556 val: 0
+addr: -142786555 val: 0
+addr: -142786554 val: 0
+addr: -142786553 val: 0
+addr: -142786552 val: 0
+addr: -142786551 val: 0
+addr: -142786550 val: 0
+addr: -142786549 val: 0
+addr: -142786548 val: 0
+addr: -142786547 val: 0
+addr: -142786546 val: 0
+addr: -142786545 val: 0
+addr: -142786544 val: 0
+addr: -142786543 val: 0
+addr: -142786542 val: 0
+addr: -142786541 val: 0
+addr: -142786540 val: 0
+addr: -142786539 val: 0
+addr: -142786538 val: 0
+addr: -142786537 val: 0
+addr: -142786536 val: 0
+addr: -142786535 val: 0
+addr: -142786534 val: 0
+addr: -142786533 val: 0
+proc: vuln EBP: -142786652 ESP: -142786772 size: 120
+count 2302621
+addr: -142786652 val: 172
+addr: -142786651 val: 63
+addr: -142786650 val: 125
+addr: -142786649 val: 247
+addr: -142786648 val: 51
+addr: -142786647 val: 58
+addr: -142786646 val: 102
+addr: -142786645 val: 193
+addr: -142786644 val: 0
+addr: -142786643 val: 32
+addr: -142786642 val: 125
+addr: -142786641 val: 247
+addr: -142786640 val: 70
+addr: -142786639 val: 112
+addr: -142786638 val: 102
+addr: -142786637 val: 193
+addr: -142786636 val: 0
+addr: -142786635 val: 32
+addr: -142786634 val: 121
+addr: -142786633 val: 183
+addr: -142786632 val: 0
+addr: -142786631 val: 0
+addr: -142786630 val: 0
+addr: -142786629 val: 0
+addr: -142786628 val: 56
+addr: -142786627 val: 41
+addr: -142786626 val: 121
+addr: -142786625 val: 183
+addr: -142786624 val: 56
+addr: -142786623 val: 41
+addr: -142786622 val: 121
+addr: -142786621 val: 183
+addr: -142786620 val: 0
+addr: -142786619 val: 0
+addr: -142786618 val: 0
+addr: -142786617 val: 0
+addr: -142786616 val: 16
+addr: -142786615 val: 0
+addr: -142786614 val: 0
+addr: -142786613 val: 0
+addr: -142786612 val: 1
+addr: -142786611 val: 0
+addr: -142786610 val: 0
+addr: -142786609 val: 0
+addr: -142786608 val: 123
+addr: -142786607 val: 0
+addr: -142786606 val: 0
+addr: -142786605 val: 0
+addr: -142786604 val: 123
+addr: -142786603 val: 0
+addr: -142786602 val: 0
+addr: -142786601 val: 0
+addr: -142786600 val: 0
+addr: -142786599 val: 0
+addr: -142786598 val: 0
+addr: -142786597 val: 0
+addr: -142786596 val: 0
+addr: -142786595 val: 0
+addr: -142786594 val: 0
+addr: -142786593 val: 0
+addr: -142786592 val: 16
+addr: -142786591 val: 255
+addr: -142786590 val: 255
+addr: -142786589 val: 255
+addr: -142786588 val: 136
+addr: -142786587 val: 184
+addr: -142786586 val: 119
+addr: -142786585 val: 183
+addr: -142786584 val: 115
+addr: -142786583 val: 0
+addr: -142786582 val: 0
+addr: -142786581 val: 0
+addr: -142786580 val: 131
+addr: -142786579 val: 2
+addr: -142786578 val: 0
+addr: -142786577 val: 0
+addr: -142786576 val: 112
+addr: -142786575 val: 19
+addr: -142786574 val: 203
+addr: -142786573 val: 191
+addr: -142786572 val: 123
+addr: -142786571 val: 0
+addr: -142786570 val: 0
+addr: -142786569 val: 0
+addr: -142786568 val: 0
+addr: -142786567 val: 0
+addr: -142786566 val: 0
+addr: -142786565 val: 0
+addr: -142786564 val: 0
+addr: -142786563 val: 0
+addr: -142786562 val: 0
+addr: -142786561 val: 0
+addr: -142786560 val: 0
+addr: -142786559 val: 0
+addr: -142786558 val: 0
+addr: -142786557 val: 0
+addr: -142786556 val: 0
+addr: -142786555 val: 0
+addr: -142786554 val: 0
+addr: -142786553 val: 0
+addr: -142786552 val: 0
+addr: -142786551 val: 0
+addr: -142786550 val: 0
+addr: -142786549 val: 0
+addr: -142786548 val: 0
+addr: -142786547 val: 0
+addr: -142786546 val: 0
+addr: -142786545 val: 0
+addr: -142786544 val: 0
+addr: -142786543 val: 0
+addr: -142786542 val: 0
+addr: -142786541 val: 0
+addr: -142786540 val: 0
+addr: -142786539 val: 0
+addr: -142786538 val: 0
+addr: -142786537 val: 0
+addr: -142786536 val: 0
+addr: -142786535 val: 0
+addr: -142786534 val: 0
+addr: -142786533 val: 0
+proc: vuln EBP: -142786652 ESP: -142786772 size: 120
+count 2362541
+addr: -142786652 val: 172
+addr: -142786651 val: 63
+addr: -142786650 val: 125
+addr: -142786649 val: 247
+addr: -142786648 val: 51
+addr: -142786647 val: 58
+addr: -142786646 val: 102
+addr: -142786645 val: 193
+addr: -142786644 val: 0
+addr: -142786643 val: 32
+addr: -142786642 val: 125
+addr: -142786641 val: 247
+addr: -142786640 val: 70
+addr: -142786639 val: 112
+addr: -142786638 val: 102
+addr: -142786637 val: 193
+addr: -142786636 val: 0
+addr: -142786635 val: 32
+addr: -142786634 val: 121
+addr: -142786633 val: 183
+addr: -142786632 val: 1
+addr: -142786631 val: 0
+addr: -142786630 val: 0
+addr: -142786629 val: 0
+addr: -142786628 val: 255
+addr: -142786627 val: 255
+addr: -142786626 val: 255
+addr: -142786625 val: 255
+addr: -142786624 val: 1
+addr: -142786623 val: 0
+addr: -142786622 val: 0
+addr: -142786621 val: 0
+addr: -142786620 val: 1
+addr: -142786619 val: 0
+addr: -142786618 val: 0
+addr: -142786617 val: 0
+addr: -142786616 val: 88
+addr: -142786615 val: 19
+addr: -142786614 val: 203
+addr: -142786613 val: 191
+addr: -142786612 val: 254
+addr: -142786611 val: 255
+addr: -142786610 val: 255
+addr: -142786609 val: 255
+addr: -142786608 val: 123
+addr: -142786607 val: 0
+addr: -142786606 val: 0
+addr: -142786605 val: 0
+addr: -142786604 val: 123
+addr: -142786603 val: 0
+addr: -142786602 val: 0
+addr: -142786601 val: 0
+addr: -142786600 val: 0
+addr: -142786599 val: 0
+addr: -142786598 val: 0
+addr: -142786597 val: 0
+addr: -142786596 val: 0
+addr: -142786595 val: 0
+addr: -142786594 val: 0
+addr: -142786593 val: 0
+addr: -142786592 val: 16
+addr: -142786591 val: 255
+addr: -142786590 val: 255
+addr: -142786589 val: 255
+addr: -142786588 val: 57
+addr: -142786587 val: 235
+addr: -142786586 val: 119
+addr: -142786585 val: 183
+addr: -142786584 val: 115
+addr: -142786583 val: 0
+addr: -142786582 val: 0
+addr: -142786581 val: 0
+addr: -142786580 val: 70
+addr: -142786579 val: 2
+addr: -142786578 val: 0
+addr: -142786577 val: 0
+addr: -142786576 val: 240
+addr: -142786575 val: 18
+addr: -142786574 val: 203
+addr: -142786573 val: 191
+addr: -142786572 val: 123
+addr: -142786571 val: 0
+addr: -142786570 val: 0
+addr: -142786569 val: 0
+addr: -142786568 val: 0
+addr: -142786567 val: 0
+addr: -142786566 val: 0
+addr: -142786565 val: 0
+addr: -142786564 val: 0
+addr: -142786563 val: 0
+addr: -142786562 val: 0
+addr: -142786561 val: 0
+addr: -142786560 val: 0
+addr: -142786559 val: 0
+addr: -142786558 val: 0
+addr: -142786557 val: 0
+addr: -142786556 val: 0
+addr: -142786555 val: 0
+addr: -142786554 val: 0
+addr: -142786553 val: 0
+addr: -142786552 val: 0
+addr: -142786551 val: 0
+addr: -142786550 val: 0
+addr: -142786549 val: 0
+addr: -142786548 val: 0
+addr: -142786547 val: 0
+addr: -142786546 val: 0
+addr: -142786545 val: 0
+addr: -142786544 val: 0
+addr: -142786543 val: 0
+addr: -142786542 val: 0
+addr: -142786541 val: 0
+addr: -142786540 val: 0
+addr: -142786539 val: 0
+addr: -142786538 val: 0
+addr: -142786537 val: 0
+addr: -142786536 val: 0
+addr: -142786535 val: 0
+addr: -142786534 val: 0
+addr: -142786533 val: 0
+proc: vuln EBP: -142786916 ESP: -142786916 size: 0
+size 0
+proc: vuln EBP: -142786916 ESP: -142786916 size: 0
+size 0
+proc: vuln EBP: -142786916 ESP: -142786916 size: 0
+size 0
+proc: vuln EBP: -142786900 ESP: -142786900 size: 0
+size 0
+proc: vuln EBP: -142786688 ESP: -142786808 size: 120
+count 3056638
+addr: -142786688 val: 136
+addr: -142786687 val: 63
+addr: -142786686 val: 125
+addr: -142786685 val: 247
+addr: -142786684 val: 134
+addr: -142786683 val: 61
+addr: -142786682 val: 102
+addr: -142786681 val: 193
+addr: -142786680 val: 156
+addr: -142786679 val: 63
+addr: -142786678 val: 125
+addr: -142786677 val: 247
+addr: -142786676 val: 166
+addr: -142786675 val: 68
+addr: -142786674 val: 7
+addr: -142786673 val: 193
+addr: -142786672 val: 2
+addr: -142786671 val: 0
+addr: -142786670 val: 0
+addr: -142786669 val: 0
+addr: -142786668 val: 180
+addr: -142786667 val: 63
+addr: -142786666 val: 125
+addr: -142786665 val: 247
+addr: -142786664 val: 92
+addr: -142786663 val: 37
+addr: -142786662 val: 121
+addr: -142786661 val: 183
+addr: -142786660 val: 172
+addr: -142786659 val: 63
+addr: -142786658 val: 125
+addr: -142786657 val: 247
+addr: -142786656 val: 41
+addr: -142786655 val: 8
+addr: -142786654 val: 1
+addr: -142786653 val: 193
+addr: -142786652 val: 3
+addr: -142786651 val: 128
+addr: -142786650 val: 118
+addr: -142786649 val: 183
+addr: -142786648 val: 0
+addr: -142786647 val: 0
+addr: -142786646 val: 0
+addr: -142786645 val: 0
+addr: -142786644 val: 0
+addr: -142786643 val: 32
+addr: -142786642 val: 125
+addr: -142786641 val: 247
+addr: -142786640 val: 145
+addr: -142786639 val: 112
+addr: -142786638 val: 102
+addr: -142786637 val: 193
+addr: -142786636 val: 0
+addr: -142786635 val: 128
+addr: -142786634 val: 118
+addr: -142786633 val: 183
+addr: -142786632 val: 190
+addr: -142786631 val: 81
+addr: -142786630 val: 0
+addr: -142786629 val: 0
+addr: -142786628 val: 0
+addr: -142786627 val: 32
+addr: -142786626 val: 121
+addr: -142786625 val: 183
+addr: -142786624 val: 0
+addr: -142786623 val: 0
+addr: -142786622 val: 0
+addr: -142786621 val: 0
+addr: -142786620 val: 92
+addr: -142786619 val: 37
+addr: -142786618 val: 121
+addr: -142786617 val: 183
+addr: -142786616 val: 136
+addr: -142786615 val: 20
+addr: -142786614 val: 203
+addr: -142786613 val: 191
+addr: -142786612 val: 0
+addr: -142786611 val: 0
+addr: -142786610 val: 0
+addr: -142786609 val: 0
+addr: -142786608 val: 123
+addr: -142786607 val: 0
+addr: -142786606 val: 0
+addr: -142786605 val: 0
+addr: -142786604 val: 123
+addr: -142786603 val: 0
+addr: -142786602 val: 0
+addr: -142786601 val: 0
+addr: -142786600 val: 0
+addr: -142786599 val: 0
+addr: -142786598 val: 0
+addr: -142786597 val: 0
+addr: -142786596 val: 51
+addr: -142786595 val: 0
+addr: -142786594 val: 0
+addr: -142786593 val: 0
+addr: -142786592 val: 91
+addr: -142786591 val: 0
+addr: -142786590 val: 0
+addr: -142786589 val: 0
+addr: -142786588 val: 241
+addr: -142786587 val: 138
+addr: -142786586 val: 120
+addr: -142786585 val: 183
+addr: -142786584 val: 115
+addr: -142786583 val: 0
+addr: -142786582 val: 0
+addr: -142786581 val: 0
+addr: -142786580 val: 131
+addr: -142786579 val: 2
+addr: -142786578 val: 0
+addr: -142786577 val: 0
+addr: -142786576 val: 156
+addr: -142786575 val: 19
+addr: -142786574 val: 203
+addr: -142786573 val: 191
+addr: -142786572 val: 123
+addr: -142786571 val: 0
+addr: -142786570 val: 0
+addr: -142786569 val: 0
+proc: vuln EBP: -142786936 ESP: -142787056 size: 120
+count 3438334
+addr: -142786936 val: 144
+addr: -142786935 val: 62
+addr: -142786934 val: 125
+addr: -142786933 val: 247
+addr: -142786932 val: 51
+addr: -142786931 val: 58
+addr: -142786930 val: 102
+addr: -142786929 val: 193
+addr: -142786928 val: 180
+addr: -142786927 val: 62
+addr: -142786926 val: 125
+addr: -142786925 val: 247
+addr: -142786924 val: 221
+addr: -142786923 val: 65
+addr: -142786922 val: 24
+addr: -142786921 val: 193
+addr: -142786920 val: 0
+addr: -142786919 val: 0
+addr: -142786918 val: 0
+addr: -142786917 val: 0
+addr: -142786916 val: 0
+addr: -142786915 val: 26
+addr: -142786914 val: 170
+addr: -142786913 val: 245
+addr: -142786912 val: 80
+addr: -142786911 val: 53
+addr: -142786910 val: 9
+addr: -142786909 val: 193
+addr: -142786908 val: 60
+addr: -142786907 val: 247
+addr: -142786906 val: 146
+addr: -142786905 val: 243
+addr: -142786904 val: 60
+addr: -142786903 val: 247
+addr: -142786902 val: 146
+addr: -142786901 val: 243
+addr: -142786900 val: 0
+addr: -142786899 val: 0
+addr: -142786898 val: 0
+addr: -142786897 val: 0
+addr: -142786896 val: 1
+addr: -142786895 val: 0
+addr: -142786894 val: 0
+addr: -142786893 val: 0
+addr: -142786892 val: 12
+addr: -142786891 val: 63
+addr: -142786890 val: 125
+addr: -142786889 val: 247
+addr: -142786888 val: 121
+addr: -142786887 val: 73
+addr: -142786886 val: 24
+addr: -142786885 val: 193
+addr: -142786884 val: 17
+addr: -142786883 val: 0
+addr: -142786882 val: 0
+addr: -142786881 val: 0
+addr: -142786880 val: 56
+addr: -142786879 val: 247
+addr: -142786878 val: 146
+addr: -142786877 val: 243
+addr: -142786876 val: 96
+addr: -142786875 val: 84
+addr: -142786874 val: 186
+addr: -142786873 val: 245
+addr: -142786872 val: 0
+addr: -142786871 val: 26
+addr: -142786870 val: 170
+addr: -142786869 val: 245
+addr: -142786868 val: 120
+addr: -142786867 val: 236
+addr: -142786866 val: 124
+addr: -142786865 val: 247
+addr: -142786864 val: 28
+addr: -142786863 val: 63
+addr: -142786862 val: 125
+addr: -142786861 val: 247
+addr: -142786860 val: 0
+addr: -142786859 val: 0
+addr: -142786858 val: 0
+addr: -142786857 val: 0
+addr: -142786856 val: 0
+addr: -142786855 val: 16
+addr: -142786854 val: 0
+addr: -142786853 val: 0
+addr: -142786852 val: 0
+addr: -142786851 val: 0
+addr: -142786850 val: 0
+addr: -142786849 val: 0
+addr: -142786848 val: 0
+addr: -142786847 val: 0
+addr: -142786846 val: 0
+addr: -142786845 val: 0
+addr: -142786844 val: 104
+addr: -142786843 val: 84
+addr: -142786842 val: 186
+addr: -142786841 val: 245
+addr: -142786840 val: 0
+addr: -142786839 val: 0
+addr: -142786838 val: 2
+addr: -142786837 val: 0
+addr: -142786836 val: 104
+addr: -142786835 val: 105
+addr: -142786834 val: 106
+addr: -142786833 val: 245
+addr: -142786832 val: 32
+addr: -142786831 val: 247
+addr: -142786830 val: 146
+addr: -142786829 val: 243
+addr: -142786828 val: 4
+addr: -142786827 val: 0
+addr: -142786826 val: 0
+addr: -142786825 val: 0
+addr: -142786824 val: 80
+addr: -142786823 val: 150
+addr: -142786822 val: 129
+addr: -142786821 val: 245
+addr: -142786820 val: 0
+addr: -142786819 val: 0
+addr: -142786818 val: 0
+addr: -142786817 val: 0
+./stack_overflow-rr-nondet.log:   395555612 instrs total.
+stack_overflow:     3955561 (  1.00%) instrs.    2.32 sec.  0.59 GB ram.
+stack_overflow:     7911113 (  2.00%) instrs.    2.58 sec.  0.59 GB ram.
+stack_overflow:    11866674 (  3.00%) instrs.    2.82 sec.  0.60 GB ram.
+stack_overflow:    15822225 (  4.00%) instrs.    3.00 sec.  0.60 GB ram.
+stack_overflow:    19777781 (  5.00%) instrs.    3.21 sec.  0.60 GB ram.
+stack_overflow:    23733339 (  6.00%) instrs.    3.43 sec.  0.60 GB ram.
+stack_overflow:    27688895 (  7.00%) instrs.    3.62 sec.  0.60 GB ram.
+proc: vuln EBP: -142786652 ESP: -142786772 size: 120
+count 29186653
+addr: -142786652 val: 172
+addr: -142786651 val: 63
+addr: -142786650 val: 125
+addr: -142786649 val: 247
+addr: -142786648 val: 51
+addr: -142786647 val: 58
+addr: -142786646 val: 102
+addr: -142786645 val: 193
+addr: -142786644 val: 0
+addr: -142786643 val: 32
+addr: -142786642 val: 125
+addr: -142786641 val: 247
+addr: -142786640 val: 70
+addr: -142786639 val: 112
+addr: -142786638 val: 102
+addr: -142786637 val: 193
+addr: -142786636 val: 0
+addr: -142786635 val: 64
+addr: -142786634 val: 118
+addr: -142786633 val: 183
+addr: -142786632 val: 0
+addr: -142786631 val: 192
+addr: -142786630 val: 118
+addr: -142786629 val: 183
+addr: -142786628 val: 255
+addr: -142786627 val: 255
+addr: -142786626 val: 255
+addr: -142786625 val: 255
+addr: -142786624 val: 32
+addr: -142786623 val: 76
+addr: -142786622 val: 118
+addr: -142786621 val: 183
+addr: -142786620 val: 0
+addr: -142786619 val: 0
+addr: -142786618 val: 0
+addr: -142786617 val: 0
+addr: -142786616 val: 88
+addr: -142786615 val: 20
+addr: -142786614 val: 203
+addr: -142786613 val: 191
+addr: -142786612 val: 97
+addr: -142786611 val: 0
+addr: -142786610 val: 0
+addr: -142786609 val: 0
+addr: -142786608 val: 123
+addr: -142786607 val: 0
+addr: -142786606 val: 0
+addr: -142786605 val: 0
+addr: -142786604 val: 123
+addr: -142786603 val: 0
+addr: -142786602 val: 0
+addr: -142786601 val: 0
+addr: -142786600 val: 0
+addr: -142786599 val: 0
+addr: -142786598 val: 0
+addr: -142786597 val: 0
+addr: -142786596 val: 51
+addr: -142786595 val: 0
+addr: -142786594 val: 0
+addr: -142786593 val: 0
+addr: -142786592 val: 16
+addr: -142786591 val: 255
+addr: -142786590 val: 255
+addr: -142786589 val: 255
+addr: -142786588 val: 238
+addr: -142786587 val: 124
+addr: -142786586 val: 98
+addr: -142786585 val: 183
+addr: -142786584 val: 115
+addr: -142786583 val: 0
+addr: -142786582 val: 0
+addr: -142786581 val: 0
+addr: -142786580 val: 19
+addr: -142786579 val: 2
+addr: -142786578 val: 0
+addr: -142786577 val: 0
+addr: -142786576 val: 48
+addr: -142786575 val: 18
+addr: -142786574 val: 203
+addr: -142786573 val: 191
+addr: -142786572 val: 123
+addr: -142786571 val: 0
+addr: -142786570 val: 0
+addr: -142786569 val: 0
+addr: -142786568 val: 0
+addr: -142786567 val: 0
+addr: -142786566 val: 0
+addr: -142786565 val: 0
+addr: -142786564 val: 0
+addr: -142786563 val: 0
+addr: -142786562 val: 0
+addr: -142786561 val: 0
+addr: -142786560 val: 0
+addr: -142786559 val: 0
+addr: -142786558 val: 0
+addr: -142786557 val: 0
+addr: -142786556 val: 0
+addr: -142786555 val: 0
+addr: -142786554 val: 0
+addr: -142786553 val: 0
+addr: -142786552 val: 0
+addr: -142786551 val: 0
+addr: -142786550 val: 0
+addr: -142786549 val: 0
+addr: -142786548 val: 0
+addr: -142786547 val: 0
+addr: -142786546 val: 0
+addr: -142786545 val: 0
+addr: -142786544 val: 0
+addr: -142786543 val: 0
+addr: -142786542 val: 0
+addr: -142786541 val: 0
+addr: -142786540 val: 0
+addr: -142786539 val: 0
+addr: -142786538 val: 0
+addr: -142786537 val: 0
+addr: -142786536 val: 0
+addr: -142786535 val: 0
+addr: -142786534 val: 0
+addr: -142786533 val: 0
+proc: vuln EBP: -142786872 ESP: -142786992 size: 120
+count 29388188
+addr: -142786872 val: 208
+addr: -142786871 val: 62
+addr: -142786870 val: 125
+addr: -142786869 val: 247
+addr: -142786868 val: 134
+addr: -142786867 val: 61
+addr: -142786866 val: 102
+addr: -142786865 val: 193
+addr: -142786864 val: 220
+addr: -142786863 val: 62
+addr: -142786862 val: 125
+addr: -142786861 val: 247
+addr: -142786860 val: 128
+addr: -142786859 val: 76
+addr: -142786858 val: 102
+addr: -142786857 val: 193
+addr: -142786856 val: 0
+addr: -142786855 val: 162
+addr: -142786854 val: 181
+addr: -142786853 val: 245
+addr: -142786852 val: 40
+addr: -142786851 val: 63
+addr: -142786850 val: 125
+addr: -142786849 val: 247
+addr: -142786848 val: 16
+addr: -142786847 val: 43
+addr: -142786846 val: 61
+addr: -142786845 val: 193
+addr: -142786844 val: 120
+addr: -142786843 val: 163
+addr: -142786842 val: 181
+addr: -142786841 val: 245
+addr: -142786840 val: 0
+addr: -142786839 val: 26
+addr: -142786838 val: 170
+addr: -142786837 val: 245
+addr: -142786836 val: 0
+addr: -142786835 val: 136
+addr: -142786834 val: 106
+addr: -142786833 val: 247
+addr: -142786832 val: 128
+addr: -142786831 val: 162
+addr: -142786830 val: 181
+addr: -142786829 val: 245
+addr: -142786828 val: 0
+addr: -142786827 val: 207
+addr: -142786826 val: 185
+addr: -142786825 val: 245
+addr: -142786824 val: 112
+addr: -142786823 val: 50
+addr: -142786822 val: 65
+addr: -142786821 val: 248
+addr: -142786820 val: 50
+addr: -142786819 val: 0
+addr: -142786818 val: 0
+addr: -142786817 val: 0
+addr: -142786816 val: 49
+addr: -142786815 val: 136
+addr: -142786814 val: 106
+addr: -142786813 val: 247
+addr: -142786812 val: 0
+addr: -142786811 val: 0
+addr: -142786810 val: 0
+addr: -142786809 val: 0
+addr: -142786808 val: 0
+addr: -142786807 val: 0
+addr: -142786806 val: 0
+addr: -142786805 val: 0
+addr: -142786804 val: 0
+addr: -142786803 val: 26
+addr: -142786802 val: 170
+addr: -142786801 val: 245
+addr: -142786800 val: 192
+addr: -142786799 val: 77
+addr: -142786798 val: 8
+addr: -142786797 val: 193
+addr: -142786796 val: 124
+addr: -142786795 val: 163
+addr: -142786794 val: 181
+addr: -142786793 val: 245
+addr: -142786792 val: 124
+addr: -142786791 val: 163
+addr: -142786790 val: 181
+addr: -142786789 val: 245
+addr: -142786788 val: 0
+addr: -142786787 val: 162
+addr: -142786786 val: 181
+addr: -142786785 val: 245
+addr: -142786784 val: 64
+addr: -142786783 val: 41
+addr: -142786782 val: 61
+addr: -142786781 val: 193
+addr: -142786780 val: 50
+addr: -142786779 val: 0
+addr: -142786778 val: 0
+addr: -142786777 val: 0
+addr: -142786776 val: 96
+addr: -142786775 val: 63
+addr: -142786774 val: 125
+addr: -142786773 val: 247
+addr: -142786772 val: 43
+addr: -142786771 val: 254
+addr: -142786770 val: 60
+addr: -142786769 val: 193
+addr: -142786768 val: 1
+addr: -142786767 val: 0
+addr: -142786766 val: 0
+addr: -142786765 val: 0
+addr: -142786764 val: 96
+addr: -142786763 val: 63
+addr: -142786762 val: 125
+addr: -142786761 val: 247
+addr: -142786760 val: 128
+addr: -142786759 val: 222
+addr: -142786758 val: 175
+addr: -142786757 val: 245
+addr: -142786756 val: 0
+addr: -142786755 val: 26
+addr: -142786754 val: 170
+addr: -142786753 val: 245
+proc: vuln EBP: -142787180 ESP: -142787300 size: 120
+count 29484082
+addr: -142787180 val: 156
+addr: -142787179 val: 61
+addr: -142787178 val: 125
+addr: -142787177 val: 247
+addr: -142787176 val: 134
+addr: -142787175 val: 61
+addr: -142787174 val: 102
+addr: -142787173 val: 193
+addr: -142787172 val: 204
+addr: -142787171 val: 61
+addr: -142787170 val: 125
+addr: -142787169 val: 247
+addr: -142787168 val: 154
+addr: -142787167 val: 140
+addr: -142787166 val: 22
+addr: -142787165 val: 193
+addr: -142787164 val: 64
+addr: -142787163 val: 113
+addr: -142787162 val: 190
+addr: -142787161 val: 247
+addr: -142787160 val: 176
+addr: -142787159 val: 61
+addr: -142787158 val: 125
+addr: -142787157 val: 247
+addr: -142787156 val: 123
+addr: -142787155 val: 175
+addr: -142787154 val: 3
+addr: -142787153 val: 193
+addr: -142787152 val: 49
+addr: -142787151 val: 195
+addr: -142787150 val: 7
+addr: -142787149 val: 193
+addr: -142787148 val: 37
+addr: -142787147 val: 168
+addr: -142787146 val: 11
+addr: -142787145 val: 193
+addr: -142787144 val: 208
+addr: -142787143 val: 0
+addr: -142787142 val: 0
+addr: -142787141 val: 0
+addr: -142787140 val: 64
+addr: -142787139 val: 113
+addr: -142787138 val: 190
+addr: -142787137 val: 247
+addr: -142787136 val: 12
+addr: -142787135 val: 63
+addr: -142787134 val: 125
+addr: -142787133 val: 247
+addr: -142787132 val: 0
+addr: -142787131 val: 26
+addr: -142787130 val: 170
+addr: -142787129 val: 245
+addr: -142787128 val: 128
+addr: -142787127 val: 154
+addr: -142787126 val: 181
+addr: -142787125 val: 245
+addr: -142787124 val: 224
+addr: -142787123 val: 61
+addr: -142787122 val: 125
+addr: -142787121 val: 247
+addr: -142787120 val: 49
+addr: -142787119 val: 195
+addr: -142787118 val: 7
+addr: -142787117 val: 193
+addr: -142787116 val: 12
+addr: -142787115 val: 63
+addr: -142787114 val: 125
+addr: -142787113 val: 247
+addr: -142787112 val: 0
+addr: -142787111 val: 32
+addr: -142787110 val: 125
+addr: -142787109 val: 247
+addr: -142787108 val: 128
+addr: -142787107 val: 154
+addr: -142787106 val: 181
+addr: -142787105 val: 245
+addr: -142787104 val: 144
+addr: -142787103 val: 62
+addr: -142787102 val: 125
+addr: -142787101 val: 247
+addr: -142787100 val: 61
+addr: -142787099 val: 151
+addr: -142787098 val: 28
+addr: -142787097 val: 193
+addr: -142787096 val: 4
+addr: -142787095 val: 0
+addr: -142787094 val: 0
+addr: -142787093 val: 0
+addr: -142787092 val: 225
+addr: -142787091 val: 177
+addr: -142787090 val: 62
+addr: -142787089 val: 164
+addr: -142787088 val: 56
+addr: -142787087 val: 89
+addr: -142787086 val: 0
+addr: -142787085 val: 0
+addr: -142787084 val: 232
+addr: -142787083 val: 116
+addr: -142787082 val: 190
+addr: -142787081 val: 247
+addr: -142787080 val: 184
+addr: -142787079 val: 116
+addr: -142787078 val: 190
+addr: -142787077 val: 247
+addr: -142787076 val: 136
+addr: -142787075 val: 116
+addr: -142787074 val: 190
+addr: -142787073 val: 247
+addr: -142787072 val: 3
+addr: -142787071 val: 0
+addr: -142787070 val: 0
+addr: -142787069 val: 0
+addr: -142787068 val: 0
+addr: -142787067 val: 0
+addr: -142787066 val: 0
+addr: -142787065 val: 0
+addr: -142787064 val: 0
+addr: -142787063 val: 0
+addr: -142787062 val: 0
+addr: -142787061 val: 0
+proc: vuln EBP: -142787696 ESP: -142787816 size: 120
+count 30503380
+addr: -142787696 val: 152
+addr: -142787695 val: 59
+addr: -142787694 val: 125
+addr: -142787693 val: 247
+addr: -142787692 val: 51
+addr: -142787691 val: 58
+addr: -142787690 val: 102
+addr: -142787689 val: 193
+addr: -142787688 val: 188
+addr: -142787687 val: 59
+addr: -142787686 val: 125
+addr: -142787685 val: 247
+addr: -142787684 val: 221
+addr: -142787683 val: 65
+addr: -142787682 val: 24
+addr: -142787681 val: 193
+addr: -142787680 val: 0
+addr: -142787679 val: 0
+addr: -142787678 val: 0
+addr: -142787677 val: 0
+addr: -142787676 val: 0
+addr: -142787675 val: 26
+addr: -142787674 val: 170
+addr: -142787673 val: 245
+addr: -142787672 val: 80
+addr: -142787671 val: 53
+addr: -142787670 val: 9
+addr: -142787669 val: 193
+addr: -142787668 val: 60
+addr: -142787667 val: 202
+addr: -142787666 val: 121
+addr: -142787665 val: 247
+addr: -142787664 val: 60
+addr: -142787663 val: 202
+addr: -142787662 val: 121
+addr: -142787661 val: 247
+addr: -142787660 val: 0
+addr: -142787659 val: 0
+addr: -142787658 val: 0
+addr: -142787657 val: 0
+addr: -142787656 val: 56
+addr: -142787655 val: 202
+addr: -142787654 val: 121
+addr: -142787653 val: 247
+addr: -142787652 val: 12
+addr: -142787651 val: 60
+addr: -142787650 val: 125
+addr: -142787649 val: 247
+addr: -142787648 val: 26
+addr: -142787647 val: 68
+addr: -142787646 val: 24
+addr: -142787645 val: 193
+addr: -142787644 val: 208
+addr: -142787643 val: 59
+addr: -142787642 val: 125
+addr: -142787641 val: 247
+addr: -142787640 val: 115
+addr: -142787639 val: 18
+addr: -142787638 val: 5
+addr: -142787637 val: 193
+addr: -142787636 val: 56
+addr: -142787635 val: 202
+addr: -142787634 val: 121
+addr: -142787633 val: 247
+addr: -142787632 val: 0
+addr: -142787631 val: 26
+addr: -142787630 val: 170
+addr: -142787629 val: 245
+addr: -142787628 val: 0
+addr: -142787627 val: 0
+addr: -142787626 val: 0
+addr: -142787625 val: 0
+addr: -142787624 val: 37
+addr: -142787623 val: 208
+addr: -142787622 val: 129
+addr: -142787621 val: 53
+addr: -142787620 val: 0
+addr: -142787619 val: 0
+addr: -142787618 val: 0
+addr: -142787617 val: 0
+addr: -142787616 val: 28
+addr: -142787615 val: 60
+addr: -142787614 val: 125
+addr: -142787613 val: 247
+addr: -142787612 val: 0
+addr: -142787611 val: 16
+addr: -142787610 val: 0
+addr: -142787609 val: 0
+addr: -142787608 val: 32
+addr: -142787607 val: 56
+addr: -142787606 val: 142
+addr: -142787605 val: 243
+addr: -142787604 val: 160
+addr: -142787603 val: 229
+addr: -142787602 val: 124
+addr: -142787601 val: 247
+addr: -142787600 val: 37
+addr: -142787599 val: 0
+addr: -142787598 val: 0
+addr: -142787597 val: 0
+addr: -142787596 val: 16
+addr: -142787595 val: 0
+addr: -142787594 val: 0
+addr: -142787593 val: 0
+addr: -142787592 val: 37
+addr: -142787591 val: 208
+addr: -142787590 val: 129
+addr: -142787589 val: 53
+addr: -142787588 val: 0
+addr: -142787587 val: 0
+addr: -142787586 val: 0
+addr: -142787585 val: 0
+addr: -142787584 val: 32
+addr: -142787583 val: 136
+addr: -142787582 val: 104
+addr: -142787581 val: 193
+addr: -142787580 val: 32
+addr: -142787579 val: 56
+addr: -142787578 val: 142
+addr: -142787577 val: 243
+stack_overflow:    31644454 (  8.00%) instrs.    3.90 sec.  0.61 GB ram.
+stack_overflow:    35600006 (  9.00%) instrs.    4.04 sec.  0.61 GB ram.
+stack_overflow:    39555573 ( 10.00%) instrs.    4.22 sec.  0.61 GB ram.
+stack_overflow:    43511121 ( 11.00%) instrs.    4.39 sec.  0.61 GB ram.
+stack_overflow:    47466675 ( 12.00%) instrs.    4.59 sec.  0.62 GB ram.
+stack_overflow:    51422238 ( 13.00%) instrs.    4.73 sec.  0.62 GB ram.
+stack_overflow:    55377790 ( 14.00%) instrs.    4.88 sec.  0.62 GB ram.
+stack_overflow:    59333344 ( 15.00%) instrs.    5.05 sec.  0.62 GB ram.
+stack_overflow:    63288926 ( 16.00%) instrs.    5.20 sec.  0.62 GB ram.
+stack_overflow:    67244465 ( 17.00%) instrs.    5.34 sec.  0.62 GB ram.
+stack_overflow:    71200017 ( 18.00%) instrs.    5.48 sec.  0.62 GB ram.
+stack_overflow:    75155573 ( 19.00%) instrs.    5.67 sec.  0.62 GB ram.
+stack_overflow:    79111123 ( 20.00%) instrs.    5.82 sec.  0.62 GB ram.
+stack_overflow:    83066681 ( 21.00%) instrs.    5.96 sec.  0.62 GB ram.
+stack_overflow:    87022239 ( 22.00%) instrs.    6.10 sec.  0.62 GB ram.
+stack_overflow:    90977791 ( 23.00%) instrs.    6.26 sec.  0.62 GB ram.
+stack_overflow:    94933372 ( 24.00%) instrs.    6.41 sec.  0.62 GB ram.
+stack_overflow:    98888907 ( 25.00%) instrs.    6.55 sec.  0.62 GB ram.
+stack_overflow:   102844460 ( 26.00%) instrs.    6.69 sec.  0.62 GB ram.
+stack_overflow:   106800017 ( 27.00%) instrs.    6.84 sec.  0.62 GB ram.
+stack_overflow:   110755576 ( 28.00%) instrs.    6.99 sec.  0.62 GB ram.
+stack_overflow:   114711130 ( 29.00%) instrs.    7.14 sec.  0.62 GB ram.
+stack_overflow:   118666692 ( 30.00%) instrs.    7.28 sec.  0.62 GB ram.
+stack_overflow:   122622241 ( 31.00%) instrs.    7.42 sec.  0.62 GB ram.
+stack_overflow:   126577817 ( 32.00%) instrs.    7.56 sec.  0.62 GB ram.
+stack_overflow:   130533353 ( 33.00%) instrs.    7.68 sec.  0.62 GB ram.
+stack_overflow:   134488909 ( 34.00%) instrs.    7.82 sec.  0.62 GB ram.
+stack_overflow:   138444467 ( 35.00%) instrs.    7.97 sec.  0.62 GB ram.
+stack_overflow:   142400022 ( 36.00%) instrs.    8.10 sec.  0.62 GB ram.
+stack_overflow:   146355582 ( 37.00%) instrs.    8.24 sec.  0.62 GB ram.
+stack_overflow:   150311135 ( 38.00%) instrs.    8.38 sec.  0.62 GB ram.
+stack_overflow:   154266689 ( 39.00%) instrs.    8.50 sec.  0.62 GB ram.
+stack_overflow:   158222249 ( 40.00%) instrs.    8.63 sec.  0.62 GB ram.
+stack_overflow:   162177801 ( 41.00%) instrs.    8.76 sec.  0.62 GB ram.
+stack_overflow:   166133359 ( 42.00%) instrs.    8.90 sec.  0.62 GB ram.
+stack_overflow:   170088915 ( 43.00%) instrs.    9.04 sec.  0.62 GB ram.
+stack_overflow:   174044470 ( 44.00%) instrs.    9.20 sec.  0.62 GB ram.
+stack_overflow:   178000032 ( 45.00%) instrs.    9.34 sec.  0.62 GB ram.
+stack_overflow:   181955582 ( 46.00%) instrs.    9.48 sec.  0.62 GB ram.
+stack_overflow:   185911138 ( 47.00%) instrs.    9.62 sec.  0.62 GB ram.
+stack_overflow:   189866696 ( 48.00%) instrs.    9.73 sec.  0.62 GB ram.
+stack_overflow:   193822250 ( 49.00%) instrs.    9.87 sec.  0.62 GB ram.
+stack_overflow:   197777829 ( 50.00%) instrs.   10.01 sec.  0.62 GB ram.
+stack_overflow:   201733369 ( 51.00%) instrs.   10.16 sec.  0.62 GB ram.
+stack_overflow:   205688924 ( 52.00%) instrs.   10.30 sec.  0.62 GB ram.
+stack_overflow:   209644479 ( 53.00%) instrs.   10.43 sec.  0.62 GB ram.
+stack_overflow:   213600035 ( 54.00%) instrs.   10.60 sec.  0.62 GB ram.
+stack_overflow:   217555597 ( 55.00%) instrs.   10.74 sec.  0.62 GB ram.
+stack_overflow:   221511145 ( 56.00%) instrs.   10.89 sec.  0.62 GB ram.
+stack_overflow:   225466699 ( 57.00%) instrs.   11.04 sec.  0.62 GB ram.
+stack_overflow:   229422259 ( 58.00%) instrs.   11.19 sec.  0.62 GB ram.
+stack_overflow:   233377812 ( 59.00%) instrs.   11.32 sec.  0.62 GB ram.
+stack_overflow:   237333368 ( 60.00%) instrs.   11.46 sec.  0.62 GB ram.
+stack_overflow:   241288926 ( 61.00%) instrs.   11.61 sec.  0.62 GB ram.
+stack_overflow:   245244480 ( 62.00%) instrs.   11.74 sec.  0.62 GB ram.
+stack_overflow:   249200038 ( 63.00%) instrs.   11.87 sec.  0.62 GB ram.
+stack_overflow:   253155600 ( 64.00%) instrs.   12.02 sec.  0.62 GB ram.
+stack_overflow:   257111154 ( 65.00%) instrs.   12.16 sec.  0.62 GB ram.
+stack_overflow:   261066708 ( 66.00%) instrs.   12.24 sec.  0.62 GB ram.
+stack_overflow:   265022267 ( 67.00%) instrs.   12.33 sec.  0.62 GB ram.
+stack_overflow:   268977818 ( 68.00%) instrs.   12.46 sec.  0.62 GB ram.
+stack_overflow:   272933374 ( 69.00%) instrs.   12.59 sec.  0.62 GB ram.
+stack_overflow:   276888934 ( 70.00%) instrs.   12.72 sec.  0.62 GB ram.
+stack_overflow:   280844485 ( 71.00%) instrs.   12.90 sec.  0.63 GB ram.
+stack_overflow:   284800041 ( 72.00%) instrs.   13.04 sec.  0.63 GB ram.
+stack_overflow:   288755606 ( 73.00%) instrs.   13.18 sec.  0.63 GB ram.
+stack_overflow:   292711154 ( 74.00%) instrs.   13.34 sec.  0.63 GB ram.
+stack_overflow:   296666712 ( 75.00%) instrs.   13.47 sec.  0.63 GB ram.
+stack_overflow:   300622268 ( 76.00%) instrs.   13.60 sec.  0.63 GB ram.
+stack_overflow:   304577822 ( 77.00%) instrs.   13.73 sec.  0.63 GB ram.
+stack_overflow:   308533386 ( 78.00%) instrs.   13.89 sec.  0.63 GB ram.
+stack_overflow:   312488936 ( 79.00%) instrs.   14.05 sec.  0.63 GB ram.
+stack_overflow:   316444492 ( 80.00%) instrs.   14.18 sec.  0.63 GB ram.
+stack_overflow:   320400050 ( 81.00%) instrs.   14.32 sec.  0.63 GB ram.
+stack_overflow:   324355605 ( 82.00%) instrs.   14.49 sec.  0.63 GB ram.
+stack_overflow:   328311160 ( 83.00%) instrs.   14.63 sec.  0.63 GB ram.
+stack_overflow:   332266717 ( 84.00%) instrs.   14.76 sec.  0.63 GB ram.
+stack_overflow:   336222274 ( 85.00%) instrs.   14.90 sec.  0.63 GB ram.
+stack_overflow:   340177830 ( 86.00%) instrs.   15.05 sec.  0.63 GB ram.
+stack_overflow:   344133384 ( 87.00%) instrs.   15.19 sec.  0.63 GB ram.
+stack_overflow:   348088939 ( 88.00%) instrs.   15.39 sec.  0.63 GB ram.
+stack_overflow:   352044497 ( 89.00%) instrs.   15.55 sec.  0.63 GB ram.
+stack_overflow:   356000058 ( 90.00%) instrs.   15.69 sec.  0.63 GB ram.
+stack_overflow:   359955608 ( 91.00%) instrs.   15.86 sec.  0.63 GB ram.
+stack_overflow:   363911168 ( 92.00%) instrs.   16.05 sec.  0.63 GB ram.
+stack_overflow:   367866720 ( 93.00%) instrs.   16.21 sec.  0.63 GB ram.
+stack_overflow:   371822276 ( 94.00%) instrs.   16.33 sec.  0.64 GB ram.
+stack_overflow:   375777834 ( 95.00%) instrs.   16.44 sec.  0.64 GB ram.
+stack_overflow:   379733390 ( 96.00%) instrs.   16.56 sec.  0.64 GB ram.
+stack_overflow:   383688946 ( 97.00%) instrs.   16.68 sec.  0.64 GB ram.
+stack_overflow:   387644502 ( 98.00%) instrs.   16.80 sec.  0.64 GB ram.
+stack_overflow:   391600056 ( 99.00%) instrs.   16.93 sec.  0.64 GB ram.
+proc: vuln EBP: -142787204 ESP: -142787204 size: 0
+size 0
+./stack_overflow-rr-nondet.log:  log is empty.
+./stack_overflow-rr-nondet.log:  log is empty.
+Replay completed successfully. 1
+Time taken was: 16 seconds.
+Stats:
+RR_INPUT_1 number = 0, size = 0 bytes
+RR_INPUT_2 number = 0, size = 0 bytes
+RR_INPUT_4 number = 2432, size = 34048 bytes
+RR_INPUT_8 number = 17579, size = 316422 bytes
+RR_INTERRUPT_REQUEST number = 5546, size = 77644 bytes
+RR_EXIT_REQUEST number = 0, size = 0 bytes
+RR_SKIPPED_CALL number = 0, size = 0 bytes
+RR_END_OF_LOG number = 1, size = 10 bytes
+RR_PENDING_INTERRUPTS number = 0, size = 0 bytes
+RR_EXCEPTION number = 0, size = 0 bytes
+max_queue_len = 111
+Checksum of guest memory: 0x8147dc4
+Replay completed successfully 2.
