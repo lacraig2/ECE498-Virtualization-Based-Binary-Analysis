@@ -63,17 +63,19 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
 		// printf("process: %s EAX: %d\n", current->name,EAX);
         if (current->pages){
 		    OsiPage *page = current->pages;
-            int high_addr = page->start;
+            int addr = page->start;
             int len = page->len;
             if (len > 0){
                 unsigned char *buf = (unsigned char *) malloc(len*sizeof(char));
-                int err = panda_virtual_memory_rw(cpu, high_addr, buf, len, 0);
+                int err = panda_physical_memory_rw(cpu, addr, buf, len, 0);
                 if (err==-1){
                     printf("couldn't read memory.\n");
                 }else{
-                    printf("buff_mem %s", buf);
+                    printf("buff_mem %s\n", buf);
                 }
 
+            }else{
+                printf("len %d\n",len)
             }
         }else{
             printf("no pages\n");
