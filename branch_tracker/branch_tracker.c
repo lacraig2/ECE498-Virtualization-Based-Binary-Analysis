@@ -75,7 +75,7 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
                 }
 
             }else{
-                printf("len %d\n",len)
+                printf("len %d\n",len);
             }
         }else{
             printf("no pages\n");
