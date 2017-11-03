@@ -43,7 +43,11 @@ int virt_mem_w(CPUState *cpu, target_ulong pc, target_ulong addr, target_ulong s
 
 int virt_mem_w(CPUState *cpu, target_ulong pc, target_ulong addr, target_ulong size, void *buf){
     #ifdef TARGET_I386
-    printf("write: %lu, %s\n", (uint64_t) addr, (char*) buf);
+    OsiProc *current = get_current_process(cpu);
+    // printf("%s\n",current->name);
+    // if (!strcmp("vuln", current->name)){
+    printf("%s write: %lu, %s\n", current->name, (uint64_t) addr, (char*) buf);
+    // }
     #endif
     return 0;
 }
