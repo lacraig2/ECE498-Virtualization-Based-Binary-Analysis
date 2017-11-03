@@ -216,12 +216,11 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
 // }
 
 bool init_plugin(void *self) {
-    panda_cb pcb;
     printf("init called\n");
-    pcb.virt_mem_before_write = virt_mem_w;
+    panda_cb pcb = {.before_block_exec = before_block_exec,
+                    .virt_mem_before_write = virt_mem_w};
+    panda_register_callback(self, PANDA_CB_BEFORE_BLOCK_EXEC, pcb);
     panda_register_callback(self,PANDA_CB_VIRT_MEM_BEFORE_WRITE,pcb);
-    pcb.virt_mem_after_read = virt_mem_r;
-    panda_register_callback(self,PANDA_CB_VIRT_MEM_AFTER_READ,pcb);
     return true;
 }
 
