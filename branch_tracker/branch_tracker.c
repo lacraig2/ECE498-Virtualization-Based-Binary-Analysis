@@ -202,11 +202,11 @@ bool init_plugin(void *self) {
     panda_cb pcb;
 #if defined(INVOKE_FREQ_PGD)
     // relatively short execution
-    pcb = { .asid_changed = vmi_pgd_changed };
+    pcb.asid_changed = vmi_pgd_changed;
     panda_register_callback(self, PANDA_CB_ASID_CHANGED, pcb);
 #else
     // expect this to take forever to run
-    pcb = { .before_block_exec = before_block_exec };
+    pcb.before_block_exec = before_block_exec;
     panda_register_callback(self, PANDA_CB_BEFORE_BLOCK_EXEC, pcb);
 #endif
     pcb.virt_mem_before_write = virt_mem_write;
