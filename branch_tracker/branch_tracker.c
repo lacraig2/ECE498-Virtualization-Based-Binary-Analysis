@@ -218,7 +218,7 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
 bool init_plugin(void *self) {
     panda_cb pcb;
     printf("init called\n");
-    pcb.virt_mem_before_write = virt_mem_wr;
+    pcb.virt_mem_before_write = virt_mem_w;
     panda_register_callback(self,PANDA_CB_VIRT_MEM_BEFORE_WRITE,pcb);
     pcb.virt_mem_after_read = virt_mem_r;
     panda_register_callback(self,PANDA_CB_VIRT_MEM_AFTER_READ,pcb);
