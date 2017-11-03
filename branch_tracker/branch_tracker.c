@@ -38,27 +38,14 @@ void uninit_plugin(void *);
 
 // int vmi_pgd_changed(CPUState *cpu, target_ulong old_pgd, target_ulong new_pgd);
 int before_block_exec(CPUState *cpu, TranslationBlock *tb);
-int virt_mem_helper(CPUState *cpu, target_ulong pc, target_ulong addr, bool isRead, void* buf, target_ulong size);
-int virt_mem_r(CPUState *cpu, target_ulong pc, target_ulong addr, target_ulong size, void *buf);
 int virt_mem_w(CPUState *cpu, target_ulong pc, target_ulong addr, target_ulong size, void *buf);
 // FILE *fp;
 
-int virt_mem_helper(CPUState *cpu, target_ulong pc, target_ulong addr, bool isRead, void* buf, target_ulong size) {
+int virt_mem_w(CPUState *cpu, target_ulong pc, target_ulong addr, target_ulong size, void *buf){
     #ifdef TARGET_I386
-    printf("%lu %s: %s\n", (uint64_t) addr, isRead ? "read":"written", (char*) buf);
+    printf("write: %lu, %s\n", (uint64_t) addr, (char*) buf);
     #endif
     return 0;
-}
-
-int virt_mem_r(CPUState *cpu, target_ulong pc, target_ulong addr, target_ulong size, void *buf) {
-    printf("called\n");
-    return virt_mem_helper(cpu, pc, addr, true, buf, size);
-
-}
-
-int virt_mem_w(CPUState *cpu, target_ulong pc, target_ulong addr, target_ulong size, void *buf){
-    printf("called\n");
-    return virt_mem_helper(cpu, pc, addr,false, buf, size);
 }
 // unsigned char* old_buffer;
 
@@ -217,8 +204,8 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
 
 bool init_plugin(void *self) {
     printf("init called\n");
-    panda_cb pcb = {.before_block_exec = before_block_exec,
-                    .virt_mem_before_write = virt_mem_w};
+    panda_cb pcb = {    //.before_block_exec = before_block_exec,
+        .virt_mem_before_write = virt_mem_w};
     panda_register_callback(self, PANDA_CB_BEFORE_BLOCK_EXEC, pcb);
     panda_register_callback(self,PANDA_CB_VIRT_MEM_BEFORE_WRITE,pcb);
     return true;
