@@ -38,8 +38,9 @@ void uninit_plugin(void *);
 
 int vmi_pgd_changed(CPUState *cpu, target_ulong old_pgd, target_ulong new_pgd);
 int before_block_exec(CPUState *cpu, TranslationBlock *tb);
-
-
+int virt_mem_helper(CPUState *cpu, target_ulong pc, target_ulong addr, bool isRead, void* buf, target_ulong size);
+int virt_mem_read(CPUState *cpu, target_ulong pc, target_ulong addr, target_ulong size, void *buf);
+int virt_mem_write(CPUState *cpu, target_ulong pc, target_ulong addr, target_ulong size, void *buf);
 // FILE *fp;
 
 int virt_mem_helper(CPUState *cpu, target_ulong pc, target_ulong addr, bool isRead, void* buf, target_ulong size) {
@@ -54,7 +55,7 @@ int virt_mem_read(CPUState *cpu, target_ulong pc, target_ulong addr, target_ulon
 
 }
 
-int virt_mem_write(CPUState *cpu, target_ulong pc, target_ulong addr, target_ulong size, void *buf) {
+int virt_mem_write(CPUState *cpu, target_ulong pc, target_ulong addr, target_ulong size, void *buf){
     return virt_mem_helper(cpu, pc, addr,false, buf, size);
 }
 // unsigned char* old_buffer;
@@ -198,15 +199,20 @@ int vmi_pgd_changed(CPUState *cpu, target_ulong old_pgd, target_ulong new_pgd) {
 
 bool init_plugin(void *self) {
     // panda_memory_memcb();
+    panda_cb pcb;
 #if defined(INVOKE_FREQ_PGD)
     // relatively short execution
-    panda_cb pcb = { .asid_changed = vmi_pgd_changed };
+    pcb = { .asid_changed = vmi_pgd_changed };
     panda_register_callback(self, PANDA_CB_ASID_CHANGED, pcb);
 #else
     // expect this to take forever to run
-    panda_cb pcb = { .before_block_exec = before_block_exec };
+    pcb = { .before_block_exec = before_block_exec };
     panda_register_callback(self, PANDA_CB_BEFORE_BLOCK_EXEC, pcb);
 #endif
+    pcb.virt_mem_before_write = virt_mem_write;
+    panda_register_callback(self,PANDA_CB_VIRT_MEM_BEFORE_WRITE,pcb);
+    pcb.virt_mem_after_read = virt_mem_read;
+    panda_register_callback(self,PANDA_CB_VIRT_MEM_AFTER_READ,pcb);
 
     if(!init_osi_api()) return false;
 
