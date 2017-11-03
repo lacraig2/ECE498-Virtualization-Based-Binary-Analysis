@@ -197,21 +197,21 @@ int vmi_pgd_changed(CPUState *cpu, target_ulong old_pgd, target_ulong new_pgd) {
     return before_block_exec(cpu, NULL);
 }
 
-bool init_plugin(void *self) {
-    // panda_memory_memcb();
-    panda_cb pcb;
-    // expect this to take forever to run
-    pcb.before_block_exec = before_block_exec;
-    panda_register_callback(self, PANDA_CB_BEFORE_BLOCK_EXEC, pcb);
-    pcb.virt_mem_before_write = virt_mem_write;
-    panda_register_callback(self,PANDA_CB_VIRT_MEM_BEFORE_WRITE,pcb);
-    pcb.virt_mem_after_read = virt_mem_read;
-    panda_register_callback(self,PANDA_CB_VIRT_MEM_AFTER_READ,pcb);
+// bool init_plugin(void *self) {
+//     // panda_memory_memcb();
+//     panda_cb pcb;
+//     // expect this to take forever to run
+//     pcb.before_block_exec = before_block_exec;
+//     panda_register_callback(self, PANDA_CB_BEFORE_BLOCK_EXEC, pcb);
+//     pcb.virt_mem_before_write = virt_mem_write;
+//     panda_register_callback(self,PANDA_CB_VIRT_MEM_BEFORE_WRITE,pcb);
+//     pcb.virt_mem_after_read = virt_mem_read;
+//     panda_register_callback(self,PANDA_CB_VIRT_MEM_AFTER_READ,pcb);
 
-    if(!init_osi_api()) return false;
+//     if(!init_osi_api()) return false;
 
-    return true;
-}
+//     return true;
+// }
 
 bool init_plugin(void *self) {
 
