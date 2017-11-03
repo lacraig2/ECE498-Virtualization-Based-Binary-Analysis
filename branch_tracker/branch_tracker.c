@@ -42,7 +42,21 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb);
 
 // FILE *fp;
 
+int virt_mem_helper(CPUState *cpu, target_ulong pc, target_ulong addr, bool isRead, void* buf, target_ulong size) {
+    #ifdef TARGET_I386
+    printf("%d %s: %s\n", addr, isRead ? "read":"written", (char*) buf);
+    #endif
+    return 0;
+}
 
+int virt_mem_read(CPUState *cpu, target_ulong pc, target_ulong addr, target_ulong size, void *buf) {
+    return virt_mem_helper(cpu, pc, addr, true, buf, size);
+
+}
+
+int virt_mem_write(CPUState *cpu, target_ulong pc, target_ulong addr, target_ulong size, void *buf) {
+    return virt_mem_helper(cpu, pc, addr,false, buf, size);
+}
 // unsigned char* old_buffer;
 
 int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
@@ -55,33 +69,33 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
     printf("NOT I386");
     #endif
 
-    #ifdef TARGET_I386
+    #ifdef TARGET_I386  
     OsiProc *current = get_current_process(cpu);
     // printf("%s\n",current->name);
-	if (!strcmp("python", current->name)){
+	if (!strcmp("vuln", current->name)){
 		CPUArchState *env = (CPUArchState*)cpu->env_ptr;
 		// int EAX = (int)env->regs[R_EAX];
 		// printf("process: %s EAX: %d\n", current->name,EAX);
-        if (current->pages){
-		    OsiPage *page = current->pages;
-            int addr = page->start;
-            int len = page->len;
-            printf("memaddr: %u len: %u\n", addr, len);
-            if (len > 0){
-                unsigned char *buf = (unsigned char *) malloc(len*sizeof(char));
-                int err = panda_physical_memory_rw(addr, buf, len, 0);
-                if (err==-1){
-                    printf("couldn't read memory.\n");
-                }else{
-                    printf("buff_mem %s\n", buf);
-                }
+      //   if (current->pages){
+		    // OsiPage *page = current->pages;
+      //       int addr = page->start;
+      //       int len = page->len;
+      //       printf("memaddr: %u len: %u\n", addr, len);
+      //       if (len > 0){
+      //           unsigned char *buf = (unsigned char *) malloc(len*sizeof(char));
+      //           int err = panda_physical_memory_rw(addr, buf, len, 0);
+      //           if (err==-1){
+      //               printf("couldn't read memory.\n");
+      //           }else{
+      //               printf("buff_mem %s\n", buf);
+      //           }
 
-            }else{
-                printf("len %u\n",len);
-            }
-        }else{
-            printf("no pages\n");
-        }
+      //       }else{
+      //           printf("len %u\n",len);
+      //       }
+      //   }else{
+      //       printf("no pages\n");
+      //   }
 		// printf("got pages");
 		
 		// int i;
