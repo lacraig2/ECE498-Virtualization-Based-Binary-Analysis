@@ -50,7 +50,7 @@ int virt_mem_w(CPUState *cpu, target_ulong pc, target_ulong addr, target_ulong s
         printf("%s write: %lu, %s\n", current->name, (uint64_t) addr, (char*) buf);
     // }
     }else{
-        printf("kernel %s", (char*) buf);
+        printf("kernel %s\n", (char*) buf);
     }
     #endif
     return 0;
