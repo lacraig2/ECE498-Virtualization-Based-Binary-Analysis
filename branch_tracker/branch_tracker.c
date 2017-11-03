@@ -200,15 +200,9 @@ int vmi_pgd_changed(CPUState *cpu, target_ulong old_pgd, target_ulong new_pgd) {
 bool init_plugin(void *self) {
     // panda_memory_memcb();
     panda_cb pcb;
-#if defined(INVOKE_FREQ_PGD)
-    // relatively short execution
-    pcb.asid_changed = vmi_pgd_changed;
-    panda_register_callback(self, PANDA_CB_ASID_CHANGED, pcb);
-#else
     // expect this to take forever to run
     pcb.before_block_exec = before_block_exec;
     panda_register_callback(self, PANDA_CB_BEFORE_BLOCK_EXEC, pcb);
-#endif
     pcb.virt_mem_before_write = virt_mem_write;
     panda_register_callback(self,PANDA_CB_VIRT_MEM_BEFORE_WRITE,pcb);
     pcb.virt_mem_after_read = virt_mem_read;
@@ -216,6 +210,23 @@ bool init_plugin(void *self) {
 
     if(!init_osi_api()) return false;
 
+    return true;
+}
+
+bool init_plugin(void *self) {
+
+#if defined(TARGET_I386) && !defined(TARGET_X86_64)
+    //panda_arg_list *args = panda_get_args("pri_taint");
+    //PPP_REG_CB("pri", on_before_line_change, on_line_change);
+    //PPP_REG_CB("pri", on_fn_start, on_fn_start);
+    {
+        panda_cb pcb;
+        pcb.virt_mem_before_write = virt_mem_write;
+        panda_register_callback(self,PANDA_CB_VIRT_MEM_BEFORE_WRITE,pcb);
+        pcb.virt_mem_after_read = virt_mem_read;
+        panda_register_callback(self,PANDA_CB_VIRT_MEM_AFTER_READ,pcb);
+    }
+#endif
     return true;
 }
 
