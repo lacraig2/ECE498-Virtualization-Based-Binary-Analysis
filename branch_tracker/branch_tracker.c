@@ -43,7 +43,7 @@ int virt_mem_w(CPUState *cpu, target_ulong pc, target_ulong addr, target_ulong s
 
 int virt_mem_w(CPUState *cpu, target_ulong pc, target_ulong addr, target_ulong size, void *buf){
     #ifdef TARGET_I386
-    if (!panda_in_kernel(cpu)){
+    if (get_current_process(cpu) && !panda_in_kernel(cpu)){
         OsiProc *current = get_current_process(cpu);
     // printf("%s\n",current->name);
     // if (!strcmp("vuln", current->name)){
