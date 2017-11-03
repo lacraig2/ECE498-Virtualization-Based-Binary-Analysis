@@ -36,7 +36,7 @@ PANDAENDCOMMENT */
 bool init_plugin(void *);
 void uninit_plugin(void *);
 
-int vmi_pgd_changed(CPUState *cpu, target_ulong old_pgd, target_ulong new_pgd);
+// int vmi_pgd_changed(CPUState *cpu, target_ulong old_pgd, target_ulong new_pgd);
 int before_block_exec(CPUState *cpu, TranslationBlock *tb);
 int virt_mem_helper(CPUState *cpu, target_ulong pc, target_ulong addr, bool isRead, void* buf, target_ulong size);
 int virt_mem_read(CPUState *cpu, target_ulong pc, target_ulong addr, target_ulong size, void *buf);
@@ -51,11 +51,13 @@ int virt_mem_helper(CPUState *cpu, target_ulong pc, target_ulong addr, bool isRe
 }
 
 int virt_mem_read(CPUState *cpu, target_ulong pc, target_ulong addr, target_ulong size, void *buf) {
+    printf("called\n");
     return virt_mem_helper(cpu, pc, addr, true, buf, size);
 
 }
 
 int virt_mem_write(CPUState *cpu, target_ulong pc, target_ulong addr, target_ulong size, void *buf){
+    printf("called\n");
     return virt_mem_helper(cpu, pc, addr,false, buf, size);
 }
 // unsigned char* old_buffer;
@@ -192,10 +194,10 @@ int before_block_exec(CPUState *cpu, TranslationBlock *tb) {
     return 0;
 }
 
-int vmi_pgd_changed(CPUState *cpu, target_ulong old_pgd, target_ulong new_pgd) {
-    // tb argument is not used by before_block_exec()
-    return before_block_exec(cpu, NULL);
-}
+// int vmi_pgd_changed(CPUState *cpu, target_ulong old_pgd, target_ulong new_pgd) {
+//     // tb argument is not used by before_block_exec()
+//     return before_block_exec(cpu, NULL);
+// }
 
 // bool init_plugin(void *self) {
 //     // panda_memory_memcb();
@@ -214,19 +216,12 @@ int vmi_pgd_changed(CPUState *cpu, target_ulong old_pgd, target_ulong new_pgd) {
 // }
 
 bool init_plugin(void *self) {
-
-#if defined(TARGET_I386) && !defined(TARGET_X86_64)
-    //panda_arg_list *args = panda_get_args("pri_taint");
-    //PPP_REG_CB("pri", on_before_line_change, on_line_change);
-    //PPP_REG_CB("pri", on_fn_start, on_fn_start);
-    {
-        panda_cb pcb;
-        pcb.virt_mem_before_write = virt_mem_write;
-        panda_register_callback(self,PANDA_CB_VIRT_MEM_BEFORE_WRITE,pcb);
-        pcb.virt_mem_after_read = virt_mem_read;
-        panda_register_callback(self,PANDA_CB_VIRT_MEM_AFTER_READ,pcb);
-    }
-#endif
+    panda_cb pcb;
+    printf("init called\n");
+    pcb.virt_mem_before_write = virt_mem_write;
+    panda_register_callback(self,PANDA_CB_VIRT_MEM_BEFORE_WRITE,pcb);
+    pcb.virt_mem_after_read = virt_mem_read;
+    panda_register_callback(self,PANDA_CB_VIRT_MEM_AFTER_READ,pcb);
     return true;
 }
 
