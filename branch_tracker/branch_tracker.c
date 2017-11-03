@@ -45,7 +45,7 @@ int virt_mem_write(CPUState *cpu, target_ulong pc, target_ulong addr, target_ulo
 
 int virt_mem_helper(CPUState *cpu, target_ulong pc, target_ulong addr, bool isRead, void* buf, target_ulong size) {
     #ifdef TARGET_I386
-    printf("%d %s: %s\n", addr, isRead ? "read":"written", (char*) buf);
+    printf("%lu %s: %s\n", (uint_64) addr, isRead ? "read":"written", (char*) buf);
     #endif
     return 0;
 }
