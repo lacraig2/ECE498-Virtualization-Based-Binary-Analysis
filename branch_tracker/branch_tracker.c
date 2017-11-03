@@ -42,7 +42,7 @@ int virt_mem_w(CPUState *cpu, target_ulong pc, target_ulong addr, target_ulong s
 // FILE *fp;
 
 int virt_mem_w(CPUState *cpu, target_ulong pc, target_ulong addr, target_ulong size, void *buf){
-    // #ifdef TARGET_I386
+    #ifdef TARGET_I386
     // if (get_current_process(cpu) != null && !panda_in_kernel(cpu)){
     OsiProc *current = get_current_process(cpu);
     // // printf("%s\n",current->name);
