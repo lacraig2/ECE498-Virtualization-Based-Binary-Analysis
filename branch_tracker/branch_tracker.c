@@ -47,9 +47,9 @@ int virt_mem_w(CPUState *cpu, target_ulong pc, target_ulong addr, target_ulong s
     // OsiProc *current = get_current_process(cpu);
     // // printf("%s\n",current->name);
     // if (!strcmp("vuln", current->name)){
-    if (addr){
-        printf("write: %lu, %s\n", (uint64_t) addr, (char*) buf);
-    }
+    // if (addr){
+    printf("write: %lu, %s\n", (uint64_t) addr, (char*) buf);
+    // }
     // }
     // }else{
         // printf("kernel %s\n", (char*) buf);
