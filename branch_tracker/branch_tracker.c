@@ -49,7 +49,7 @@ int virt_mem_w(CPUState *cpu, target_ulong pc, target_ulong addr, target_ulong s
     // if (!strcmp("vuln", current->name)){
     // if (addr){
     if (addr){
-      printf("write: %lu, %x\n", (uint64_t) addr, (char*) buf);
+      printf("write: %lu, %x\n", (uint64_t) addr, (int*) buf);
     }
     // }
     // }
