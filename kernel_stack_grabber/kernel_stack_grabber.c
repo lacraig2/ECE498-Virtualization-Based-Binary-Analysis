@@ -25,8 +25,12 @@ int before_block_exec(CPUState *env, TranslationBlock *tb);
 
 int before_block_exec(CPUState *env, TranslationBlock *tb) {
 	if (panda_in_kernel(env)){
-		uint64_t cr3 = (uint64_t) panda_current_asid(cpu);
+		uint64_t cr3 = (uint64_t) panda_current_asid(env);
+		uint64_t page_val = cr3 & 1111111111111111111111111111111111111111111111111110000000000000;
 		printf("%"PRIx64"\n",cr3);
+		// offset 1111111111111111111111111111111111111111111111111110000000000000
+
+
 	}
     return 0;
 }
