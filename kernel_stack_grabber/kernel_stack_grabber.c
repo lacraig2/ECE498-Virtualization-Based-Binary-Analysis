@@ -24,14 +24,14 @@ void uninit_plugin(void *);
 int before_block_exec(CPUState *env, TranslationBlock *tb);
 
 int before_block_exec(CPUState *env, TranslationBlock *tb) {
+	#ifdef TARGET_I386
 	if (panda_in_kernel(env)){
 		uint64_t cr3 = (uint64_t) panda_current_asid(env);
-		uint64_t page_val = cr3 & 1111111111111111111111111111111111111111111111111110000000000000;
+		uint64_t page_val = cr3 & 0b1111111111111111111111111111111111111111111111111110000000000000;
 		printf("%"PRIx64"\n",cr3);
 		// offset 1111111111111111111111111111111111111111111111111110000000000000
-
-
 	}
+	#endif
     return 0;
 }
 
