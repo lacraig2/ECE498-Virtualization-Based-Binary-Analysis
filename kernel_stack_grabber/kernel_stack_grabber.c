@@ -26,11 +26,13 @@ int before_block_exec(CPUState *env, TranslationBlock *tb);
 int before_block_exec(CPUState *env, TranslationBlock *tb) {
 	#ifdef TARGET_I386
 	if (panda_in_kernel(env)){
-		uint64_t cr3 = (uint64_t) panda_current_asid(env);
-		uint64_t page_val = cr3 & 0b1111111111111111111111111111111111111111111111111110000000000000;
+		// uint64_t cr3 = (uint64_t) panda_current_asid(env);
 		uint64_t esp = (uint64_t)((CPUArchState*)env->env_ptr)->regs[R_ESP];
 		uint64_t ebp = (uint64_t)((CPUArchState*)env->env_ptr)->regs[R_EBP];
-		printf("%"PRIx64" %"PRIx64" 0x%"PRIx64" 0x%"PRIx64"\n",cr3, page_val,esp,ebp);
+		uint64_t page_val = esp & 0b1111111111111111111111111111111111111111111111111110000000000000;
+		uint64_t page_val2 = ebp &  0b1111111111111111111111111111111111111111111111111110000000000000;
+		printf("page_val %s equal page_val2\n", (page_val==page_val2)? "does": "does not")
+		// printf("0x%"PRIx64" 0x%"PRIx64" 0x%"PRIx64" 0x%"PRIx64"\n",cr3, page_val,esp,ebp);
 		// offset 1111111111111111111111111111111111111111111111111110000000000000
 	}
 	#endif
