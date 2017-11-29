@@ -1,18 +1,12 @@
 /* PANDABEGINCOMMENT
  * 
  * Authors:
- *  Tim Leek               tleek@ll.mit.edu
- *  Ryan Whelan            rwhelan@ll.mit.edu
- *  Joshua Hodosh          josh.hodosh@ll.mit.edu
- *  Michael Zhivich        mzhivich@ll.mit.edu
- *  Brendan Dolan-Gavitt   brendandg@gatech.edu
+ *  Luke Craig 		craigla@rose-hulman.edu
  * 
  * This work is licensed under the terms of the GNU GPL, version 2. 
  * See the COPYING file in the top-level directory. 
  * 
 PANDAENDCOMMENT */
-// This needs to be defined before anything is included in order to get
-// the PRIx64 macro
 #define __STDC_FORMAT_MACROS
 
 #include "panda/plugin.h"
@@ -25,11 +19,12 @@ int before_block_exec(CPUState *env, TranslationBlock *tb);
 
 int before_block_exec(CPUState *env, TranslationBlock *tb) {
 	#ifdef TARGET_I386
+	// make sure process is in kernel
 	if (panda_in_kernel(env)){
 		// uint64_t cr3 = (uint64_t) panda_current_asid(env);
 		uint64_t esp = (uint64_t)((CPUArchState*)env->env_ptr)->regs[R_ESP];
 		uint64_t ebp = (uint64_t)((CPUArchState*)env->env_ptr)->regs[R_EBP];
-		uint64_t page_val = esp & 0b1111111111111111111111111111111111111111111111111100000000000000;
+		uint64_t page_val =  esp &  0b1111111111111111111111111111111111111111111111111100000000000000;
 		uint64_t page_val2 = ebp &  0b1111111111111111111111111111111111111111111111111100000000000000;
 		printf("page_val %s equal page_val2\n", (page_val==page_val2)? "does": "does not");
 		// printf("0x%"PRIx64" 0x%"PRIx64" 0x%"PRIx64" 0x%"PRIx64"\n",cr3, page_val,esp,ebp);
