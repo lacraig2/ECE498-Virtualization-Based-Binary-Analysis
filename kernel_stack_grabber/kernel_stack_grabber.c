@@ -30,7 +30,7 @@ int before_block_exec(CPUState *env, TranslationBlock *tb) {
 		uint64_t page_val = cr3 & 0b1111111111111111111111111111111111111111111111111110000000000000;
 		uint64_t esp = (uint64_t)((CPUArchState*)env->env_ptr)->regs[R_ESP];
 		uint64_t ebp = (uint64_t)((CPUArchState*)env->env_ptr)->regs[R_EBP];
-		printf("%"PRIx64" %"PRIx64" %"PRIx64"%"PRIx64"\n",cr3, page_val,esp,ebp);
+		printf("%"PRIx64" %"PRIx64" 0x%"PRIx64" 0x%"PRIx64"\n",cr3, page_val,esp,ebp);
 		// offset 1111111111111111111111111111111111111111111111111110000000000000
 	}
 	#endif
