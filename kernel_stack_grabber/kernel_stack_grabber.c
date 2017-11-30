@@ -34,14 +34,14 @@ int before_block_exec(CPUState *env, TranslationBlock *tb) {
 		if (page_val==page_val2 && total < 1000){
 			// valid case
 			int size = 8192;
-			unsigned char *buf = (unsigned char *) malloc(size*sizeof(char));
+			char *buf = (unsigned char *) malloc(size*sizeof(char));
 		  	int err = panda_virtual_memory_rw(env, page_val, buf, size, 0);
           	if (err==-1){
             	printf("couldn't read memory.\n");
             	return -1;
           	}
           	uint64_t count = rr_get_guest_instr_count();
-          	unsigned char str[256];
+          	char str[256];
           	strcpy(str, "/home/luke/ece498/files/file_");
           	sprintf(str+29, "%"PRIx64, count);
           	FILE *fp;
