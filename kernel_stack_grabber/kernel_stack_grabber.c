@@ -33,9 +33,7 @@ int before_block_exec(CPUState *env, TranslationBlock *tb) {
 			// valid case
 			int size = 8192;
 			unsigned char *buf = (unsigned char *) malloc(size);
-			printf("prebuf size: %d\n", (int)sizeof(buf));
 		  	int err = panda_virtual_memory_rw(env, page_val, buf, size, 0);
-		  	printf("buf size: %d\n", (int)sizeof(buf));
           	if (err==-1){
             	printf("couldn't read memory.\n");
             	return -1;
@@ -50,7 +48,8 @@ int before_block_exec(CPUState *env, TranslationBlock *tb) {
           	// open file for writing
           	FILE *fp = fopen(str, "w+");
           	
-          	fwrite(buf, 1, sizeof(buf), fp);
+          	//write buffer to file
+          	fwrite(buf, 1, 8192, fp);
           	fclose(fp);
           	free(buf);
           	total +=1;
