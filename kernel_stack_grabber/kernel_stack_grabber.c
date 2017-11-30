@@ -31,22 +31,24 @@ int before_block_exec(CPUState *env, TranslationBlock *tb) {
 		uint64_t page_val =  esp &  0b1111111111111111111111111111111111111111111111111110000000000000;
 		if (total < 1000){
 			// valid case
-			int size = 8192*sizeof(char);
+			int size = 8192;
 			unsigned char *buf = (unsigned char *) malloc(size);
 		  	int err = panda_virtual_memory_rw(env, page_val, buf, size, 0);
+		  	printf("buf size: %d\n", (int)sizeof(buf));
           	if (err==-1){
             	printf("couldn't read memory.\n");
             	return -1;
           	}
           	uint64_t count = rr_get_guest_instr_count();
+          	
+          	// write path for file
           	char str[256];
           	strcpy(str, "/home/luke/ece498/files/file_");
           	sprintf(str+29, "%"PRIx64, count);
-          	FILE *fp;
-          	fp = fopen(str, "w+");
-          	// char buf_str[10000];
-          	// strcpy(buf_str, buf);
-          	printf("buf size: %d\n", (int)sizeof(buf));
+
+          	// open file for writing
+          	FILE *fp = fopen(str, "w+");
+          	
           	fwrite(buf, 1, sizeof(buf), fp);
           	fclose(fp);
           	free(buf);
