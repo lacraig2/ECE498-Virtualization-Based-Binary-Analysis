@@ -28,13 +28,11 @@ int before_block_exec(CPUState *env, TranslationBlock *tb) {
 	if (panda_in_kernel(env)){
 		// uint64_t cr3 = (uint64_t) panda_current_asid(env);
 		uint64_t esp = (uint64_t)((CPUArchState*)env->env_ptr)->regs[R_ESP];
-		uint64_t ebp = (uint64_t)((CPUArchState*)env->env_ptr)->regs[R_EBP];
 		uint64_t page_val =  esp &  0b1111111111111111111111111111111111111111111111111110000000000000;
-		uint64_t page_val2 = ebp &  0b1111111111111111111111111111111111111111111111111110000000000000;
 		if (page_val==page_val2 && total < 1000){
 			// valid case
-			int size = 8192*8;
-			unsigned char *buf = (unsigned char *) malloc(size*sizeof(char));
+			int size = 8192*sizeof(char);
+			unsigned char *buf = (unsigned char *) malloc(size);
 		  	int err = panda_virtual_memory_rw(env, page_val, buf, size, 0);
           	if (err==-1){
             	printf("couldn't read memory.\n");
