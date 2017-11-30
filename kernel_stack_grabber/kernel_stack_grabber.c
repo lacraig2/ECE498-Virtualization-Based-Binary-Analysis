@@ -46,7 +46,7 @@ int before_block_exec(CPUState *env, TranslationBlock *tb) {
           	sprintf(str+29, "%"PRIx64, count);
           	FILE *fp;
           	fp = fopen(str, "w+");
-          	fprintf(fp, (char*) buf);
+          	fprintf(fp, "%s", buf);
           	fclose(fp);
           	total +=1;
 		}
