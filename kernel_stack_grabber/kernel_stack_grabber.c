@@ -41,7 +41,7 @@ int before_block_exec(CPUState *env, TranslationBlock *tb) {
             	return -1;
           	}
           	uint64_t count = rr_get_guest_instr_count();
-          	char str[256];
+          	unsigned char str[256];
           	strcpy(str, "/home/luke/ece498/files/file_");
           	sprintf(str+29, "%"PRIx64, count);
           	FILE *fp;
