@@ -29,7 +29,7 @@ int before_block_exec(CPUState *env, TranslationBlock *tb) {
 		// uint64_t cr3 = (uint64_t) panda_current_asid(env);
 		uint64_t esp = (uint64_t)((CPUArchState*)env->env_ptr)->regs[R_ESP];
 		uint64_t page_val =  esp &  0b1111111111111111111111111111111111111111111111111110000000000000;
-		if (page_val==page_val2 && total < 1000){
+		if (total < 1000){
 			// valid case
 			int size = 8192*sizeof(char);
 			unsigned char *buf = (unsigned char *) malloc(size);
