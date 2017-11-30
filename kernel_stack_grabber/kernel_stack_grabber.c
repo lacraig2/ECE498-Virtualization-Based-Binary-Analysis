@@ -24,8 +24,8 @@ int before_block_exec(CPUState *env, TranslationBlock *tb) {
 		// uint64_t cr3 = (uint64_t) panda_current_asid(env);
 		uint64_t esp = (uint64_t)((CPUArchState*)env->env_ptr)->regs[R_ESP];
 		uint64_t ebp = (uint64_t)((CPUArchState*)env->env_ptr)->regs[R_EBP];
-		uint64_t page_val =  esp &  0b1111111111111111111111111111111111111111111111111100000000000000;
-		uint64_t page_val2 = ebp &  0b1111111111111111111111111111111111111111111111111100000000000000;
+		uint64_t page_val =  esp &  0b1111111111111111111111111111111111111111111111111110000000000000;
+		uint64_t page_val2 = ebp &  0b1111111111111111111111111111111111111111111111111110000000000000;
 		printf("page_val %s equal page_val2\n", (page_val==page_val2)? "does": "does not");
 		// printf("0x%"PRIx64" 0x%"PRIx64" 0x%"PRIx64" 0x%"PRIx64"\n",cr3, page_val,esp,ebp);
 		// offset 1111111111111111111111111111111111111111111111111110000000000000
