@@ -45,6 +45,7 @@ int before_block_exec(CPUState *env, TranslationBlock *tb) {
           	strcpy(str, "/home/luke/ece498/files/file_");
           	sprintf(str+29, "%"PRIx64, count);
           	printf("%s",str);
+          	total +=1;
 		}
 		// printf("0x%"PRIx64" 0x%"PRIx64" 0x%"PRIx64" 0x%"PRIx64"\n",cr3, page_val,esp,ebp);
 		// offset 1111111111111111111111111111111111111111111111111110000000000000
