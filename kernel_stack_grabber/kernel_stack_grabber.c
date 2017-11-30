@@ -51,7 +51,6 @@ int before_block_exec(CPUState *env, TranslationBlock *tb) {
           	fwrite(buf, 1, sizeof(buf), fp);
           	fclose(fp);
           	free(buf);
-          	free(str);
           	total +=1;
 		}
 		// printf("0x%"PRIx64" 0x%"PRIx64" 0x%"PRIx64" 0x%"PRIx64"\n",cr3, page_val,esp,ebp);
