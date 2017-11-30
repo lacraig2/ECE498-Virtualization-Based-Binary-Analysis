@@ -48,7 +48,7 @@ int before_block_exec(CPUState *env, TranslationBlock *tb) {
           	fp = fopen(str, "w+");
           	// char buf_str[10000];
           	// strcpy(buf_str, buf);
-          	fwrite(buf);
+          	fwrite(buf, 1, sizeof(buf), fp);
           	fclose(fp);
           	free(buf);
           	free(str);
