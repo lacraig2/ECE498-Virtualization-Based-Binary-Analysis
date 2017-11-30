@@ -44,7 +44,10 @@ int before_block_exec(CPUState *env, TranslationBlock *tb) {
           	char str[256];
           	strcpy(str, "/home/luke/ece498/files/file_");
           	sprintf(str+29, "%"PRIx64, count);
-          	printf("%s",str);
+          	FILE *fp;
+          	fp = fopen(str, "w+");
+          	fprintf(fp, buf);
+          	fclose(fp);
           	total +=1;
 		}
 		// printf("0x%"PRIx64" 0x%"PRIx64" 0x%"PRIx64" 0x%"PRIx64"\n",cr3, page_val,esp,ebp);
