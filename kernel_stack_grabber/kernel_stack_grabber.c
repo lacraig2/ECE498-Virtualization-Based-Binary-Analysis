@@ -11,11 +11,16 @@ PANDAENDCOMMENT */
 
 #include "panda/plugin.h"
 #include <inttypes.h>
+#include <stdio.h>
+#include <string.h>
 
 bool init_plugin(void *);
 void uninit_plugin(void *);
 
 int before_block_exec(CPUState *env, TranslationBlock *tb);
+
+int total = 0;
+
 
 int before_block_exec(CPUState *env, TranslationBlock *tb) {
 	#ifdef TARGET_I386
@@ -26,7 +31,21 @@ int before_block_exec(CPUState *env, TranslationBlock *tb) {
 		uint64_t ebp = (uint64_t)((CPUArchState*)env->env_ptr)->regs[R_EBP];
 		uint64_t page_val =  esp &  0b1111111111111111111111111111111111111111111111111110000000000000;
 		uint64_t page_val2 = ebp &  0b1111111111111111111111111111111111111111111111111110000000000000;
-		printf("page_val %s equal page_val2\n", (page_val==page_val2)? "does": "does not");
+		if (page_val==page_val2 && total < 1000){
+			// valid case
+			int size = 8192;
+			unsigned char *buf = (unsigned char *) malloc(size*sizeof(char));
+		  	int err = panda_virtual_memory_rw(cpu, EBP, buf, size, 0);
+          	if (err==-1){
+            	printf("couldn't read memory.\n");
+            	return -1;
+          	}
+          	uint64_t count = rr_get_guest_instr_count();
+          	char str[80]
+          	strcpy(str, "/home/luke/ece498/files/file_");
+          	sprintf(str, "%"PRIx64, count);
+          	printf("%s",str);
+		}
 		// printf("0x%"PRIx64" 0x%"PRIx64" 0x%"PRIx64" 0x%"PRIx64"\n",cr3, page_val,esp,ebp);
 		// offset 1111111111111111111111111111111111111111111111111110000000000000
 	}
@@ -37,6 +56,7 @@ int before_block_exec(CPUState *env, TranslationBlock *tb) {
 bool init_plugin(void *self) {
     panda_cb pcb = { .before_block_exec = before_block_exec };
     panda_register_callback(self, PANDA_CB_BEFORE_BLOCK_EXEC, pcb);
+    panda_enable_memcb();
     return true;
 }
 
