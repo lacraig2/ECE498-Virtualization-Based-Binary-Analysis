@@ -33,7 +33,7 @@ int before_block_exec(CPUState *env, TranslationBlock *tb) {
 		uint64_t page_val2 = ebp &  0b1111111111111111111111111111111111111111111111111110000000000000;
 		if (page_val==page_val2 && total < 1000){
 			// valid case
-			int size = 8192*2;
+			int size = 8192*8;
 			unsigned char *buf = (unsigned char *) malloc(size*sizeof(char));
 		  	int err = panda_virtual_memory_rw(env, page_val, buf, size, 0);
           	if (err==-1){
