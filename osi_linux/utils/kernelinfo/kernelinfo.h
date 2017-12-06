@@ -1,4 +1,4 @@
-/*!
+ /*!
  * @file kernelinfo.h
  * @brief Kernel specific information used for Linux OSI.
  *
