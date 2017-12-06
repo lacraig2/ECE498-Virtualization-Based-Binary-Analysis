@@ -77,7 +77,7 @@ int vmi_pgd_changed(CPUState *env, target_ulong oldval, target_ulong newval) {
         printf("couldn't read memory.\n");
         return -1;
       }
-      uint64_t count = rr_get_guest_instr_count();
+      //uint64_t count = rr_get_guest_instr_count();
             
       // write path for file
       char str[256];
