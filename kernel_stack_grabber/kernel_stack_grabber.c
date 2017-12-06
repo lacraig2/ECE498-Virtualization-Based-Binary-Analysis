@@ -61,7 +61,7 @@ int total = 0;
 //   return 0;
 // }
 
-int vmi_pgd_changed(CPUState *cpu, target_ulong oldval, target_ulong newval) {
+int vmi_pgd_changed(CPUState *env, target_ulong oldval, target_ulong newval) {
   #ifdef TARGET_I386
   // make sure process is in kernel
   if (panda_in_kernel(env)){
