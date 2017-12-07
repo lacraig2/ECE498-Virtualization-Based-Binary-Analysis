@@ -106,6 +106,7 @@ bool init_plugin(void *self) {
   // panda_cb pcb = { .before_block_exec = before_block_exec };
   // panda_register_callback(self, PANDA_CB_BEFORE_BLOCK_EXEC, pcb);
   #if defined(TARGET_I386) || defined(TARGET_ARM)
+  #if (defined OSI_LINUX_TEST)
   panda_cb pcb = { .after_PGD_write = vmi_pgd_changed };
   panda_register_callback(self, PANDA_CB_VMI_PGD_CHANGED, pcb);
   panda_enable_memcb();
