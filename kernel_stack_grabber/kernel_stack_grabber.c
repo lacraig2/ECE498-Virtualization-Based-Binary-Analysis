@@ -56,6 +56,7 @@ int before_block_exec(CPUState *env, TranslationBlock *tb) {
         free(buf);
         total +=1;
   		}
+      old_cr3 = cr3;
     }
   }
 		// printf("0x%"PRIx64" 0x%"PRIx64" 0x%"PRIx64" 0x%"PRIx64"\n",cr3, page_val,esp,ebp);
