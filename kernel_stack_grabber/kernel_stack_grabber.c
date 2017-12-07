@@ -111,6 +111,7 @@ bool init_plugin(void *self) {
   panda_register_callback(self, PANDA_CB_VMI_PGD_CHANGED, pcb);
   panda_enable_memcb();
   #endif
+  #endif
   return true;
 }
 
