@@ -40,7 +40,7 @@ int before_block_exec(CPUState *env, TranslationBlock *tb) {
          	printf("couldn't read memory.\n");
          	return -1;
         }
-        uint64_t count = rr_get_guest_instr_count();
+        // uint64_t count = rr_get_guest_instr_count();
             	
         // write path for file
         char str[256];
@@ -60,9 +60,8 @@ int before_block_exec(CPUState *env, TranslationBlock *tb) {
   }
 		// printf("0x%"PRIx64" 0x%"PRIx64" 0x%"PRIx64" 0x%"PRIx64"\n",cr3, page_val,esp,ebp);
 		// offset 1111111111111111111111111111111111111111111111111110000000000000
-	}
 	#endif
-    return 0;
+  return 0;
 }
 
 bool init_plugin(void *self) {
