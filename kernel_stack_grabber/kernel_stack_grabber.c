@@ -2,10 +2,10 @@
  * libgen.h
  * Authors:
  *  Luke Craig 		craigla@rose-hulman.edu
- * 
- * This work is licensed under the terms of the GNU GPL, version 2. 
- * See the COPYING file in the top-level directory. 
- * 
+ *
+ * This work is licensed under the terms of the GNU GPL, version 2.
+ * See the COPYING file in the top-level directory.
+ *
 PANDAENDCOMMENT */
 #define __STDC_FORMAT_MACROS
 
@@ -33,7 +33,7 @@ int before_block_exec(CPUState *env, TranslationBlock *tb) {
   		uint64_t page_val =  esp &  0b1111111111111111111111111111111111111111111111111110000000000000;
   		if (total < 1000){
   			// valid case
-  			int size = 8192;
+  			int size = 8192*2;
   			unsigned char *buf = (unsigned char *) malloc(size);
   		  int err = panda_virtual_memory_rw(env, page_val, buf, size, 0);
         if (err==-1){
@@ -41,7 +41,7 @@ int before_block_exec(CPUState *env, TranslationBlock *tb) {
          	return -1;
         }
         // uint64_t count = rr_get_guest_instr_count();
-            	
+
         // write path for file
         char str[256];
         strcpy(str, "/home/luke/ece498/files/file");
@@ -49,7 +49,7 @@ int before_block_exec(CPUState *env, TranslationBlock *tb) {
 
         // open file for writing
         FILE *fp = fopen(str, "w+");
-            	
+
         //write buffer to file
         fwrite(buf, 1, size, fp);
         fclose(fp);
