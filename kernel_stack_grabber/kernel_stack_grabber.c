@@ -43,7 +43,7 @@ int before_block_exec(CPUState *env, TranslationBlock *tb) {
          	return -1;
         }
 				unsigned int *int_buf = (unsigned int *) buf;
-				printf("0x%"PRIx64"\n", int_buf[0]);
+				printf("0x%x\n", int_buf[0]);
         // uint64_t count = rr_get_guest_instr_count();
 
         // write path for file
