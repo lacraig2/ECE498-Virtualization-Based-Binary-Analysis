@@ -31,9 +31,10 @@ int before_block_exec(CPUState *env, TranslationBlock *tb) {
     if (cr3!=old_cr3){
   		uint64_t esp = (uint64_t)((CPUArchState*)env->env_ptr)->regs[R_ESP];
   		uint64_t page_val =  esp &  0b1111111111111111111111111111111111111111111111111110000000000000;
+			printf("CR3: %"PRIx64" PAGE_VAL: %"PRIx64" ESP: %"PRIx64"\n", CR3,page_val,esp);
   		if (total < 1000){
   			// valid case
-  			int size = 8192*2;
+  			int size = 8192;
   			unsigned char *buf = (unsigned char *) malloc(size);
   		  int err = panda_virtual_memory_rw(env, page_val, buf, size, 0);
         if (err==-1){
