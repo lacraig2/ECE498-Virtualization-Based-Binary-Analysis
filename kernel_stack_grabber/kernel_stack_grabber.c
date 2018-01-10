@@ -43,7 +43,7 @@ int before_block_exec(CPUState *env, TranslationBlock *tb) {
          	return -1;
         }
 				unsigned int *int_buf = (unsigned int *) buf;
-				unsigned int address = int_but[0];
+				unsigned int address = int_buf[0];
 				struct task_info* task = (struct task_info*) address;
 				printf("0x%x\n", int_buf[0]);
 				printf("%d", task->size);
