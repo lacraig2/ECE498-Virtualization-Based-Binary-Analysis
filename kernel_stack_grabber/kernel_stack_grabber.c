@@ -42,7 +42,7 @@ int before_block_exec(CPUState *env, TranslationBlock *tb) {
          	printf("couldn't read memory.\n");
          	return -1;
         }
-				unsigned int *int_buf = (uintptr_t) buf;
+				unsigned int *int_buf = (uintptr_t*) buf;
 				struct task_info* task = (struct task_info*) int_buf[0];
 				printf("0x%x\n", int_buf[0]);
 				printf("%d", task->size);
