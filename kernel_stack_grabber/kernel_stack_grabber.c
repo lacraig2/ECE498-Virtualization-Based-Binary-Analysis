@@ -14,7 +14,7 @@ PANDAENDCOMMENT */
 #include <stdio.h>
 #include <string.h>
 #include "kernelinfo.h"
-
+ q
 bool init_plugin(void *);
 void uninit_plugin(void *);
 
@@ -52,7 +52,7 @@ int before_block_exec(CPUState *env, TranslationBlock *tb) {
         char str[256];
         strcpy(str, "/home/luke/ece498/files/file");
         sprintf(str+28, "%"PRIx64, cr3);
-
+				//asdf
         // open file for writing
         FILE *fp = fopen(str, "w+");
 
