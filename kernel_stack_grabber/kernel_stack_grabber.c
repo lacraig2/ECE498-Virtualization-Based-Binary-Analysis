@@ -56,9 +56,9 @@ int before_block_exec(CPUState *env, TranslationBlock *tb) {
 
 				printf("buf0 addr: %lx\n", (long unsigned int)buf0);
 				// printf("%p\n", (void*)task);
-				printf("state: %lx\n", task->state);
+				printf("state: %lx\n", (long unsigned int)task->state);
 				printf("stack pointer: %p\n", task->stack);
-				printf("flags: %lx\n", task->flags);
+				printf("flags: %lx\n", (long unsigned int)task->flags);
         // uint64_t count = rr_get_guest_instr_count();
 
         // write path for file
