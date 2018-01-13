@@ -14,7 +14,6 @@ PANDAENDCOMMENT */
 #include <stdio.h>
 #include <string.h>
 #include "kernelinfo.h"
- q
 bool init_plugin(void *);
 void uninit_plugin(void *);
 
