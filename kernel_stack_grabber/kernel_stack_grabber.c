@@ -47,8 +47,11 @@ int before_block_exec(CPUState *env, TranslationBlock *tb) {
 
 				int task_struct_size = 8192;
   			unsigned char *t_struct_buf = (unsigned char *) malloc(size);
-  		  int err = panda_virtual_memory_rw(env, int_buf[0], buf, size, 0);
-
+  		  int err_t_struct = panda_virtual_memory_rw(env, int_buf[0], buf, size, 0);
+				if (err_t_struct==-1){
+         	printf("couldn't read memory.\n");
+         	return -1;
+        }
 				struct task_info* task = (struct task_info*) (void*) t_struct_buf;
 
 				printf("%lx\n", (long unsigned int)int_buf[0]);
