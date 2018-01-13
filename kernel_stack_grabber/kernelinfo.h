@@ -9,6 +9,9 @@
 #ifndef KERNELINFO_H
 #define KERNELINFO_H
 
+typedef struct {
+	int counter;
+} atomic_t;
 
 struct task_struct {
 	volatile long state;	/* -1 unrunnable, 0 runnable, >0 stopped */
@@ -16,7 +19,7 @@ struct task_struct {
 	atomic_t usage;
 	unsigned int flags;	/* per process flags, defined below */
 	unsigned int ptrace;
-}
+};
 
 
 /*!
