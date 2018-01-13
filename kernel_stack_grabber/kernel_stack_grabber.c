@@ -42,8 +42,8 @@ int before_block_exec(CPUState *env, TranslationBlock *tb) {
          	printf("couldn't read memory.\n");
          	return -1;
         }
-				unsigned int *int_buf = (uintptr_t*) buf;
-				struct task_info task = (struct task_info) &(int_buf[0]);
+				unsigned int *int_buf = (unsigned int*) buf;
+				struct task_info task = (struct task_info) *(int_buf[0]);
 				printf("0x%x\n", int_buf[0]);
 				printf("%d", task->size);
         // uint64_t count = rr_get_guest_instr_count();
