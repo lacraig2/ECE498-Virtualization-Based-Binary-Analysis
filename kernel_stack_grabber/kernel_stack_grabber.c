@@ -46,7 +46,7 @@ int before_block_exec(CPUState *env, TranslationBlock *tb) {
 				struct task_info* task = (struct task_info*) (intptr_t)int_buf[0];
 				printf("%lx\n", (long unsigned int)int_buf[0]);
 				printf("%p\n", (void*)task);
-				// printf("%lu\n", task->size);
+				printf("%lu\n", task->size);
         // uint64_t count = rr_get_guest_instr_count();
 
         // write path for file
