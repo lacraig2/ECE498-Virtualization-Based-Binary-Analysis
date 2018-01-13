@@ -42,8 +42,15 @@ int before_block_exec(CPUState *env, TranslationBlock *tb) {
          	printf("couldn't read memory.\n");
          	return -1;
         }
+
 				uint32_t *int_buf = (uint32_t*) buf;
-				struct task_info* task = (struct task_info*) (intptr_t)int_buf[0];
+
+				int task_struct_size = 8192;
+  			unsigned char *t_struct_buf = (unsigned char *) malloc(size);
+  		  int err = panda_virtual_memory_rw(env, int_buf[0], buf, size, 0);
+
+				struct task_info* task = (struct task_info*) (void*) t_struct_buf;
+
 				printf("%lx\n", (long unsigned int)int_buf[0]);
 				printf("%p\n", (void*)task);
 				printf("%lu\n", task->size);
