@@ -44,7 +44,7 @@ int before_block_exec(CPUState *env, TranslationBlock *tb) {
         }
 				uint32_t *int_buf = (uint32_t*) buf;
 				struct task_info* task = (struct task_info*) (intptr_t)int_buf[0];
-				printf("%lx\n", int_buf[0]);
+				printf("%lx\n", (long unsigned int)int_buf[0]);
 				printf("%p\n", (void*)task);
 				// printf("%lu\n", task->size);
         // uint64_t count = rr_get_guest_instr_count();
