@@ -14,6 +14,7 @@ PANDAENDCOMMENT */
 #include <stdio.h>
 #include <string.h>
 #include "kernelinfo.h"
+
 bool init_plugin(void *);
 void uninit_plugin(void *);
 
@@ -42,7 +43,7 @@ int before_block_exec(CPUState *env, TranslationBlock *tb) {
          	return -1;
         }
 				unsigned int *int_buf = (unsigned int*) buf;
-				struct task_info task = (struct task_info) *(int_buf[0]);
+				struct task_info* task = (struct task_info*) int_buf[0];
 				printf("0x%x\n", int_buf[0]);
 				printf("%d", task->size);
         // uint64_t count = rr_get_guest_instr_count();
