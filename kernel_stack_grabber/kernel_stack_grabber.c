@@ -45,18 +45,20 @@ int before_block_exec(CPUState *env, TranslationBlock *tb) {
 
 				uint32_t *int_buf = (uint32_t*) buf;
 				uint32_t buf0 = int_buf[0];
-				int task_struct_size = 8192;
+				int task_struct_size = 8192; //it's less than this.
   			unsigned char *t_struct_buf = (unsigned char *) malloc(size);
   		  int err_t_struct = panda_virtual_memory_rw(env, buf0, buf, task_struct_size, 0);
 				if (err_t_struct==-1){
          	printf("couldn't read memory.\n");
          	return -1;
         }
-				struct task_info* task = (struct task_info*) (void*) t_struct_buf;
+				struct task_struct* task = (struct task_struct*) (void*) t_struct_buf;
 
-				printf("%lx\n", (long unsigned int)buf0);
-				printf("%p\n", (void*)task);
-				printf("%lu\n", task->size);
+				printf("buf0 addr: %lx\n", (long unsigned int)buf0);
+				// printf("%p\n", (void*)task);
+				printf("state: %lx\n", task->state);
+				printf("stack pointer: %p\n", task->stack);
+				printf("flags: %lx\n", task->flags);
         // uint64_t count = rr_get_guest_instr_count();
 
         // write path for file

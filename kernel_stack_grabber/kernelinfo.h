@@ -9,8 +9,18 @@
 #ifndef KERNELINFO_H
 #define KERNELINFO_H
 
+
+struct task_struct {
+	volatile long state;	/* -1 unrunnable, 0 runnable, >0 stopped */
+	void *stack;
+	atomic_t usage;
+	unsigned int flags;	/* per process flags, defined below */
+	unsigned int ptrace;
+}
+
+
 /*!
- * @brief Information and offsets related to `struct task_struct`. 
+ * @brief Information and offsets related to `struct task_struct`.
  */
 struct task_info {
 	int task_offset;			/**< Offset of task_struct in the thread_info struct. */
