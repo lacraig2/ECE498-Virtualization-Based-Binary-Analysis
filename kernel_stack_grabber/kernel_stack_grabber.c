@@ -44,8 +44,8 @@ int before_block_exec(CPUState *env, TranslationBlock *tb) {
         }
 				intptr_t *int_buf = (intptr_t*) buf;
 				struct task_info* task = (struct task_info*) (intptr_t)int_buf[0];
-				printf("0x%x\n", (uint32_t)int_buf[0]);
-				printf("%d\n", (uint32_t)task->size);
+				printf("0x%x\n", (uint64_t) &task);
+				printf("%d\n", (uint64_t)task->size);
         // uint64_t count = rr_get_guest_instr_count();
 
         // write path for file
