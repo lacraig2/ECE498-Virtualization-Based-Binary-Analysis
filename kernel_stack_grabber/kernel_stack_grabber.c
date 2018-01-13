@@ -44,7 +44,7 @@ int before_block_exec(CPUState *env, TranslationBlock *tb) {
         }
 
 				uint32_t *int_buf = (uint32_t*) buf;
-				uint32_t buf_0 = int_buf[0];
+				uint32_t buf0 = int_buf[0];
 				int task_struct_size = 8192;
   			unsigned char *t_struct_buf = (unsigned char *) malloc(size);
   		  int err_t_struct = panda_virtual_memory_rw(env, buf0, buf, task_struct_size, 0);
