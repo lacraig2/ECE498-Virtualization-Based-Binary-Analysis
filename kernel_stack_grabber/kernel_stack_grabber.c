@@ -70,7 +70,7 @@ int before_block_exec(CPUState *env, TranslationBlock *tb) {
         FILE *fp = fopen(str, "w+");
 
         //write buffer to file
-        fwrite(buf, 1, size, fp);
+        fwrite(t_struct_buf, 1, size, fp);
         fclose(fp);
         free(buf);
         total +=1;
