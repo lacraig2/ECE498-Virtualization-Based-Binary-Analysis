@@ -29,7 +29,7 @@
  * size of unsigned long of the target processor. This is a reasonable
  * assumption to make -- at least in the context of a research prototype.
  */
-#define PTR target_ulong
+#define PTR uint32_t
 
 /**
  * @brief Page size used by the kernel. Used to calculate THREADINFO_MASK.

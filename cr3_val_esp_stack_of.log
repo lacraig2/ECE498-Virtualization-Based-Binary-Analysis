@@ -1,0 +1,209 @@
+loading snapshot
+... done.
+opening nondet log for read :	./stack_overflow-rr-nondet.log
+CR3: 375c8000 PAGE_VAL: c1928000 ESP: c1929f74
+CR3: 37716000 PAGE_VAL: f596c000 ESP: f596de88
+CR3: 376c2000 PAGE_VAL: f7568000 ESP: f7569e9c
+CR3: 37716000 PAGE_VAL: f7538000 ESP: f7539f2c
+CR3: 376c2000 PAGE_VAL: f7568000 ESP: f7569f2c
+CR3: 37716000 PAGE_VAL: f7538000 ESP: f7539f2c
+CR3: 376c2000 PAGE_VAL: f7568000 ESP: f7569f2c
+CR3: 37716000 PAGE_VAL: f7538000 ESP: f7539e10
+CR3: 3772f000 PAGE_VAL: f7568000 ESP: f7569f2c
+CR3: 376c2000 PAGE_VAL: f58a2000 ESP: f58a3e44
+CR3: 37716000 PAGE_VAL: f58a2000 ESP: f58a3e44
+CR3: 3772f000 PAGE_VAL: f5896000 ESP: f5897ec8
+CR3: 376c2000 PAGE_VAL: f77d2000 ESP: f77d3f2c
+CR3: 3772f000 PAGE_VAL: f7538000 ESP: f7539f2c
+CR3: 376c2000 PAGE_VAL: f77d2000 ESP: f77d3f2c
+CR3: 3772f000 PAGE_VAL: f7538000 ESP: f7539f2c
+CR3: 376c2000 PAGE_VAL: f77d2000 ESP: f77d3f2c
+CR3: 3772f000 PAGE_VAL: f7538000 ESP: f7539f2c
+CR3: 376c2000 PAGE_VAL: f77d2000 ESP: f77d3ea8
+CR3: 3772f000 PAGE_VAL: f7538000 ESP: f7539f2c
+CR3: 376c2000 PAGE_VAL: f77d2000 ESP: f77d3d28
+CR3: 3772f000 PAGE_VAL: f58a2000 ESP: f58a3e44
+CR3: 376c2000 PAGE_VAL: f77d2000 ESP: f77d3d4c
+CR3: 3772f000 PAGE_VAL: f7538000 ESP: f7539de0
+CR3: 3752d000 PAGE_VAL: f77d2000 ESP: f77d3eac
+CR3: 376c2000 PAGE_VAL: f77d2000 ESP: f77d3cfc
+CR3: 3752d000 PAGE_VAL: f7538000 ESP: f7539d28
+CR3: 376c2000 PAGE_VAL: f77d2000 ESP: f77d3da8
+CR3: 3752d000 PAGE_VAL: f7538000 ESP: f7539e6c
+CR3: 376c2000 PAGE_VAL: f77d2000 ESP: f77d3d74
+CR3: 3752d000 PAGE_VAL: f7538000 ESP: f7539e14
+CR3: 376c2000 PAGE_VAL: f77d2000 ESP: f77d3d38
+CR3: 375af000 PAGE_VAL: f7538000 ESP: f7539eac
+CR3: 3752d000 PAGE_VAL: f7538000 ESP: f7539e18
+CR3: 375af000 PAGE_VAL: f77d2000 ESP: f77d3ddc
+CR3: 3752d000 PAGE_VAL: f7538000 ESP: f7539cfc
+CR3: 375af000 PAGE_VAL: f77d2000 ESP: f77d3f2c
+CR3: 3752d000 PAGE_VAL: f7538000 ESP: f7539ca0
+CR3: 375af000 PAGE_VAL: f77d2000 ESP: f77d3f2c
+CR3: 3752d000 PAGE_VAL: f7538000 ESP: f7539f2c
+CR3: 375af000 PAGE_VAL: f77d2000 ESP: f77d3f2c
+CR3: 3752d000 PAGE_VAL: f7538000 ESP: f7539f2c
+CR3: 375af000 PAGE_VAL: f58a2000 ESP: f58a3e44
+CR3: 3752d000 PAGE_VAL: f58a2000 ESP: f58a3e44
+CR3: 375af000 PAGE_VAL: f58a2000 ESP: f58a3e44
+CR3: 3752d000 PAGE_VAL: f58a2000 ESP: f58a3e44
+CR3: 375af000 PAGE_VAL: f58a2000 ESP: f58a3e44
+CR3: 3752d000 PAGE_VAL: f58a2000 ESP: f58a3e44
+CR3: 375af000 PAGE_VAL: f58a2000 ESP: f58a3ea4
+CR3: 3752d000 PAGE_VAL: f58a2000 ESP: f58a3e44
+CR3: 375af000 PAGE_VAL: f58a2000 ESP: f58a3ea4
+CR3: 3752d000 PAGE_VAL: f58a2000 ESP: f58a3e44
+CR3: 375af000 PAGE_VAL: f58a2000 ESP: f58a3ea4
+CR3: 3752d000 PAGE_VAL: f58a2000 ESP: f58a3e44
+CR3: 375af000 PAGE_VAL: f58a2000 ESP: f58a3ea4
+CR3: 3752d000 PAGE_VAL: f7538000 ESP: f7539f2c
+CR3: 375af000 PAGE_VAL: f77d2000 ESP: f77d3f08
+CR3: 3752d000 PAGE_VAL: f58a2000 ESP: f58a3e44
+CR3: 375af000 PAGE_VAL: f58a2000 ESP: f58a3ea4
+CR3: 3752d000 PAGE_VAL: f7538000 ESP: f7539e54
+CR3: 375af000 PAGE_VAL: f596c000 ESP: f596dec0
+CR3: 3752d000 PAGE_VAL: f58a2000 ESP: f58a3e44
+CR3: 375af000 PAGE_VAL: f58a2000 ESP: f58a3ea4
+CR3: 3752d000 PAGE_VAL: f7538000 ESP: f7539f2c
+CR3: 375af000 PAGE_VAL: f77d2000 ESP: f77d3e10
+./stack_overflow-rr-nondet.log:   395555612 instrs total.
+stack_overflow:     3955561 (  1.00%) instrs.    2.31 sec.  0.59 GB ram.
+stack_overflow:     7911113 (  2.00%) instrs.    2.69 sec.  0.59 GB ram.
+stack_overflow:    11866674 (  3.00%) instrs.    3.03 sec.  0.60 GB ram.
+stack_overflow:    15822225 (  4.00%) instrs.    3.32 sec.  0.60 GB ram.
+stack_overflow:    19777781 (  5.00%) instrs.    3.63 sec.  0.60 GB ram.
+stack_overflow:    23733339 (  6.00%) instrs.    3.95 sec.  0.60 GB ram.
+stack_overflow:    27688895 (  7.00%) instrs.    4.23 sec.  0.60 GB ram.
+CR3: 3752d000 PAGE_VAL: f7538000 ESP: f7539f2c
+CR3: 375af000 PAGE_VAL: f77d2000 ESP: f77d3f2c
+CR3: 3752d000 PAGE_VAL: f7538000 ESP: f7539f2c
+CR3: 375af000 PAGE_VAL: f77d2000 ESP: f77d3e50
+CR3: 3752d000 PAGE_VAL: f7538000 ESP: f7539f2c
+CR3: 375af000 PAGE_VAL: f77d2000 ESP: f77d3d1c
+CR3: 3752d000 PAGE_VAL: f7538000 ESP: f7539d94
+CR3: 375af000 PAGE_VAL: f3832000 ESP: f3833ddc
+CR3: 3752d000 PAGE_VAL: f76f6000 ESP: f76f7ec0
+CR3: 375af000 PAGE_VAL: f58a2000 ESP: f58a3e44
+CR3: 37716000 PAGE_VAL: f7538000 ESP: f7539ebc
+CR3: 375af000 PAGE_VAL: f58a2000 ESP: f58a3e44
+CR3: 3752d000 PAGE_VAL: f58a2000 ESP: f58a3e44
+CR3: 375af000 PAGE_VAL: f58a2000 ESP: f58a3e44
+CR3: 37716000 PAGE_VAL: f58a2000 ESP: f58a3e44
+CR3: 3752d000 PAGE_VAL: f7568000 ESP: f7569eac
+CR3: 375af000 PAGE_VAL: f58a2000 ESP: f58a3ea4
+CR3: 3752d000 PAGE_VAL: f58a2000 ESP: f58a3e44
+CR3: 375af000 PAGE_VAL: f77d2000 ESP: f77d3b18
+stack_overflow:    31644454 (  8.00%) instrs.    4.61 sec.  0.61 GB ram.
+stack_overflow:    35600006 (  9.00%) instrs.    4.86 sec.  0.61 GB ram.
+stack_overflow:    39555573 ( 10.00%) instrs.    5.14 sec.  0.61 GB ram.
+stack_overflow:    43511121 ( 11.00%) instrs.    5.40 sec.  0.61 GB ram.
+stack_overflow:    47466675 ( 12.00%) instrs.    5.71 sec.  0.61 GB ram.
+stack_overflow:    51422238 ( 13.00%) instrs.    5.95 sec.  0.61 GB ram.
+stack_overflow:    55377790 ( 14.00%) instrs.    6.21 sec.  0.61 GB ram.
+stack_overflow:    59333344 ( 15.00%) instrs.    6.47 sec.  0.61 GB ram.
+stack_overflow:    63288926 ( 16.00%) instrs.    6.73 sec.  0.61 GB ram.
+stack_overflow:    67244465 ( 17.00%) instrs.    6.97 sec.  0.61 GB ram.
+stack_overflow:    71200017 ( 18.00%) instrs.    7.21 sec.  0.61 GB ram.
+stack_overflow:    75155573 ( 19.00%) instrs.    7.51 sec.  0.62 GB ram.
+stack_overflow:    79111123 ( 20.00%) instrs.    7.76 sec.  0.62 GB ram.
+stack_overflow:    83066681 ( 21.00%) instrs.    7.98 sec.  0.62 GB ram.
+stack_overflow:    87022239 ( 22.00%) instrs.    8.19 sec.  0.62 GB ram.
+stack_overflow:    90977791 ( 23.00%) instrs.    8.46 sec.  0.62 GB ram.
+stack_overflow:    94933372 ( 24.00%) instrs.    8.71 sec.  0.62 GB ram.
+stack_overflow:    98888907 ( 25.00%) instrs.    8.95 sec.  0.62 GB ram.
+stack_overflow:   102844460 ( 26.00%) instrs.    9.18 sec.  0.62 GB ram.
+stack_overflow:   106800017 ( 27.00%) instrs.    9.43 sec.  0.62 GB ram.
+stack_overflow:   110755576 ( 28.00%) instrs.    9.68 sec.  0.62 GB ram.
+stack_overflow:   114711130 ( 29.00%) instrs.    9.94 sec.  0.62 GB ram.
+stack_overflow:   118666692 ( 30.00%) instrs.   10.18 sec.  0.62 GB ram.
+stack_overflow:   122622241 ( 31.00%) instrs.   10.42 sec.  0.62 GB ram.
+stack_overflow:   126577817 ( 32.00%) instrs.   10.66 sec.  0.62 GB ram.
+stack_overflow:   130533353 ( 33.00%) instrs.   10.86 sec.  0.62 GB ram.
+stack_overflow:   134488909 ( 34.00%) instrs.   11.09 sec.  0.62 GB ram.
+stack_overflow:   138444467 ( 35.00%) instrs.   11.34 sec.  0.62 GB ram.
+stack_overflow:   142400022 ( 36.00%) instrs.   11.57 sec.  0.62 GB ram.
+stack_overflow:   146355582 ( 37.00%) instrs.   11.81 sec.  0.62 GB ram.
+stack_overflow:   150311135 ( 38.00%) instrs.   12.02 sec.  0.62 GB ram.
+stack_overflow:   154266689 ( 39.00%) instrs.   12.24 sec.  0.62 GB ram.
+stack_overflow:   158222249 ( 40.00%) instrs.   12.46 sec.  0.62 GB ram.
+stack_overflow:   162177801 ( 41.00%) instrs.   12.67 sec.  0.62 GB ram.
+stack_overflow:   166133359 ( 42.00%) instrs.   12.91 sec.  0.62 GB ram.
+stack_overflow:   170088915 ( 43.00%) instrs.   13.16 sec.  0.62 GB ram.
+stack_overflow:   174044470 ( 44.00%) instrs.   13.41 sec.  0.62 GB ram.
+stack_overflow:   178000032 ( 45.00%) instrs.   13.65 sec.  0.62 GB ram.
+stack_overflow:   181955582 ( 46.00%) instrs.   13.89 sec.  0.62 GB ram.
+stack_overflow:   185911138 ( 47.00%) instrs.   14.13 sec.  0.62 GB ram.
+stack_overflow:   189866696 ( 48.00%) instrs.   14.34 sec.  0.62 GB ram.
+stack_overflow:   193822250 ( 49.00%) instrs.   14.58 sec.  0.62 GB ram.
+stack_overflow:   197777829 ( 50.00%) instrs.   14.83 sec.  0.62 GB ram.
+stack_overflow:   201733369 ( 51.00%) instrs.   15.09 sec.  0.62 GB ram.
+stack_overflow:   205688924 ( 52.00%) instrs.   15.32 sec.  0.62 GB ram.
+stack_overflow:   209644479 ( 53.00%) instrs.   15.54 sec.  0.62 GB ram.
+stack_overflow:   213600035 ( 54.00%) instrs.   15.82 sec.  0.62 GB ram.
+stack_overflow:   217555597 ( 55.00%) instrs.   16.06 sec.  0.62 GB ram.
+stack_overflow:   221511145 ( 56.00%) instrs.   16.32 sec.  0.62 GB ram.
+stack_overflow:   225466699 ( 57.00%) instrs.   16.56 sec.  0.62 GB ram.
+stack_overflow:   229422259 ( 58.00%) instrs.   16.82 sec.  0.62 GB ram.
+stack_overflow:   233377812 ( 59.00%) instrs.   17.05 sec.  0.62 GB ram.
+stack_overflow:   237333368 ( 60.00%) instrs.   17.29 sec.  0.62 GB ram.
+stack_overflow:   241288926 ( 61.00%) instrs.   17.54 sec.  0.62 GB ram.
+stack_overflow:   245244480 ( 62.00%) instrs.   17.76 sec.  0.62 GB ram.
+stack_overflow:   249200038 ( 63.00%) instrs.   17.99 sec.  0.62 GB ram.
+stack_overflow:   253155600 ( 64.00%) instrs.   18.24 sec.  0.62 GB ram.
+stack_overflow:   257111154 ( 65.00%) instrs.   18.48 sec.  0.62 GB ram.
+stack_overflow:   261066708 ( 66.00%) instrs.   18.66 sec.  0.62 GB ram.
+stack_overflow:   265022267 ( 67.00%) instrs.   18.85 sec.  0.62 GB ram.
+stack_overflow:   268977818 ( 68.00%) instrs.   19.07 sec.  0.62 GB ram.
+stack_overflow:   272933374 ( 69.00%) instrs.   19.32 sec.  0.62 GB ram.
+stack_overflow:   276888934 ( 70.00%) instrs.   19.56 sec.  0.62 GB ram.
+stack_overflow:   280844485 ( 71.00%) instrs.   19.83 sec.  0.62 GB ram.
+stack_overflow:   284800041 ( 72.00%) instrs.   20.08 sec.  0.62 GB ram.
+stack_overflow:   288755606 ( 73.00%) instrs.   20.33 sec.  0.62 GB ram.
+stack_overflow:   292711154 ( 74.00%) instrs.   20.58 sec.  0.63 GB ram.
+stack_overflow:   296666712 ( 75.00%) instrs.   20.80 sec.  0.63 GB ram.
+stack_overflow:   300622268 ( 76.00%) instrs.   21.02 sec.  0.63 GB ram.
+stack_overflow:   304577822 ( 77.00%) instrs.   21.24 sec.  0.63 GB ram.
+stack_overflow:   308533386 ( 78.00%) instrs.   21.51 sec.  0.63 GB ram.
+stack_overflow:   312488936 ( 79.00%) instrs.   21.77 sec.  0.63 GB ram.
+stack_overflow:   316444492 ( 80.00%) instrs.   22.01 sec.  0.63 GB ram.
+stack_overflow:   320400050 ( 81.00%) instrs.   22.25 sec.  0.63 GB ram.
+stack_overflow:   324355605 ( 82.00%) instrs.   22.53 sec.  0.63 GB ram.
+stack_overflow:   328311160 ( 83.00%) instrs.   22.78 sec.  0.63 GB ram.
+stack_overflow:   332266717 ( 84.00%) instrs.   22.99 sec.  0.63 GB ram.
+stack_overflow:   336222274 ( 85.00%) instrs.   23.22 sec.  0.63 GB ram.
+stack_overflow:   340177830 ( 86.00%) instrs.   23.48 sec.  0.63 GB ram.
+stack_overflow:   344133384 ( 87.00%) instrs.   23.71 sec.  0.63 GB ram.
+stack_overflow:   348088939 ( 88.00%) instrs.   24.01 sec.  0.63 GB ram.
+stack_overflow:   352044497 ( 89.00%) instrs.   24.28 sec.  0.63 GB ram.
+stack_overflow:   356000058 ( 90.00%) instrs.   24.52 sec.  0.63 GB ram.
+stack_overflow:   359955608 ( 91.00%) instrs.   24.80 sec.  0.63 GB ram.
+stack_overflow:   363911168 ( 92.00%) instrs.   25.10 sec.  0.63 GB ram.
+stack_overflow:   367866720 ( 93.00%) instrs.   25.34 sec.  0.63 GB ram.
+stack_overflow:   371822276 ( 94.00%) instrs.   25.55 sec.  0.63 GB ram.
+stack_overflow:   375777834 ( 95.00%) instrs.   25.74 sec.  0.63 GB ram.
+stack_overflow:   379733390 ( 96.00%) instrs.   25.94 sec.  0.63 GB ram.
+stack_overflow:   383688946 ( 97.00%) instrs.   26.14 sec.  0.63 GB ram.
+stack_overflow:   387644502 ( 98.00%) instrs.   26.34 sec.  0.63 GB ram.
+stack_overflow:   391600056 ( 99.00%) instrs.   26.56 sec.  0.63 GB ram.
+CR3: 1ab1000 PAGE_VAL: f3832000 ESP: f3833e90
+CR3: 3752d000 PAGE_VAL: f3832000 ESP: f3833ea8
+CR3: 1ab1000 PAGE_VAL: f77d2000 ESP: f77d3d7c
+CR3: 37716000 PAGE_VAL: f58a2000 ESP: f58a3e44
+./stack_overflow-rr-nondet.log:  log is empty.
+./stack_overflow-rr-nondet.log:  log is empty.
+Replay completed successfully. 1
+Time taken was: 25 seconds.
+Stats:
+RR_INPUT_1 number = 0, size = 0 bytes
+RR_INPUT_2 number = 0, size = 0 bytes
+RR_INPUT_4 number = 2432, size = 34048 bytes
+RR_INPUT_8 number = 17579, size = 316422 bytes
+RR_INTERRUPT_REQUEST number = 5546, size = 77644 bytes
+RR_EXIT_REQUEST number = 0, size = 0 bytes
+RR_SKIPPED_CALL number = 0, size = 0 bytes
+RR_END_OF_LOG number = 1, size = 10 bytes
+RR_PENDING_INTERRUPTS number = 0, size = 0 bytes
+RR_EXCEPTION number = 0, size = 0 bytes
+max_queue_len = 111
+Checksum of guest memory: 0x8147dc4
+Replay completed successfully 2.
